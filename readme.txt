@@ -1,9 +1,9 @@
 
-1) General FTP user folders and files structure
+1) General folders and files structure
 
     Example Tree:
 
-    template
+    data
     ├── inventory.csv
     └── assets
         ├── GIA-2205729946
@@ -64,8 +64,3 @@
 
     All new created account are started with sandbox setting, after approval, it will move out of sandbox.
 
-    After the main account is in production, By adding a prefix "sandbox-" to the username with the same password, 
-    you can use the sandbox account for developing purpose.
-
-    For example, your username is "demo1", changing the username to "sandbox-demo1" and use the same password, 
-    you are accessing the sandbox account.

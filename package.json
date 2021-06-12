@@ -1,6 +1,6 @@
 {
   "name": "@samwen/vendor-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Ritani Diamond Vendor Inventory SDK",
   "main": "lib/index.js",
   "directories": {
