@@ -21,6 +21,7 @@ const agreed_header = [
 	'length_width_ratio',
 	'fluorescence',
 	'girdle',
+	'girdle_percent',
 	'symmetry',
 	'table_percent',
 	'key_to_symbols',

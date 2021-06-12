@@ -26,7 +26,7 @@ const fields_map = [
 			iidgr: 'IIDGR', 	
 			pgs: 'PGS'
 		},
-		default: 'GIA',
+		default_value: 'GIA',
 	},
 	{
 		key: 'certificate_number',
@@ -175,7 +175,7 @@ const fields_map = [
 			'N': 0,
 			'Y': 1
 		},
-		default: 0,
+		default_value: 0,
 	},
 	{
 		key: 'orig_primary_image_url',
