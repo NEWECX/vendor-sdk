@@ -22,13 +22,13 @@ const expect = chai.expect;
 // OR
 // stage_env=test mocha --timeout 100000 --reporter spec test/test-api-client1
 
-const old_headers = [ 'sku', 'carat', 'shipping_availability', 'certificate_lab', 'certificate_number', 'orig_certificate_url', 'shape', 'cost', 'clarity', 'color', 'cut', 'culet', 'polish', 'depth', 'depth_percent', 'width', 'length', 'length_width_ratio', 'fluorescence', 'girdle', 'symmetry', 'table_percent', 'key_to_symbols', 'crown_angle', 'location', 'lab_grown', 'orig_primary_image_url', 'orig_proportions_diagram', 'orig_plotting_diagram', 'orig_video_url', 'orig_alternate_image1_url', 'orig_alternate_image2_url', 'orig_alternate_image3_url', 'orig_video1_url', 'orig_video2_url'];
+const old_headers = [ 'vendor_sku', 'carat', 'shipping_availability', 'certificate_lab', 'certificate_number', 'orig_certificate_url', 'shape', 'cost', 'clarity', 'color', 'cut', 'culet', 'polish', 'depth', 'depth_percent', 'width', 'length', 'length_width_ratio', 'fluorescence', 'girdle', 'symmetry', 'table_percent', 'key_to_symbols', 'crown_angle', 'location', 'lab_grown', 'orig_primary_image_url', 'orig_proportions_diagram', 'orig_plotting_diagram', 'orig_video_url', 'orig_alternate_image1_url', 'orig_alternate_image2_url', 'orig_alternate_image3_url', 'orig_video1_url', 'orig_video2_url'];
 
-const old_fields_map = { certificate_lab: 'certificate_lab', certificate_number: 'certificate_number'};
+const old_fields_map = [{ key: 'certificate_lab'}, {key: 'certificate_number'}];
 
 const new_headers = [ 'stock#', 'carat', 'shipping_availability', 'certificate_lab', 'certificate_number', 'orig_certificate_url', 'shape', 'cost', 'clarity', 'color', 'cut', 'culet', 'polish', 'depth', 'depth_percent', 'width', 'length', 'length_width_ratio', 'fluorescence', 'girdle', 'symmetry', 'table_percent', 'key_to_symbols', 'crown_angle', 'location', 'lab_grown', 'orig_primary_image_url', 'orig_proportions_diagram', 'orig_plotting_diagram', 'orig_video_url', 'orig_alternate_image1_url', 'orig_alternate_image2_url', 'orig_alternate_image3_url', 'orig_video1_url', 'orig_video2_url'];
 
-const new_fields_map = { sku: 'stock#', certificate_lab: 'certificate_lab', certificate_number: 'certificate_number'};
+const new_fields_map = [ {key: 'vendor_sku', field: 'stock#'}, { key: 'certificate_lab', field: 'certificate_lab'}, {key: 'certificate_number', field: 'certificate_number'} ];
 
 describe('Test api-client 1', () => {
 

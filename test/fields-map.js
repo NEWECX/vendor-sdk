@@ -2,7 +2,7 @@
 
 const fields_map = [
 	{
-		key: 'sku',
+		key: 'vendor_sku',
 	},
 	{
 		key: 'carat',

@@ -25,19 +25,19 @@ describe('Test validate-header', () => {
     });
 
     it('test validate-header simple', async () => {
-        const result = validate_header(['sku', 'carat'], ['sku', 'carat']);
+        const result = validate_header(['vendor_sku', 'carat'], ['vendor_sku', 'carat']);
         //console.log(result);
         expect(result).equals('ok');
     });
 
     it('test validate-header less agreed_header', async () => {
-        const result = validate_header(['sku', 'carat'], ['carat']);
+        const result = validate_header(['vendor_sku', 'carat'], ['carat']);
         //console.log(result);
         expect(result[0]).equals('number of header fields 2 is not 1 of agreed header');
     });
 
     it('test validate-header less header', async () => {
-        const result = validate_header(['carat'], ['sku', 'carat']);
+        const result = validate_header(['carat'], ['vendor_sku', 'carat']);
         //console.log(result);
         expect(result[0]).equals('number of header fields 1 is not 2 of agreed header');
     });

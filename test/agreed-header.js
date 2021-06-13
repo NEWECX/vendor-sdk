@@ -1,7 +1,7 @@
 'use strict';
 
 const agreed_header = [
-	'sku',
+	'vendor_sku',
 	'carat',
 	'shipping_availability',
 	'certificate_lab',

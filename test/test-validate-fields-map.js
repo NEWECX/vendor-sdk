@@ -26,7 +26,7 @@ describe('Test validate-fields-map', () => {
     });
 
     it('test simple fields_map', async () => {
-        const result = validate_fields_map([{key: 'sku', field: 'field1'}, {key: 'carat', field: 'field2'}]);
+        const result = validate_fields_map([{key: 'vendor_sku', field: 'field1'}, {key: 'carat', field: 'field2'}]);
         //console.log(result);
         expect(result).equals(null);
     });
