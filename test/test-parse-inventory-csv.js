@@ -19,7 +19,7 @@ describe('Test parse-inventory-csv', () => {
     it('test parse-inventory-csv', async () => {
         const local_filepath = node_path.join(__dirname, 'data', 'inventory.csv');
         const result = await parse_inventory_csv(local_filepath, fields_map, agreed_header);
-        console.log('result', JSON.stringify(result, null, 2));
+        //console.log('result', JSON.stringify(result, null, 2));
         expect(result.ok_count).equals(1);
         expect(result.diamonds.length).equals(1);
         expect(result.diamonds[0].pass).equals(true);
@@ -28,7 +28,7 @@ describe('Test parse-inventory-csv', () => {
     it('test parse-inventory-csv new', async () => {
         const local_filepath = node_path.join(__dirname, 'data', 'inventory-new.csv');
         const result = await parse_inventory_csv(local_filepath, fields_map, agreed_header);
-        console.log('result', JSON.stringify(result, null, 2));
+        //console.log('result', JSON.stringify(result, null, 2));
         expect(result.ok_count).equals(2);
         expect(result.diamonds.length).equals(2);
         expect(result.diamonds[0].pass).equals(true);

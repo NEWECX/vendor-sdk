@@ -38,18 +38,42 @@ describe('Test download-assets', () => {
 
         configuration.set_data_dir( data_dir );
 
-        const result = await download_assets(diamond);
-        //console.log(result);
-        expect(result).to.be.deep.equal({
-            certificate: { provided: 1, retrieved: 1 },
-            primary_image: { provided: 1, retrieved: 1 },
-            cutprofile: { provided: 1, retrieved: 1 },
-            plot: { provided: 1, retrieved: 1 },
-            alternate_image: { provided: 0, retrieved: 0 },
-            primary_video: { provided: 1, retrieved: 1 },
-            alternate_video: { provided: 0, retrieved: 0 }
-        });
-        const list = fs.readdirSync(diamond_path);
+        const result = await download_assets([diamond]);
+        //console.log(JSON.stringify(result, null, 2));
+        expect(result).to.be.deep.equal([{
+            "lab": "GIA",
+            "cert": "2205729946",
+            "assets_stats": {
+                "certificate": {
+                    "provided": 1,
+                    "retrieved": 0
+                },
+                "primary_image": {
+                    "provided": 1,
+                    "retrieved": 0
+                },
+                "cutprofile": {
+                    "provided": 1,
+                    "retrieved": 0
+                },
+                "plot": {
+                    "provided": 1,
+                    "retrieved": 0
+                },
+                "alternate_image": {
+                    "provided": 0,
+                    "retrieved": 0
+                },
+                "primary_video": {
+                    "provided": 1,
+                    "retrieved": 0
+                },
+                "alternate_video": {
+                    "provided": 0,
+                    "retrieved": 0
+                }
+            }
+        }]);        const list = fs.readdirSync(diamond_path);
         expect(list.includes('certificate.pdf')).equals(true);
         expect(list.includes('cutprofile.jpg')).equals(true);
         expect(list.includes('plot.jpg')).equals(true);
@@ -81,17 +105,42 @@ describe('Test download-assets', () => {
 
         configuration.set_data_dir( data_dir );
 
-        const result = await download_assets(diamond);
-        //console.log(result);
-        expect(result).to.be.deep.equal({
-            certificate: { provided: 1, retrieved: 1 },
-            primary_image: { provided: 1, retrieved: 1 },
-            cutprofile: { provided: 0, retrieved: 0 },
-            plot: { provided: 0, retrieved: 0 },
-            alternate_image: { provided: 0, retrieved: 0 },
-            primary_video: { provided: 1, retrieved: 1 },
-            alternate_video: { provided: 0, retrieved: 0 }
-        });
+        const result = await download_assets([diamond]);
+        //console.log(JSON.stringify(result, null, 2));
+        expect(result).to.be.deep.equal([{
+            "lab": "IGI",
+            "cert": "459108837",
+            "assets_stats": {
+                "certificate": {
+                  "provided": 1,
+                  "retrieved": 0
+                },
+                "primary_image": {
+                  "provided": 1,
+                  "retrieved": 0
+                },
+                "cutprofile": {
+                  "provided": 0,
+                  "retrieved": 0
+                },
+                "plot": {
+                  "provided": 0,
+                  "retrieved": 0
+                },
+                "alternate_image": {
+                  "provided": 0,
+                  "retrieved": 0
+                },
+                "primary_video": {
+                  "provided": 1,
+                  "retrieved": 0
+                },
+                "alternate_video": {
+                  "provided": 0,
+                  "retrieved": 0
+                }
+              }
+        }]);
         const list = fs.readdirSync(diamond_path);
         expect(list.includes('certificate.pdf')).equals(true);
         expect(list.includes('primary.jpg')).equals(true);
@@ -113,17 +162,42 @@ describe('Test download-assets', () => {
 
         configuration.set_data_dir( data_dir );
 
-        const result = await download_assets(diamond);
-        //console.log(result);
-        expect(result).to.be.deep.equal({
-            certificate: { provided: 1, retrieved: 1 },
-            primary_image: { provided: 0, retrieved: 0 },
-            cutprofile: { provided: 0, retrieved: 0 },
-            plot: { provided: 0, retrieved: 0 },
-            alternate_image: { provided: 0, retrieved: 0 },
-            primary_video: { provided: 0, retrieved: 0 },
-            alternate_video: { provided: 0, retrieved: 0 }
-        });
+        const result = await download_assets([diamond]);
+        //console.log(JSON.stringify(result, null, 2));
+        expect(result).to.be.deep.equal([{
+            "lab": "GIA",
+            "cert": "2205729946",
+            "assets_stats": {
+                "certificate": {
+                    "provided": 1,
+                    "retrieved": 1
+                },
+                "primary_image": {
+                    "provided": 0,
+                    "retrieved": 0
+                },
+                "cutprofile": {
+                    "provided": 0,
+                    "retrieved": 0
+                },
+                "plot": {
+                    "provided": 0,
+                    "retrieved": 0
+                },
+                "alternate_image": {
+                    "provided": 0,
+                    "retrieved": 0
+                },
+                "primary_video": {
+                    "provided": 0,
+                    "retrieved": 0
+                },
+                "alternate_video": {
+                    "provided": 0,
+                    "retrieved": 0
+                }
+            }
+        }]);
         const list = fs.readdirSync(diamond_path);
         expect(list.includes('certificate.pdf')).equals(true);
     });
