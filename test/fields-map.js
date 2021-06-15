@@ -53,6 +53,9 @@ const fields_map = [
 		key: 'cost',
 	},
 	{
+		key: 'cost_per_carat',
+	},
+	{
         key: 'clarity', 
         values_map: {
 			'flawless': 'FL', 
@@ -138,6 +141,9 @@ const fields_map = [
 	},
 	{
 		key: 'girdle',
+	},
+	{
+		key: 'girdle_percent',
 	},
 	{
 		key: 'symmetry', 

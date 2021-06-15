@@ -9,6 +9,7 @@ const agreed_header = [
 	'orig_certificate_url',
 	'shape',
 	'cost',
+	'cost_per_carat',
 	'clarity',
 	'color',
 	'cut',

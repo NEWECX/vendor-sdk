@@ -2,7 +2,7 @@
 
 const chai = require('chai');
 const node_path = require('path');
-const parse_inventory_csv = require('../lib/parse-inventory-csv');
+const { parse_inventory_csv } = require('../lib/validate');
 
 const expect = chai.expect;
 

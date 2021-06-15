@@ -14,7 +14,6 @@ const expect = chai.expect;
 // OR
 // stage_env=test mocha --reporter spec test/test-convert-diamond 
 
-// convert_diamond(timestamp, index, row, fields_map, std_fields = standard_fields, assets_fields = Object.key(assets_filename_map))
 describe('Test convert-diamond', () => {
 
     it('test convert-diamond 1', async () => {
@@ -52,7 +51,9 @@ describe('Test convert-diamond', () => {
               "lab": "AAA"
             },
             "errors": [
-              "row_no: 1 error, certificate_lab => lab => AAA not in AGSL, DF, EGL, GCAL, GIA, GHI, GSI, HRD, IGI, IIDGR, PGS"
+              "row_no: 1 error, value(AAA) not mapped for lab",
+              "row_no: 1 error, certificate_lab => lab => * AAA not in AGSL, DF, EGL, GCAL, GIA, GHI, GSI, HRD, IGI, IIDGR, PGS",
+              'row_no: 1 error, missing required value for lab'
             ]
         });
     });
@@ -83,7 +84,7 @@ describe('Test convert-diamond', () => {
         });
     });
 
-    it('test convert-diamond 3', async () => {
+    it('test convert-diamond 4', async () => {
         const assets_fields = ['certificate_lab'];
         const std_fields = [];
         for (const key of assets_fields) {
@@ -112,7 +113,7 @@ describe('Test convert-diamond', () => {
         });
     });
 
-    it('test convert-diamond 4', async () => {
+    it('test convert-diamond 5', async () => {
         const assets_fields = ['certificate_lab'];
         const std_fields = [];
         for (const key of assets_fields) {
@@ -138,7 +139,7 @@ describe('Test convert-diamond', () => {
         });
     });
 
-    it('test convert-diamond 5', async () => {
+    it('test convert-diamond 6', async () => {
         const assets_fields = ['lab_grown'];
         const std_fields = [];
         for (const key of assets_fields) {
@@ -167,7 +168,7 @@ describe('Test convert-diamond', () => {
         });
     });
 
-    it('test convert-diamond 6', async () => {
+    it('test convert-diamond 7', async () => {
         const assets_fields = ['lab_grown'];
         const std_fields = [];
         for (const key of assets_fields) {
@@ -193,7 +194,7 @@ describe('Test convert-diamond', () => {
         });
     });
 
-    it('test convert-diamond 7', async () => {
+    it('test convert-diamond 8', async () => {
         const assets_fields = ['lab_grown'];
         const std_fields = [];
         for (const key of assets_fields) {
@@ -218,4 +219,5 @@ describe('Test convert-diamond', () => {
             }
         });
     });
+
 });

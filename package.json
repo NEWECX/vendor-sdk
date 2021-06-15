@@ -1,6 +1,6 @@
 {
   "name": "@samwen/vendor-sdk",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "Ritani Diamond Vendor Inventory SDK",
   "main": "lib/index.js",
   "directories": {
@@ -28,6 +28,7 @@
   "dependencies": {
     "@samwen/ftp-client": "^1.0.0",
     "@samwen/http-client": "^1.0.0",
+    "base-x": "^3.0.8",
     "csvjson-json_beautifier": "^5.0.4",
     "csvtojson": "^2.0.10",
     "dotenv": "^10.0.0",

@@ -2,7 +2,7 @@
 
 const chai = require('chai');
 const configuration = require('../lib/configuration');
-const download_assets = require('../lib/download-assets')
+const { download_assets } = require('../lib/downloads')
 const fs = require('fs');
 
 const expect = chai.expect;
@@ -17,6 +17,7 @@ describe('Test download-assets', () => {
     it('test download-assets 1', async () => {
 
         const diamond = {
+            "vendor_sku": "T123",
             "certificate_lab": "GIA",
             "certificate_number": "2205729946",
             "orig_certificate_url": "https://assets.newecx.com/template/assets/GIA-2205729946/certificate.pdf",
@@ -41,6 +42,7 @@ describe('Test download-assets', () => {
         const result = await download_assets([diamond]);
         //console.log(JSON.stringify(result, null, 2));
         expect(result).to.be.deep.equal([{
+            "sku": "T123",
             "lab": "GIA",
             "cert": "2205729946",
             "assets_stats": {
@@ -84,6 +86,7 @@ describe('Test download-assets', () => {
     it('test download-assets 2', async () => {
 
         const diamond = {
+            vendor_sku: "T234",
             certificate_lab: 'IGI',
             certificate_number: '459108837',
             orig_certificate_url: 'https://assets.newecx.com/template/assets/IGI-459108837/certificate.pdf',
@@ -108,6 +111,7 @@ describe('Test download-assets', () => {
         const result = await download_assets([diamond]);
         //console.log(JSON.stringify(result, null, 2));
         expect(result).to.be.deep.equal([{
+            "sku": "T234",
             "lab": "IGI",
             "cert": "459108837",
             "assets_stats": {
@@ -150,6 +154,7 @@ describe('Test download-assets', () => {
     it('test download-assets certificate without extension', async () => {
 
         const diamond = {
+            "vendor_sku": "v123",
             "certificate_lab": "GIA",
             "certificate_number": "2205729946",
             "orig_certificate_url": "https://assets.newecx.com/template/assets/GIA-2205729946/certificate",
@@ -165,6 +170,7 @@ describe('Test download-assets', () => {
         const result = await download_assets([diamond]);
         //console.log(JSON.stringify(result, null, 2));
         expect(result).to.be.deep.equal([{
+            "sku": "v123",
             "lab": "GIA",
             "cert": "2205729946",
             "assets_stats": {
