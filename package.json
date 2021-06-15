@@ -1,5 +1,5 @@
 {
-  "name": "@samwen/vendor-sdk",
+  "name": "@ritani/vendor-sdk",
   "version": "1.1.9",
   "description": "Ritani Diamond Vendor Inventory SDK",
   "main": "lib/index.js",
