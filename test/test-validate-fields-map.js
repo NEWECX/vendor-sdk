@@ -2,7 +2,7 @@
 
 const chai = require('chai');
 const validate_fields_map = require('../lib/util/validate-fields-map');
-const std_fields = require('../lib/cfg/4-std-fields');
+const std_fields = require('../lib/cfg/std-fields');
 
 const expect = chai.expect;
 

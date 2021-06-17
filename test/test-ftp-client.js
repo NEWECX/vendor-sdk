@@ -3,7 +3,7 @@
 const chai = require('chai');
 const node_path = require('path');
 
-const { login, logout, close } = require('@samwen/ftp-client');
+const { login, logout, close } = require('@ritani/ftp-client');
 const configuration = require('../lib/configuration');
 
 const download_data =  require('./download-data');

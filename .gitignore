@@ -13,6 +13,8 @@ download
 template
 data
 tmp
+src
+report
 
 # Firebase cache
 .firebase/

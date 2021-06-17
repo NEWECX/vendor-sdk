@@ -1,7 +1,8 @@
+'use strict';  
 
 const fs = require('fs');
 const node_path = require('path');
-const http_client = require('@samwen/http-client');
+const http_client = require('@ritani/http-client');
 const extract = require('extract-zip')
 
 async function download_data() {
