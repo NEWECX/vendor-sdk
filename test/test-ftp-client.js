@@ -46,7 +46,7 @@ describe('Test ftp-client', () => {
 
     it('test ftp_upload_all_files without data dir', async () => {
         await login(async () => {
-            configuration.set_data_dir(node_path.join(__dirname, 'data'));
+            configuration.set_data_directory(node_path.join(__dirname, 'data'));
             const result = await ftp_upload_all_files();
             //console.log(result);
             expect(result).has.property('inventory');
@@ -73,7 +73,7 @@ describe('Test ftp-client', () => {
 
     it('test ftp_upload_inventory without local_filepath', async () => {
         await login(async () => {
-            configuration.set_data_dir(node_path.join(__dirname, 'data'));
+            configuration.set_data_directory(node_path.join(__dirname, 'data'));
             const result = await ftp_upload_inventory();
             //console.log(result);
             expect(result).has.property('status');

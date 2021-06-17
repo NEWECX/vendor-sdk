@@ -34,7 +34,7 @@ describe('Test api-client 3', () => {
     });
 
     it('test api_upload_all_files without data_dir', async () => {
-        configuration.set_data_dir(node_path.join(__dirname, 'data'));
+        configuration.set_data_directory(node_path.join(__dirname, 'data'));
         const data = await api_upload_all_files();
         //console.log('api_upload_all_files(2)', data);
         expect(data).has.property('inventory');

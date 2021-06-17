@@ -34,7 +34,7 @@ describe('Test api-client 2', () => {
     });
 
     it('test api_upload_inventory without filename', async () => {
-        configuration.set_data_dir(node_path.join(__dirname, 'data'));
+        configuration.set_data_directory(node_path.join(__dirname, 'data'));
         const data = await api_upload_inventory();
         //console.log('upload_inventory(2)', data);
         expect(data).has.property('status');
@@ -68,7 +68,7 @@ describe('Test api-client 2', () => {
     });
 
     it('test api_upload_assets without assets path', async () => {
-        configuration.set_data_dir(node_path.join(__dirname, 'data'));
+        configuration.set_data_directory(node_path.join(__dirname, 'data'));
         const results = await api_upload_assets();
         //console.log('upload_assets(2)', results);
         for (const data of results) {

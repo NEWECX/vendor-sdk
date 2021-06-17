@@ -17,7 +17,8 @@ const account = {
     ftp_secure: true,
     api_base_url: 'https://api.newecx.com',
     api_key: 'API-KEY',
-    data_dir: '/path/to/my-data-directory'
+    data_dir: '/path/to/my-data-directory',
+    project_dir: '/path/to/my-project-directory'
 };
 
 describe('Test account config', () => {
@@ -40,13 +41,19 @@ describe('Test account config', () => {
         expect(api_key).to.equal('API-KEY');
     });
 
-    it('test get_data_dir', async () => {
+    it('test get_data_directory', async () => {
         configuration.set_account(account);
-        const data_dir = configuration.get_data_dir();
+        const data_dir = configuration.get_data_directory();
         expect(data_dir).to.equal('/path/to/my-data-directory');
     });
 
+    it('test get_project_directory', async () => {
+        configuration.set_account(account);
+        const project_dir = configuration.get_project_directory();
+        expect(project_dir).to.equal('/path/to/my-project-directory');
+    });
+
     after(() => {
-        configuration.get_from_env(); // restore config
+        configuration.load_configuration(); // restore config
     });
 });

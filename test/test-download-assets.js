@@ -37,7 +37,7 @@ describe('Test download-assets', () => {
 
         cleanup_folder(diamond_path);
 
-        configuration.set_data_dir( data_dir );
+        configuration.set_data_directory( data_dir );
 
         const result = await download_assets([diamond]);
         //console.log(JSON.stringify(result, null, 2));
@@ -106,7 +106,7 @@ describe('Test download-assets', () => {
 
         cleanup_folder(diamond_path);
 
-        configuration.set_data_dir( data_dir );
+        configuration.set_data_directory( data_dir );
 
         const result = await download_assets([diamond]);
         //console.log(JSON.stringify(result, null, 2));
@@ -165,7 +165,7 @@ describe('Test download-assets', () => {
 
         cleanup_folder(diamond_path);
 
-        configuration.set_data_dir( data_dir );
+        configuration.set_data_directory( data_dir );
 
         const result = await download_assets([diamond]);
         //console.log(JSON.stringify(result, null, 2));

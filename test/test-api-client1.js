@@ -6,9 +6,9 @@ const node_path = require('path');
 const {
     api_get_inventory_info,
     api_get_header,
-    api_get_fields_map,
+    api_get_fields_maps,
     api_update_header,
-    api_update_fields_map,
+    api_update_fields_maps,
     api_get_asset_info,
     api_get_report,
 } = require('../lib/api-client')
@@ -58,8 +58,8 @@ describe('Test api-client 1', () => {
         //console.log('get_header', data);
     });
 
-    it('test api_get_fields_map', async () => {
-        const data = await api_get_fields_map();
+    it('test api_get_fields_maps', async () => {
+        const data = await api_get_fields_maps();
         expect(Object.keys(data).length).greaterThan(0);
         //console.log('get_fields_map', data);
     });
@@ -75,13 +75,13 @@ describe('Test api-client 1', () => {
     });
 
     it('test api_update_fields_map', async () => {
-        const data = await api_update_fields_map(new_fields_map);
+        const data = await api_update_fields_maps(new_fields_map);
         expect(Object.keys(data).length).greaterThan(0);
         //console.log('update_fields_map', data);
         expect(data.status).equals('OK');
-        const data_new = await api_get_fields_map();
+        const data_new = await api_get_fields_maps();
         expect(data_new).to.be.deep.equals(new_fields_map)
-        await api_update_fields_map(old_fields_map);
+        await api_update_fields_maps(old_fields_map);
     });
 
     it('test get_asset_info with LAB-CERT# in filepath', async () => {
