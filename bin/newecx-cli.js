@@ -18,6 +18,7 @@ const retrieve_assets = require('../lib/cmds/retrieve-assets');
 const submit_inventory = require('../lib/cmds/submit-inventory');
 const submit_assets = require('../lib/cmds/submit-assets');
 const submit_both = require('../lib/cmds/submit-both');
+const check_latest_version = require('../lib/cmds/check-latest-version');
 
 program
     .version(pkg.version)
@@ -73,6 +74,7 @@ program.parse(process.argv);
         } else {
             console.error('option not handled', options)
         }
+        check_latest_version();
     } catch(err) {
         console.error(err.message);
         process.exit(1);
