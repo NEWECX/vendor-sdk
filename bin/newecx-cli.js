@@ -74,9 +74,10 @@ program.parse(process.argv);
         } else {
             console.error('option not handled', options)
         }
-        check_latest_version();
     } catch(err) {
         console.error(err.message);
         process.exit(1);
     }
 })(program);
+
+check_latest_version();
