@@ -10,3 +10,5 @@ template
 data
 *.log
 src
+.eslintignore
+.eslintrc.json
