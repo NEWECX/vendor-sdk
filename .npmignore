@@ -1,9 +1,11 @@
 support
 test
 examples
+.env
 .gitignore
 History.md
 report
 download
 template
 data
+*.log
