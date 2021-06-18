@@ -71,7 +71,7 @@ For quick view, you can click on:
 3. <a href="/doc/instruction.csv">instruction.csv</a>
 4. <a href="/doc/inventory.csv">inventory.csv</a>
 
-### Step 6: explore newecx cli command
+### Step 5: explore newecx cli command
 
     newecx -h
 
@@ -98,7 +98,7 @@ For quick view, you can click on:
 
 <a href="/doc/newecx-cli.md">Click here for document of newecx cli command</a>
 
-## Example of Use Vendor SDK APIs
+### Step 6: Example of Use Vendor SDK APIs
 
 To upload your inventory feed data/inventory.csv file:
 
