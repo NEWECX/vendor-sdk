@@ -2,13 +2,11 @@
 
 ## How To Install
 
-### Step 1: Install Latest LTS Node
+### Install Latest LTS Node (require version 14 or later version)
 
 <a href="https://nodejs.org/en/download/">Select a pre-built installer for your platform and install node</a>
 
-### Step 2: Run
-
-npm -g install @ritani/vendor-sdk
+### Run: npm -g install @ritani/vendor-sdk
 
 ## How To Use
 
@@ -21,20 +19,15 @@ You will get ftp and api credentials:
     ftp_username, ftp_password and api_key
 
 
-### Step 2: Create a project folder and data folder
+### Step 2: Create a project folder and data folder, amd Change directory to the project folder
 
 for example: ritani-inventory as project folder, ritani-inventory/data as data folder
 
     mkdir -p ritani-inventory/data
 
-
-### Step 3: Change directory to the project folder
-
-for example: 
-
     cd ritani-inventory
 
-### Step 4: set config
+### Step 3: set config
 
     newecx --set-config
 
@@ -44,7 +37,7 @@ for example:
     Enter your FTP password: ...
     Enter your vendor API key: ...
 
-### Step 5: generate template with instruction and sample data
+### Step 4: generate template with instruction and sample data
 
     newecx --generate-template
 
@@ -54,7 +47,6 @@ for example:
     .
     ├── data
     └── template
-        ├── agreed-header.js
         ├── assets
         │   ├── GIA-2205729946
         │   │   ├── certificate.pdf
@@ -66,9 +58,10 @@ for example:
         │       ├── certificate.pdf
         │       ├── primary.jpg
         │       └── video.mp4
-        ├── fields-map.js
-        ├── instruction.csv
-        └── inventory.csv
+        ├── <a href="/NEWECX/vendor-sdk/blob/master/doc/agreed-header.js">agreed-header.js</a>
+        ├── <a href="/NEWECX/vendor-sdk/blob/master/doc/fields-map.js">fields-map.js</a>
+        ├── <a href="/NEWECX/vendor-sdk/blob/master/doc/instruction.csv">instruction.csv</a>
+        └── <a href="/NEWECX/vendor-sdk/blob/master/doc/inventory.csv">inventory.csv</a>
 
 ### Step 6: explore newecx cli command
 

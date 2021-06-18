@@ -1,0 +1,100 @@
+"field","description","type","require","allowed_values","dictionary","example"
+"vendor_sku","vendor internal sku or stock#","string","expected","","","R10-38900"
+"carat","carat weight","number","required","","",1.03
+"shipping_availability","memo field, please filter available ones to submit","string","optional","","","Guaranteed"
+"certificate_lab","certificate lab","string","required","AGSL, DF, EGL, GCAL, GIA, GHI, GSI, HRD, IGI, IIDGR, PGS","AGSL: 'American GEM Society Laboratories'
+DF: 'Diamond Foundry'
+EGL: 'European Gemological Laboratories'
+GCAL: 'GEM Certification & Assurance LAB'
+GIA: 'The Gemological Institute of America'
+GHI: 'Gemology Headquarters International Laboratory'
+GSI: 'Gemological Science International'
+HRD: 'Diamond High Council'
+IGI: 'International Gemological Institute'
+IIDGR: 'International Institute of Diamond Grading & Research'
+PGS: 'Professional GEM Science Laboratory'","GIA"
+"certificate_number","certificate number","string","required","","","2205729946"
+"orig_certificate_url","url for certificate.pdf (preferred) or  certificate.jpg","string","expected","","","https://assets.newecx.com/template/assets/GIA-2205729946/certificate.pdf"
+"shape","shape","string","required","AS, CU, EM, HS, MQ, OV, PR, PS, RA, RD","RD: 'round'
+PR: 'princess'
+EM: 'emerald'
+CU: 'cushion'
+RA: 'radiant'
+AS: 'asscher'
+PS: 'pear'
+OV: 'oval'
+MQ: 'marquise'
+HS: 'heart'","CU"
+"cost","the cost of the whole stone, NOT cost per carat","number","required","","",4073
+"cost_per_carat","the cost per carat","number","required","","",3954.37
+"clarity","clarity","string","required","FL, IF, VVS1, VVS2, VS1, VS2, SI1, SI2, I1, I2, I3","FL: 'Flawless'
+IF: 'Internally Flawless'
+VVS1: 'Very Very Slightly Inclusion 1',
+VVS2: 'Very Very Slightly Inclusion 2',
+VS1: 'Very Slightly Inclusion 1'
+VS2: 'Very Slightly Inclusion 2'
+SI1: 'Slightly Inclusion 1'
+SI2: 'Slightly Inclusion 2'
+I1: 'Inclusion 1'
+I2: 'Inclusion 2'
+I3: 'Inclusion 3'","SI1"
+"color","color","string","required","D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z","","E"
+"cut","cut grade","string","required","EX, VG, G","EX: 'Excellent'
+VG: 'Very Good'
+G: 'Good'","VG"
+"culet_size","culet size","string","optional","","","N"
+"culet_condition","culet condition","string","optional","","",""
+"polish","polish","string","required","EX, VG, G","EX: 'Excellent'
+VG: 'Very Good'
+G: 'Good'","VG"
+"depth","depth in mm","number","required","","",3.63
+"depth_percent","depth percent","number","required","","",64.7
+"width","width in mm","number","required","","",5.6
+"length","length in mm","number","required","","",6.16
+"length_width_ratio","length width ratio","number","optional","","",1.1
+"measurements","measurements by width - length x depth mm","string","optional","","",""
+"fluorescence","fluorescence","string","required","N, F, M, S, VS","N: 'None'
+F: 'Faint'
+M: 'Medium'
+S: 'Strong'
+VS: 'Very Strong'","F"
+"fluorescence_color","fluorescence color","string","optional","","",""
+"girdle","girdle includes thin to thick","string","optional","","","Slightly Thick to Extremely Thick, Faceted"
+"girdle_thin","girdle thin","string","optional","","",""
+"girdle_thick","girdle thick","string","optional","","",""
+"girdle_percent","girdle percent","number","optional","","",""
+"symmetry","symmetry","string","required","EX, VG, G, F","EX: 'Excellent'
+VG: 'Very Good'
+G: 'Good'
+F: 'Fair'","VG"
+"table_percent","table percent","number","required","","",66
+"key_to_symbols","key to symbols","string","optional","","","Crystal,Needle,Feather"
+"crown_height","crown height","number","optional","","",""
+"crown_angle","crown angle","number","optional","","",""
+"pavilion_depth","pavilion depth","number","optional","","",""
+"pavilion_angle","pavilion angle","number","optional","","",""
+"fancy_color","fancy color","string","optional","YELLOW, PINK, PURPLE, RED, BLUE, GREEN, ORANGE, BROWN, BLACK, GRAY","",""
+"fancy_color_intensity","fancy color intensity","string","optional","FL, FA, FI, FV, FP, FD","FL: 'Fancy Light'
+FA: 'Fancy'
+FI: 'Fancy Intense'
+FV: 'Fancy Vivid'
+FP: 'Fancy Deep'
+FD: 'Fancy Dark'",""
+"fancy_color_overtone","fancy color overtone","string","optional","","",""
+"city","city of the diamond location","string","optional","","",""
+"state","state of the diamond location","string","optional","","",""
+"country","country of the diamond location","string","optional","","",""
+"location","location of the diamond","string","optional","","","belgium"
+"lab_grown","lab grown or earth grown","number","required","0, 1","'0': 'N'
+'1': 'Y'",0
+"laser_inscription","laser inscription","string","optional","","",""
+"orig_primary_image_url","url for primary image primary.jpg","string","expected","","","https://assets.newecx.com/template/assets/GIA-2205729946/primary.jpg"
+"orig_proportions_url","url for proportions diagram cutprofile.jpg","string","optional","","","https://assets.newecx.com/template/assets/GIA-2205729946/cutprofile.jpg"
+"orig_plotting_url","url for plotting diagram plot.jpg","string","optional","","","https://assets.newecx.com/template/assets/GIA-2205729946/plot.jpg"
+"orig_video_url","url for video video.mp4","string","expected","","","https://assets.newecx.com/template/assets/GIA-2205729946/video.mp4"
+"orig_3d_360_url","url for 3D 360 vision url","string","optional","","","https://labgrowndiamond.s3.amazonaws.com/Video/Viewer4.0/Vision360.html?d=459108837"
+"orig_alt_image1_url","url for additional image image1.jpg","string","optional","","",""
+"orig_alt_image2_url","url for additional image image2.jpg","string","optional","","",""
+"orig_alt_image3_url","url for additional image image3.jpg","string","optional","","",""
+"orig_video1_url","url for additional video video1.mp4","string","optional","","",""
+"orig_video2_url","url for additional video video2.mp4","string","optional","","",""
