@@ -100,7 +100,7 @@ For quick view, you can click on:
 
 ## Example of Use Vendor SDK APIs
 
-To upload your inventory feed inventory.csv file:
+To upload your inventory feed data/inventory.csv file:
 
     'use strict';
 
@@ -109,12 +109,11 @@ To upload your inventory feed inventory.csv file:
 
     (async () => {
 
-        let inventory_filepath = node_path.join(data_dir, 'inventory.csv');
+        let inventory_filepath = node_path.join(__dirname(), 'data', 'inventory.csv');
 
         console.log('api upload inventory.csv');
         const result = await api_upload_inventory(inventory_filepath);
         console.log(result);
-
 
     })();
 
