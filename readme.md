@@ -6,7 +6,9 @@
 
 <a href="https://nodejs.org/en/download/">Select a pre-built installer for your platform and install node</a>
 
-### Run: npm -g install @ritani/vendor-sdk
+### Run:
+
+    npm -g install @ritani/vendor-sdk
 
 ## How To Use
 
@@ -18,8 +20,7 @@ You will get ftp and api credentials:
 
     ftp_username, ftp_password and api_key
 
-
-### Step 2: Create a project folder and data folder, amd Change directory to the project folder
+### Step 2: Create a project folder
 
 for example: ritani-inventory as project folder, ritani-inventory/data as data folder
 
@@ -63,7 +64,7 @@ for example: ritani-inventory as project folder, ritani-inventory/data as data f
         ├── instruction.csv
         └── inventory.csv
 
-For quick view:
+For quick view, you click on:
 
 1. <a href="/doc/agreed-header.js">agreed-header.js</a>
 2. <a href="/doc/fields-map.js">fields-map.js</a>
