@@ -12,3 +12,4 @@ data
 src
 .eslintignore
 .eslintrc.json
+doc
