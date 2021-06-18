@@ -2,9 +2,9 @@
 
 ## How To Install
 
-### Install Latest LTS Node (require version 14 or later version)
+### Install Latest LTS Node (require version 14 or higher)
 
-<a href="https://nodejs.org/en/download/">Select a pre-built installer for your platform and install node</a>
+<a href="https://nodejs.org/en/download/">Click to Select a pre-built installer for your platform and install node</a>
 
 ### Run:
 
@@ -14,7 +14,7 @@
 
 ### Step 1: Sign up with vendor-portal.ritani.com
 
-<a href="https://vendor-portal.ritani.com/vendor/signup">Sign up and create an account</a>
+<a href="https://vendor-portal.ritani.com/vendor/signup">Click to Sign up and create an account</a>
 
 You will get ftp and api credentials:
 
@@ -95,3 +95,9 @@ For quick view, you can click on:
     -sa --submit-assets                        to submit retrieved assets to server
     -sb --submit-both-inventory-assets         to submit both inventory and assets to server
     -h, --help                                 display help for command
+
+    <a href="/doc/newecx-cli.md">Click here for document of newecx cli command</a>
+
+## Advance Use
+
+    <a href="/doc/vender-sdk-apis.md">Click here for document of vender sdk apis</a>
