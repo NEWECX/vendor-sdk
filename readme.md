@@ -65,10 +65,10 @@ for example: ritani-inventory as project folder, ritani-inventory/data as data f
 
 For quick view:
 
-1. <a href="/NEWECX/vendor-sdk/blob/master/doc/agreed-header.js">agreed-header.js</a>
-2. <a href="/NEWECX/vendor-sdk/blob/master/doc/fields-map.js">fields-map.js</a>
-3. <a href="/NEWECX/vendor-sdk/blob/master/doc/instruction.csv">instruction.csv</a>
-4. <a href="/NEWECX/vendor-sdk/blob/master/doc/inventory.csv">inventory.csv</a>
+1. <a href="/doc/agreed-header.js">agreed-header.js</a>
+2. <a href="/doc/fields-map.js">fields-map.js</a>
+3. <a href="/doc/instruction.csv">instruction.csv</a>
+4. <a href="/doc/inventory.csv">inventory.csv</a>
 
 ### Step 6: explore newecx cli command
 
