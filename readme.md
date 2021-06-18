@@ -96,8 +96,26 @@ For quick view, you can click on:
     -sb --submit-both-inventory-assets         to submit both inventory and assets to server
     -h, --help                                 display help for command
 
-    <a href="/doc/newecx-cli.md">Click here for document of newecx cli command</a>
+<a href="/doc/newecx-cli.md">Click here for document of newecx cli command</a>
 
-## Advance Use
+## Example of Use Vendor SDK APIs
 
-    <a href="/doc/vender-sdk-apis.md">Click here for document of vender sdk apis</a>
+To upload your inventory feed inventory.csv file:
+
+    'use strict';
+
+    const node_path = require('path');
+    const { api_upload_inventory } = require('@ritani/vendor-sdk');
+
+    (async () => {
+
+        let inventory_filepath = node_path.join(data_dir, 'inventory.csv');
+
+        console.log('api upload inventory.csv');
+        const result = await api_upload_inventory(inventory_filepath);
+        console.log(result);
+
+
+    })();
+
+<a href="/doc/vender-sdk-apis.md">Click here for document of Vendor SDK APIs</a>
