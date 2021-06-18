@@ -13,6 +13,7 @@ const upload_header = require('../lib/cmds/upload-header');
 const download_fields_maps = require('../lib/cmds/download-fields-maps');
 const upload_fields_maps = require('../lib/cmds/upload-fields-maps');
 const make_fields_maps = require('../lib/cmds/make-fields-maps');
+const make_header = require('../lib/cmds/make-header');
 const validate_inventory = require('../lib/cmds/validate-inventory');
 const retrieve_assets = require('../lib/cmds/retrieve-assets');
 const submit_inventory = require('../lib/cmds/submit-inventory');
@@ -21,7 +22,7 @@ const submit_both = require('../lib/cmds/submit-both');
 const check_latest_version = require('../lib/cmds/check-latest-version');
 
 program
-    .version(pkg.version)
+    .version(pkg.version, '-v, --version', 'output the current version')
     .option('-set --set-config', 'to set project and data directories, ftp and api credentials')
     .option('-sd --set-data-dir <data_directory>', 'to set data directory')
     .option('-sp --set-project-dir <project_directory>', 'to set project directory')
@@ -30,6 +31,7 @@ program
     .option('-df --download-fields-maps', 'to download fields-maps from server')
     .option('-uh --upload-header', 'to upload agreed header to server')
     .option('-uf --upload-fields-maps', 'to upload fields-maps to server')
+    .option('-mh --make-header', 'to make agreed-header.js from inventory data')
     .option('-mf --make-fields-maps', 'to make fields-maps.js from inventory data')
     .option('-vi --validate-inventory', 'to validate inventory csv')
     .option('-ra --retrieve-assets', 'to retrieve assets of passed diamonds')
@@ -40,43 +42,49 @@ program
 program.parse(process.argv);
 
 (async (program) => {
-    try {
-        const options = program.opts();
-        //console.log(options);
-        if (options.setConfig) {
-            await set_config();
-        } else if (options.setDataDir) {
-            set_data_dir(options.setDataDir);
-        } else if (options.setProjectDir) {
-            set_project_dir(options.setProjectDir);
-        } else if (options.generateTemplate) {
-            await generate_template();
-        } else if (options.downloadHeader) {
-            await download_header();
-        } else if (options.downloadFieldsMaps) {
-            await download_fields_maps();
-        } else if (options.uploadHeader) {
-            await upload_header();
-        } else if (options.uploadFieldsMaps) {
-            await upload_fields_maps();
-        } else if (options.makeFieldsMaps) {
-            await make_fields_maps();
-        } else if (options.validateInventory) {
-            await validate_inventory();
-        } else if (options.retrieveAssets) {
-            await retrieve_assets();
-        } else if (options.submitInventory) {
-            await submit_inventory();
-        } else if (options.submitAssets) {
-            await submit_assets();
-        } else if (options.retrieveInventoryAssets) {
-            await submit_both();
-        } else {
-            console.error('option not handled', options)
+    if (process.argv.length < 3) {
+        program.help()
+    } else {
+        try {
+            const options = program.opts();
+            //console.log(options);
+            if (options.setConfig) {
+                await set_config();
+            } else if (options.setDataDir) {
+                set_data_dir(options.setDataDir);
+            } else if (options.setProjectDir) {
+                set_project_dir(options.setProjectDir);
+            } else if (options.generateTemplate) {
+                await generate_template();
+            } else if (options.downloadHeader) {
+                await download_header();
+            } else if (options.downloadFieldsMaps) {
+                await download_fields_maps();
+            } else if (options.uploadHeader) {
+                await upload_header();
+            } else if (options.uploadFieldsMaps) {
+                await upload_fields_maps();
+            } else if (options.makeHeader) {
+                await make_header();
+            }  else if (options.makeFieldsMaps) {
+                await make_fields_maps();
+            } else if (options.validateInventory) {
+                await validate_inventory();
+            } else if (options.retrieveAssets) {
+                await retrieve_assets();
+            } else if (options.submitInventory) {
+                await submit_inventory();
+            } else if (options.submitAssets) {
+                await submit_assets();
+            } else if (options.retrieveInventoryAssets) {
+                await submit_both();
+            } else {
+                console.error('option not handled', options)
+            }
+        } catch(err) {
+            console.error(err.message);
+            process.exit(1);
         }
-    } catch(err) {
-        console.error(err.message);
-        process.exit(1);
     }
 })(program);
 
