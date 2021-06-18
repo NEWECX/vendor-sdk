@@ -58,10 +58,17 @@ for example: ritani-inventory as project folder, ritani-inventory/data as data f
         │       ├── certificate.pdf
         │       ├── primary.jpg
         │       └── video.mp4
-        ├── <a href="/NEWECX/vendor-sdk/blob/master/doc/agreed-header.js">agreed-header.js</a>
-        ├── <a href="/NEWECX/vendor-sdk/blob/master/doc/fields-map.js">fields-map.js</a>
-        ├── <a href="/NEWECX/vendor-sdk/blob/master/doc/instruction.csv">instruction.csv</a>
-        └── <a href="/NEWECX/vendor-sdk/blob/master/doc/inventory.csv">inventory.csv</a>
+        ├── agreed-header.js
+        ├── fields-map.js
+        ├── instruction.csv
+        └── inventory.csv
+
+For quick view:
+
+1. <a href="/NEWECX/vendor-sdk/blob/master/doc/agreed-header.js">agreed-header.js</a>
+2. <a href="/NEWECX/vendor-sdk/blob/master/doc/fields-map.js">fields-map.js</a>
+3. <a href="/NEWECX/vendor-sdk/blob/master/doc/instruction.csv">instruction.csv</a>
+4. <a href="/NEWECX/vendor-sdk/blob/master/doc/inventory.csv">inventory.csv</a>
 
 ### Step 6: explore newecx cli command
 
