@@ -64,7 +64,7 @@ for example: ritani-inventory as project folder, ritani-inventory/data as data f
         ├── instruction.csv
         └── inventory.csv
 
-For quick view, you click on:
+For quick view, you can click on:
 
 1. <a href="/doc/agreed-header.js">agreed-header.js</a>
 2. <a href="/doc/fields-map.js">fields-map.js</a>
