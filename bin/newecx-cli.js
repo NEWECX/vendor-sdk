@@ -47,7 +47,6 @@ program.parse(process.argv);
     } else {
         try {
             const options = program.opts();
-            //console.log(options);
             if (options.setConfig) {
                 await set_config();
             } else if (options.setDataDir) {
@@ -79,11 +78,13 @@ program.parse(process.argv);
             } else if (options.retrieveInventoryAssets) {
                 await submit_both();
             } else {
-                console.error('option not handled', options)
+                console.error('option not handled', options);
+                return 1;
             }
+            return 0;
         } catch(err) {
-            console.error(err.message);
-            process.exit(1);
+            console.error(err);
+            return 1;
         }
     }
 })(program);

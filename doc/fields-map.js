@@ -29,7 +29,7 @@ const fields_map = [
 
  // description: 'certificate lab',
 
- // allowed_values:: 'AGSL, DF, EGL, GCAL, GIA, GHI, GSI, HRD, IGI, IIDGR, PGS',
+ // allowed_values:: 'AGSL, DF, EGL, GCAL, GIA, GHI, GSI, HRD, IGI, IIDGR, PGS, BSC',
 
  /* for your reference:
 
@@ -44,7 +44,8 @@ const fields_map = [
       HRD: 'Diamond High Council',
       IGI: 'International Gemological Institute',
       IIDGR: 'International Institute of Diamond Grading & Research',
-      PGS: 'Professional GEM Science Laboratory'
+      PGS: 'Professional GEM Science Laboratory',
+      BSC: 'Biological Safety Cabinet Testing & Certification'
     }
 */
   },
@@ -69,21 +70,24 @@ const fields_map = [
 
  // description: 'shape',
 
- // allowed_values:: 'AS, CU, EM, HS, MQ, OV, PR, PS, RA, RD',
+ // allowed_values:: 'RD, CU, PR, EM, OV, AS, RA, MQ, PS, HS, TR, SH, PE',
 
  /* for your reference:
 
     dictionary: {
       RD: 'round',
+      CU: 'cushion',
       PR: 'princess',
       EM: 'emerald',
-      CU: 'cushion',
-      RA: 'radiant',
-      AS: 'asscher',
-      PS: 'pear',
       OV: 'oval',
+      AS: 'asscher',
+      RA: 'radiant',
       MQ: 'marquise',
-      HS: 'heart'
+      PS: 'pear',
+      HS: 'heart',
+      TR: 'triangle',
+      SH: 'shield',
+      PE: 'pentagonal'
     }
 */
   },
@@ -172,14 +176,15 @@ const fields_map = [
 
  // description: 'cut grade',
 
- // allowed_values:: 'EX, VG, G',
+ // allowed_values:: 'EX, VG, G, F',
 
  /* for your reference:
 
     dictionary: {
       EX: 'Excellent',
       VG: 'Very Good',
-      G: 'Good'
+      G: 'Good',
+      F: 'Fair'
     }
 */
   },
@@ -188,7 +193,22 @@ const fields_map = [
  // type: 'string',
  // require: 'optional',
 
- // description: 'culet size'
+ // description: 'culet size',
+
+ // allowed_values:: 'N, VS, S, M, SL, LG, VG',
+
+ /* for your reference:
+
+    dictionary: {
+      N: 'None',
+      VS: 'Very Small',
+      S: 'Small',
+      M: 'Medium',
+      SL: 'Slightly Large',
+      LG: 'Large',
+      VG: 'Very Large'
+    }
+*/
   },
   {
     key: 'culet_condition',
@@ -204,14 +224,15 @@ const fields_map = [
 
  // description: 'polish',
 
- // allowed_values:: 'EX, VG, G',
+ // allowed_values:: 'EX, VG, G, F',
 
  /* for your reference:
 
     dictionary: {
       EX: 'Excellent',
       VG: 'Very Good',
-      G: 'Good'
+      G: 'Good',
+      F: 'Fair'
     }
 */
   },
@@ -424,7 +445,25 @@ const fields_map = [
  // type: 'string',
  // require: 'optional',
 
- // description: 'fancy color overtone'
+ // description: 'fancy color overtone',
+
+ // allowed_values:: 'YELLOW, PINK, PURPLE, RED, BLUE, GREEN, ORANGE, BROWN, BLACK, GRAY',
+
+ /* for your reference:
+
+    dictionary: {
+      YELLOW: 'Yellow',
+      PINK: 'Pink',
+      PURPLE: 'Purple',
+      RED: 'Red',
+      BLUE: 'Blue',
+      GREEN: 'Green',
+      ORANGE: 'Orange',
+      BROWN: 'Brown',
+      BLACK: 'Black',
+      GRAY: 'Gray'
+    }
+*/
   },
   {
     key: 'city',

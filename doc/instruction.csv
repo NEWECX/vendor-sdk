@@ -2,7 +2,7 @@
 "vendor_sku","vendor internal sku or stock#","string","expected","","","R10-38900"
 "carat","carat weight","number","required","","",1.03
 "shipping_availability","memo field, please filter available ones to submit","string","optional","","","Guaranteed"
-"certificate_lab","certificate lab","string","required","AGSL, DF, EGL, GCAL, GIA, GHI, GSI, HRD, IGI, IIDGR, PGS","AGSL: 'American GEM Society Laboratories'
+"certificate_lab","certificate lab","string","required","AGSL, DF, EGL, GCAL, GIA, GHI, GSI, HRD, IGI, IIDGR, PGS, BSC","AGSL: 'American GEM Society Laboratories'
 DF: 'Diamond Foundry'
 EGL: 'European Gemological Laboratories'
 GCAL: 'GEM Certification & Assurance LAB'
@@ -12,19 +12,23 @@ GSI: 'Gemological Science International'
 HRD: 'Diamond High Council'
 IGI: 'International Gemological Institute'
 IIDGR: 'International Institute of Diamond Grading & Research'
-PGS: 'Professional GEM Science Laboratory'","GIA"
+PGS: 'Professional GEM Science Laboratory'
+BSC: 'Biological Safety Cabinet Testing & Certification'","GIA"
 "certificate_number","certificate number","string","required","","","2205729946"
 "orig_certificate_url","url for certificate.pdf (preferred) or  certificate.jpg","string","expected","","","https://assets.newecx.com/template/assets/GIA-2205729946/certificate.pdf"
-"shape","shape","string","required","AS, CU, EM, HS, MQ, OV, PR, PS, RA, RD","RD: 'round'
+"shape","shape","string","required","RD, CU, PR, EM, OV, AS, RA, MQ, PS, HS, TR, SH, PE","RD: 'round'
+CU: 'cushion'
 PR: 'princess'
 EM: 'emerald'
-CU: 'cushion'
-RA: 'radiant'
-AS: 'asscher'
-PS: 'pear'
 OV: 'oval'
+AS: 'asscher'
+RA: 'radiant'
 MQ: 'marquise'
-HS: 'heart'","CU"
+PS: 'pear'
+HS: 'heart'
+TR: 'triangle'
+SH: 'shield'
+PE: 'pentagonal'","CU"
 "cost","the cost of the whole stone, NOT cost per carat","number","required","","",4073
 "cost_per_carat","the cost per carat","number","required","","",3954.37
 "clarity","clarity","string","required","FL, IF, VVS1, VVS2, VS1, VS2, SI1, SI2, I1, I2, I3","FL: 'Flawless'
@@ -39,14 +43,22 @@ I1: 'Inclusion 1'
 I2: 'Inclusion 2'
 I3: 'Inclusion 3'","SI1"
 "color","color","string","required","D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z","","E"
-"cut","cut grade","string","required","EX, VG, G","EX: 'Excellent'
+"cut","cut grade","string","required","EX, VG, G, F","EX: 'Excellent'
 VG: 'Very Good'
-G: 'Good'","VG"
-"culet_size","culet size","string","optional","","","N"
+G: 'Good'
+F: 'Fair'","VG"
+"culet_size","culet size","string","optional","N, VS, S, M, SL, LG, VG","N: 'None'
+VS: 'Very Small'
+S: 'Small'
+M: 'Medium'
+SL: 'Slightly Large'
+LG: 'Large'
+VG: 'Very Large'","N"
 "culet_condition","culet condition","string","optional","","",""
-"polish","polish","string","required","EX, VG, G","EX: 'Excellent'
+"polish","polish","string","required","EX, VG, G, F","EX: 'Excellent'
 VG: 'Very Good'
-G: 'Good'","VG"
+G: 'Good'
+F: 'Fair'","VG"
 "depth","depth in mm","number","required","","",3.63
 "depth_percent","depth percent","number","required","","",64.7
 "width","width in mm","number","required","","",5.6
@@ -80,7 +92,7 @@ FI: 'Fancy Intense'
 FV: 'Fancy Vivid'
 FP: 'Fancy Deep'
 FD: 'Fancy Dark'",""
-"fancy_color_overtone","fancy color overtone","string","optional","","",""
+"fancy_color_overtone","fancy color overtone","string","optional","YELLOW, PINK, PURPLE, RED, BLUE, GREEN, ORANGE, BROWN, BLACK, GRAY","",""
 "city","city of the diamond location","string","optional","","",""
 "state","state of the diamond location","string","optional","","",""
 "country","country of the diamond location","string","optional","","",""

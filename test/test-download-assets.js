@@ -41,41 +41,44 @@ describe('Test download-assets', () => {
 
         const result = await download_assets([diamond]);
         //console.log(JSON.stringify(result, null, 2));
-        expect(result).to.be.deep.equal([{
-            "sku": "T123",
-            "lab": "GIA",
-            "cert": "2205729946",
-            "assets_stats": {
+        expect(result).to.be.deep.equal([
+            {
+              "sku": "T123",
+              "lab": "GIA",
+              "cert": "2205729946",
+              "assets_stats": {
                 "certificate": {
-                    "provided": 1,
-                    "retrieved": 0
+                  "provided": 1,
+                  "retrieved": 1
                 },
                 "primary_image": {
-                    "provided": 1,
-                    "retrieved": 0
+                  "provided": 1,
+                  "retrieved": 1
                 },
                 "cutprofile": {
-                    "provided": 1,
-                    "retrieved": 0
+                  "provided": 1,
+                  "retrieved": 1
                 },
                 "plot": {
-                    "provided": 1,
-                    "retrieved": 0
+                  "provided": 1,
+                  "retrieved": 1
                 },
                 "alternate_image": {
-                    "provided": 0,
-                    "retrieved": 0
+                  "provided": 0,
+                  "retrieved": 0
                 },
                 "primary_video": {
-                    "provided": 1,
-                    "retrieved": 0
+                  "provided": 1,
+                  "retrieved": 1
                 },
                 "alternate_video": {
-                    "provided": 0,
-                    "retrieved": 0
+                  "provided": 0,
+                  "retrieved": 0
                 }
+              }
             }
-        }]);        const list = fs.readdirSync(diamond_path);
+        ]);        
+        const list = fs.readdirSync(diamond_path);
         expect(list.includes('certificate.pdf')).equals(true);
         expect(list.includes('cutprofile.jpg')).equals(true);
         expect(list.includes('plot.jpg')).equals(true);
@@ -110,18 +113,19 @@ describe('Test download-assets', () => {
 
         const result = await download_assets([diamond]);
         //console.log(JSON.stringify(result, null, 2));
-        expect(result).to.be.deep.equal([{
-            "sku": "T234",
-            "lab": "IGI",
-            "cert": "459108837",
-            "assets_stats": {
+        expect(result).to.be.deep.equal([
+            {
+              "sku": "T234",
+              "lab": "IGI",
+              "cert": "459108837",
+              "assets_stats": {
                 "certificate": {
                   "provided": 1,
-                  "retrieved": 0
+                  "retrieved": 1
                 },
                 "primary_image": {
                   "provided": 1,
-                  "retrieved": 0
+                  "retrieved": 1
                 },
                 "cutprofile": {
                   "provided": 0,
@@ -137,14 +141,15 @@ describe('Test download-assets', () => {
                 },
                 "primary_video": {
                   "provided": 1,
-                  "retrieved": 0
+                  "retrieved": 1
                 },
                 "alternate_video": {
                   "provided": 0,
                   "retrieved": 0
                 }
               }
-        }]);
+            }
+        ]);
         const list = fs.readdirSync(diamond_path);
         expect(list.includes('certificate.pdf')).equals(true);
         expect(list.includes('primary.jpg')).equals(true);
@@ -207,6 +212,7 @@ describe('Test download-assets', () => {
         const list = fs.readdirSync(diamond_path);
         expect(list.includes('certificate.pdf')).equals(true);
     });
+
 });
 
 function cleanup_folder(folder_path) {

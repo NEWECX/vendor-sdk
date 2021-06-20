@@ -16,42 +16,58 @@ describe('Test validate-fields-map', () => {
     it('test std_fields_map', async () => {
         const result = validate_fields_map(std_fields);
         //console.log(result);
-        expect(result).equals(null);
+        expect(result).to.be.deep.equal(null);
     });
 
     it('test empty fields_map', async () => {
         const result = validate_fields_map();
         //console.log(result);
-        expect(result[0]).equals('fields_map is missing or empty');
+        expect(result).to.be.deep.equal([ { field: 'fields_map', error: 'missing or empty' } ]);
     });
 
     it('test simple fields_map', async () => {
         const result = validate_fields_map([{key: 'vendor_sku', field: 'field1'}, {key: 'carat', field: 'field2'}]);
         //console.log(result);
-        expect(result).equals(null);
+        expect(result).to.be.deep.equal(null);
     });
 
     it('test fields_map with missing key', async () => {
         const result = validate_fields_map([{field: 'field1'}]);
         //console.log(result);
-        expect(result[0]).equals('fields_map[0] missing key');
+        expect(result).to.be.deep.equal([ { field: 'fields_map', error: '[0] missing key' } ]);
     });
 
     it('test fields_map with unknown key', async () => {
         const result = validate_fields_map([{key: 'field-unknown', field: 'field1'}]);
         //console.log(result);
-        expect(result[0]).equals('fields_map[0] with field-unknown is extra, not found in standard fields');
+        expect(result).to.be.deep.equal([
+            {
+              field: 'fields_map',
+              error: '[0] with field-unknown is extra, not found in standard fields'
+            }
+        ]);
     });
 
     it('test fields_map with incorrect values_map', async () => {
         const result = validate_fields_map([{key: 'shape', values_map: {Round: 'RDD'}}]);
         //console.log(result);
-        expect(result[0]).equals('fields_map[0] with values_map shape value Round => RDD, not validate');
+        expect(result).to.be.deep.equal([
+            {
+              field: 'fields_map',
+              error: '[0] with values_map shape value Round => RDD, not in AS, CU, EM, HS, MQ, OV, PR, PS, RA, RD'
+            }
+        ]);
     });
 
     it('test fields_map with incorrect default value', async () => {
         const result = validate_fields_map([{key: 'shape', default_value: 'RDD'}]);
         //console.log(result);
-        expect(result[0]).equals('fields_map[0] with default value RDD, not validate');
+        expect(result).to.be.deep.equal([
+            {
+              field: 'fields_map',
+              error: '[0] with default value RDD, not in AS, CU, EM, HS, MQ, OV, PR, PS, RA, RD'
+            }
+        ]);
     });
+
 });

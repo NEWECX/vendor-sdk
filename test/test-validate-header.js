@@ -15,13 +15,13 @@ describe('Test validate-header', () => {
     it('test validate-header empty header', async () => {
         const result = validate_header();
         //console.log(result);
-        expect(result[0]).equals('header is missing or not array or empty');
+        expect(result).to.be.deep.equal([ { field: 'header', error: 'missing or not array or empty' } ]);
     });
 
     it('test validate-header empty agreed_header', async () => {
         const result = validate_header(['a', 'b']);
         //console.log(result);
-        expect(result[0]).equals('agreed_header is missing or not array');
+        expect(result).to.be.deep.equal([ { field: 'header', error: 'agreed missing or not array' } ]);
     });
 
     it('test validate-header simple', async () => {
@@ -33,12 +33,38 @@ describe('Test validate-header', () => {
     it('test validate-header less agreed_header', async () => {
         const result = validate_header(['vendor_sku', 'carat'], ['carat']);
         //console.log(result);
-        expect(result[0]).equals('number of header fields 2 is not 1 of agreed header');
+        expect(result).to.be.deep.equal([
+            {
+              field: 'header',
+              error: 'number of header fields 2 is not 1 of agreed header'
+            },
+            {
+              field: 'header',
+              error: 'column: 1 header is vendor_sku not matching with agreed header: carat'
+            },
+            {
+              field: 'header',
+              info: 'For your reference, the agreed header:["carat"]'
+            }
+        ]);
     });
 
     it('test validate-header less header', async () => {
         const result = validate_header(['carat'], ['vendor_sku', 'carat']);
         //console.log(result);
-        expect(result[0]).equals('number of header fields 1 is not 2 of agreed header');
+        expect(result).to.be.deep.equal([
+            {
+              field: 'header',
+              error: 'number of header fields 1 is not 2 of agreed header'
+            },
+            {
+              field: 'header',
+              error: 'column: 1 header is carat not matching with agreed header: vendor_sku'
+            },
+            {
+              field: 'header',
+              info: 'For your reference, the agreed header:["vendor_sku","carat"]'
+            }
+        ]);
     });
 });
