@@ -44,6 +44,8 @@ describe('Test convert-diamond', () => {
             assets_fields,
         );
         //console.log('result', JSON.stringify(result, null, 2));
+        expect(result.errors[0].error.startsWith('value not mapped, certificate_lab => AAA, not in ')).is.true;
+        delete result.errors[0].error;
         expect(result).to.be.deep.equals({
             "pass": false,
             "certificate_lab": "AAA",
@@ -53,7 +55,6 @@ describe('Test convert-diamond', () => {
             "errors": [
               {
                 "field": "lab",
-                "error": "value not mapped, certificate_lab => AAA, not in AGSL, DF, EGL, GCAL, GIA, GHI, GSI, HRD, IGI, IIDGR, PGS"
               }
             ]
         });

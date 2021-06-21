@@ -44,7 +44,7 @@ describe('Test validate-header', () => {
             },
             {
               field: 'header',
-              info: 'For your reference, the agreed header:["carat"]'
+              error: 'For your reference, the agreed header:["carat"]'
             }
         ]);
     });
@@ -63,7 +63,7 @@ describe('Test validate-header', () => {
             },
             {
               field: 'header',
-              info: 'For your reference, the agreed header:["vendor_sku","carat"]'
+              error: 'For your reference, the agreed header:["vendor_sku","carat"]'
             }
         ]);
     });

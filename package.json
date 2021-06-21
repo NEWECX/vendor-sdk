@@ -1,6 +1,6 @@
 {
   "name": "@ritani/vendor-sdk",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Ritani Diamond Vendor Inventory SDK",
   "bin": {
     "newecx": "./bin/newecx-cli.js"
@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/NEWECX/vendor-sdk#readme",
   "dependencies": {
-    "@ritani/diamond-glossary": "^1.1.4",
+    "@ritani/diamond-glossary": "^1.2.3",
     "@ritani/ftp-client": "^1.0.3",
     "@ritani/get-check-sum": "^1.0.0",
     "@ritani/http-client": "^1.0.2",
