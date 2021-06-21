@@ -29,7 +29,7 @@ const fields_map = [
 
  // description: 'certificate lab',
 
- // allowed_values:: 'AGSL, DF, EGL, GCAL, GIA, GHI, GSI, HRD, IGI, IIDGR, PGS, BSC',
+ // allowed_values:: 'AGSL, DF, EGL, GCAL, GHI, GIA, GSI, HRD, IGI, IIDGR, PGS, BSC, JGS, WGI',
 
  /* for your reference:
 
@@ -45,7 +45,9 @@ const fields_map = [
       IGI: 'International Gemological Institute',
       IIDGR: 'International Institute of Diamond Grading & Research',
       PGS: 'Professional GEM Science Laboratory',
-      BSC: 'Biological Safety Cabinet Testing & Certification'
+      BSC: 'Biological Safety Cabinet Testing & Certification',
+      JGS: 'J.B. Grading System',
+      WGI: 'World Gemological Institute'
     }
 */
   },
@@ -70,24 +72,29 @@ const fields_map = [
 
  // description: 'shape',
 
- // allowed_values:: 'RD, CU, PR, EM, OV, AS, RA, MQ, PS, HS, TR, SH, PE',
+ // allowed_values:: 'RD, CU, PR, EM, OV, AS, RA, MQ, PS, HS, TR, SH, PE, OC, ST, HE, HM, TZ',
 
  /* for your reference:
 
     dictionary: {
-      RD: 'round',
-      CU: 'cushion',
-      PR: 'princess',
-      EM: 'emerald',
-      OV: 'oval',
-      AS: 'asscher',
-      RA: 'radiant',
-      MQ: 'marquise',
-      PS: 'pear',
-      HS: 'heart',
-      TR: 'triangle',
-      SH: 'shield',
-      PE: 'pentagonal'
+      RD: 'Round',
+      CU: 'Cushion',
+      PR: 'Princess',
+      EM: 'Emerald',
+      OV: 'Oval',
+      AS: 'Asscher',
+      RA: 'Radiant',
+      MQ: 'Marquise',
+      PS: 'Pear',
+      HS: 'Heart',
+      TR: 'Triangle',
+      SH: 'Shield',
+      PE: 'Pentagonal',
+      OC: 'Octagonal',
+      ST: 'Star',
+      HE: 'Hexagonal',
+      HM: 'Half Moon',
+      TZ: 'Trapezoid'
     }
 */
   },
@@ -172,7 +179,7 @@ const fields_map = [
   {
     key: 'cut',
  // type: 'string',
- // require: 'required',
+ // require: 'expected',
 
  // description: 'cut grade',
 
@@ -195,7 +202,7 @@ const fields_map = [
 
  // description: 'culet size',
 
- // allowed_values:: 'N, VS, S, M, SL, LG, VG',
+ // allowed_values:: 'N, VS, S, M, SL, LG, VL',
 
  /* for your reference:
 
@@ -206,7 +213,7 @@ const fields_map = [
       M: 'Medium',
       SL: 'Slightly Large',
       LG: 'Large',
-      VG: 'Very Large'
+      VL: 'Very Large'
     }
 */
   },
@@ -246,7 +253,7 @@ const fields_map = [
   {
     key: 'depth_percent',
  // type: 'number',
- // require: 'required',
+ // require: 'optional',
 
  // description: 'depth percent'
   },
@@ -492,6 +499,13 @@ const fields_map = [
  // require: 'optional',
 
  // description: 'location of the diamond'
+  },
+  {
+    key: 'days_to_ship',
+ // type: 'number',
+ // require: 'expected',
+
+ // description: 'days need to ship the diamond'
   },
   {
     key: 'lab_grown',

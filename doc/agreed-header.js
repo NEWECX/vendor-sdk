@@ -42,6 +42,7 @@ const agreed_header = [
   'state',
   'country',
   'location',
+  'days_to_ship',
   'lab_grown',
   'laser_inscription',
   'orig_primary_image_url',
