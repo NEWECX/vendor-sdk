@@ -75,7 +75,7 @@ program.parse(process.argv);
                 await submit_inventory();
             } else if (options.submitAssets) {
                 await submit_assets();
-            } else if (options.retrieveInventoryAssets) {
+            } else if (options.submitBothInventoryAssets) {
                 await submit_both();
             } else {
                 console.error('option not handled', options);
