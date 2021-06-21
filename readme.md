@@ -1,18 +1,18 @@
-# Diamond Vendor Inventory SDK
+# Diamond Vendor Inventory SDK Quick Start
 
-## How To Install
-
-### Install Latest LTS Node (require version 14 or higher)
-
-<a href="https://nodejs.org/en/download/">Click to Select a pre-built installer for your platform and install node</a>
-
-### Run:
+## How To Install (node version 14 or higher are required):
 
     npm -g install @ritani/vendor-sdk
 
+For install node and npm, please refer to: <a href="https://nodejs.org/en/download/">pre-built installer for your platform</a>
+
 ## How To Use
 
-### Step 1: Sign up with vendor-portal.ritani.com
+### Step 1: Get API and FTP credentials from Ritani:
+
+If you already had it, you can skip step 1 and go to step 2 directly.
+
+Sign up with vendor-portal.ritani.com:
 
 <a href="https://vendor-portal.ritani.com/vendor/signup">Click to Sign up and create an account</a>
 
@@ -20,15 +20,13 @@ You will get ftp and api credentials:
 
     ftp_username, ftp_password and api_key
 
-### Step 2: Create a project folder
+### Step 2: Create a project folder and config.
 
 for example: ritani-inventory as project folder, ritani-inventory/data as data folder
 
     mkdir -p ritani-inventory/data
 
     cd ritani-inventory
-
-### Step 3: set config
 
     newecx --set-config
 
@@ -38,7 +36,7 @@ for example: ritani-inventory as project folder, ritani-inventory/data as data f
     Enter your FTP password: ...
     Enter your vendor API key: ...
 
-### Step 4: generate template with instruction and sample data
+### Step 3: generate template with instruction and sample data
 
     newecx --generate-template
 
@@ -71,7 +69,7 @@ For quick view, you can click on:
 3. <a href="/doc/instruction.csv">instruction.csv</a>
 4. <a href="/doc/inventory.csv">inventory.csv</a>
 
-### Step 5: explore newecx cli command
+### Step 4: explore newecx cli command
 
     newecx -h
 
@@ -96,9 +94,9 @@ For quick view, you can click on:
     -sb --submit-both-inventory-assets         to submit both inventory and assets to server
     -h, --help                                 display help for command
 
-<a href="/doc/newecx-cli.md">Click here for document of newecx cli command</a>
+<a href="/doc/use-newecx-cli.md">Click here for document of use newecx cli command</a>
 
-### Step 6: Example of Use Vendor SDK APIs
+### Step 5: Example of Use Vendor SDK APIs
 
 To upload your inventory feed data/inventory.csv file:
 
