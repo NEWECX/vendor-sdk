@@ -52,7 +52,11 @@ Assuming you followed the quick start, create a project directory, change your c
 
     newecx --upload-header
 
-    The header of data/inventory.csv is updated to server. It will serve as contract between you and the API server. So the name is called "agreed-header". If you make any changes to the header of the csv file, you will need to update the server.
+    The header of data/inventory.csv is updated to server. It will serve as contract between you and 
+    the API server. 
+    
+    So the name is called "agreed-header". If you make any changes to the header of the csv file, 
+    you will need to update the server.
 
 ### Step 2 make src/fields-maps.js
 
