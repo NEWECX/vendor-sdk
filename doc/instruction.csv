@@ -2,7 +2,7 @@
 "vendor_sku","vendor internal sku or stock#","string","expected","","","R10-38900"
 "carat","carat weight","number","required","","",1.03
 "shipping_availability","memo field, please filter available ones to submit","string","optional","","","Guaranteed"
-"certificate_lab","certificate lab","string","required","AGSL, DF, EGL, GCAL, GHI, GIA, GSI, HRD, IGI, IIDGR, PGS, BSC, JGS, WGI","AGSL: 'American GEM Society Laboratories'
+"certificate_lab","certificate lab","string","required","AGSL, DF, EGL, GCAL, GHI, GIA, GSI, HRD, IGI, IIDGR, PGS, BSC, JGS, WGI, EDR","AGSL: 'American GEM Society Laboratories'
 DF: 'Diamond Foundry'
 EGL: 'European Gemological Laboratories'
 GCAL: 'GEM Certification & Assurance LAB'
@@ -15,7 +15,8 @@ IIDGR: 'International Institute of Diamond Grading & Research'
 PGS: 'Professional GEM Science Laboratory'
 BSC: 'Biological Safety Cabinet Testing & Certification'
 JGS: 'J.B. Grading System'
-WGI: 'World Gemological Institute'","GIA"
+WGI: 'World Gemological Institute'
+EDR: 'Lloyds Family Jewellery Certificate'","GIA"
 "certificate_number","certificate number","string","required","","","2205729946"
 "orig_certificate_url","url for certificate.pdf (preferred) or  certificate.jpg","string","expected","","","https://assets.newecx.com/template/assets/GIA-2205729946/certificate.pdf"
 "shape","shape","string","required","RD, CU, PR, EM, OV, AS, RA, MQ, PS, HS, TR, SH, PE, OC, ST, HE, HM, TZ","RD: 'Round'

@@ -29,7 +29,7 @@ const fields_map = [
 
  // description: 'certificate lab',
 
- // allowed_values:: 'AGSL, DF, EGL, GCAL, GHI, GIA, GSI, HRD, IGI, IIDGR, PGS, BSC, JGS, WGI',
+ // allowed_values:: 'AGSL, DF, EGL, GCAL, GHI, GIA, GSI, HRD, IGI, IIDGR, PGS, BSC, JGS, WGI, EDR',
 
  /* for your reference:
 
@@ -47,7 +47,8 @@ const fields_map = [
       PGS: 'Professional GEM Science Laboratory',
       BSC: 'Biological Safety Cabinet Testing & Certification',
       JGS: 'J.B. Grading System',
-      WGI: 'World Gemological Institute'
+      WGI: 'World Gemological Institute',
+      EDR: 'Lloyds Family Jewellery Certificate'
     }
 */
   },
