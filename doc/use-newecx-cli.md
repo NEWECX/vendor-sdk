@@ -32,11 +32,11 @@ Here is a snapshot of a project work directory, after running newecx cli command
         ├── agreed-header.js
         └── fields-maps.js
 
-1. data/inventory.csv is the feed that contains latest diamonds that are available to sell. You will need copy it to here and keep only the latest one in here.
+1. data/inventory.csv is the feed that contains latest diamonds that are available to sell. You will need to copy it to here and keep only the latest one.
 
-2. data/assets contains all assets of diamonds that passed validation process. How to download assets are explained in the late advance session. 
+2. data/assets contains all assets of diamonds that passed validation process. How to download assets are explained in the late advance docs. 
 
-3. report folder contains report files after each operations.
+3. report folder contains reports after each operations.
 
 4. src/agreed-header.js and src/fields-maps.js are used by newecx command. They provide instructions for how to validate data and transform values in your inventory csv.
 
@@ -48,7 +48,7 @@ Assuming you followed the quick start,
 2. change your current work directory to the project directory, 
 3. and run newecx --set-config to setup your credentials.
 
-### Step 1 make and update agreed-header
+### Step 1 agreed-header
 
     run
 
@@ -66,7 +66,7 @@ Assuming you followed the quick start,
     So the name is called "agreed-header". If you make any changes to the header of the csv file, 
     you will need to update the server.
 
-### Step 2 make fields-maps
+### Step 2 fields-maps
 
     run
 
@@ -165,7 +165,7 @@ Assuming you followed the quick start,
            You need to provide only one. If both are provided, the newecx cli checks the data 
            integrity between them.
 
-### Step 4 run validate
+### Step 4 validate
 
 
    run
