@@ -1,7 +1,7 @@
 # Use newecx cli Command
 
-Here is a snapshot of a project work directory, after running newecx cli command for a typical vendor operations:
-
+Here is a snapshot of a project work directory:
+<pre>
     .
     ├── data
     │   ├── inventory.csv
@@ -31,7 +31,7 @@ Here is a snapshot of a project work directory, after running newecx cli command
     └── src
         ├── agreed-header.js
         └── fields-maps.js
-
+</pre>
 1. data/inventory.csv is the feed that contains latest diamonds that are available to sell. You will need to copy it to here and keep only the latest one.
 
 2. data/assets contains all assets of diamonds that passed validation process. How to download assets are explained in the late advance docs. 
@@ -50,29 +50,27 @@ Assuming you followed the quick start,
 
 ### Step 1 agreed-header
 
-    run
+run
 
     newecx --make-header
 
-    It reads the data/inventory.csv and extract the header and save as src/agreed-header.js
+It reads the data/inventory.csv and extract the header and save as src/agreed-header.js
 
-    run
+run
 
     newecx --upload-header
 
-    The header of data/inventory.csv is updated to server. It will serve as contract between you and 
-    the API server. 
+The header of data/inventory.csv is updated to server. It will serve as contract between you and the API server. 
     
-    So the name is called "agreed-header". If you make any changes to the header of the csv file, 
-    you will need to update the server.
+So the name is called "agreed-header". If you make any changes to the header of the csv file, you will need to update the server.
 
 ### Step 2 fields-maps
 
-    run
+run
 
     newecx --make-fields-maps
 
-    The cli generates src/fields-maps.js based on the header and data in data/inventory.csv. 
+The cli generates src/fields-maps.js based on the header and data in data/inventory.csv. 
     
 
 It is javascript object that defines:
@@ -87,101 +85,104 @@ It is javascript object that defines:
 
 ### Step 3 modify fields-maps
 
-    It is a process to read through the file, follow instruction provided within the file, 
-   
-    and answer and modify ? marked lines and sections.
+It is a process to read through the file, follow instruction provided within the file, and answer and modify ? marked lines and sections.
 
-Tips:
+#### Tips:
 
-    1) lab_grown
+##### 1) lab_grown
 
-        Most vendors don't have this column. You can simply add one line after key: 'lab_grown':
+Most vendors don't have this column. You can simply add one line after key: 'lab_grown':
 
-        default_value = 1 // for lab grown diamond
+<pre>
+    default_value = 1 // for lab grown diamond
 
-        OR
+    OR
 
-        default_value = 0 // for earth diamond
+    default_value = 0 // for earth diamond
+</pre>
 
-    2) use default_value
+##### 2) use default_value
 
-        For example, days_to_ship of all of diamonds is 1 day, you don't have to create a new column, 
-        instead you can simply add default_value = 1 to days_to_ship:
+For example, days_to_ship of all of diamonds is 1 day, you don't have to create a new column, instead you can simply add default_value = 1 to days_to_ship:
 
-        {
-            key: 'days_to_ship',
-            default_value = 1,
-            ......
+<pre>
+    {
+        key: 'days_to_ship',
+        default_value = 1,
+        ......
+    },
+</pre>
+
+##### 3) values_map for shape and other keys
+
+<pre>
+    {
+        key: 'shape',
+        field: 'Shape',
+
+    //  description: 'shape',
+    //  require: 'required',
+    //  type: 'string',
+
+        values_map: {
+            PC: 'PR',
+            CC: 'CU'
         },
+    
+    //  allowed_values:: 'RD, CU, PR, EM, OV, AS, RA, MQ, PS, HS, TR, SH, PE, OC, ST, HE, HM, TZ',
+    
+    /*  for your reference:
+    
+        dictionary: {
+        RD: 'Round',
+        CU: 'Cushion',
+        PR: 'Princess',
+        EM: 'Emerald',
+        OV: 'Oval',
+        AS: 'Asscher',
+        RA: 'Radiant',
+        MQ: 'Marquise',
+        PS: 'Pear',
+        HS: 'Heart',
+        TR: 'Triangle',
+        SH: 'Shield',
+        PE: 'Pentagonal',
+        OC: 'Octagonal',
+        ST: 'Star',
+        HE: 'Hexagonal',
+        HM: 'Half Moon',
+        TZ: 'Trapezoid'
+        }
+    */
+    },
+</pre>
 
-    3) values_map for shape and other keys
+To map shape in the current feed is the first step, you are expected to map all potential shapes that will use in your feed.
 
-        {
-            key: 'shape',
-            field: 'Shape',
+The sames are expected for other keys that have values_map.
 
-        // description: 'shape',
-        // require: 'required',
-        // type: 'string',
+##### 4) cost and cost_per_carat
 
-            values_map: {
-                PC: 'PR',
-                CC: 'CU'
-            },
-
-        // allowed_values:: 'RD, CU, PR, EM, OV, AS, RA, MQ, PS, HS, TR, SH, PE, OC, ST, HE, HM, TZ',
-
-        /* for your reference:
-
-            dictionary: {
-            RD: 'Round',
-            CU: 'Cushion',
-            PR: 'Princess',
-            EM: 'Emerald',
-            OV: 'Oval',
-            AS: 'Asscher',
-            RA: 'Radiant',
-            MQ: 'Marquise',
-            PS: 'Pear',
-            HS: 'Heart',
-            TR: 'Triangle',
-            SH: 'Shield',
-            PE: 'Pentagonal',
-            OC: 'Octagonal',
-            ST: 'Star',
-            HE: 'Hexagonal',
-            HM: 'Half Moon',
-            TZ: 'Trapezoid'
-            }
-        */
-        },
-
-        To map shape in the current feed is the first step, you are expected to map 
-        all potential shapes that will use in your feed.
-
-        The sames are expected for other keys that have values_map.
-
-    4) cost and cost_per_carat
-
-        You need to provide only one. If both are provided, the newecx cli checks the data 
-        integrity between them.
+You need to provide only one. If both are provided, the newecx cli checks the data integrity between them.
 
 ### Step 4 validate
 
-    run
+run
     
     newecx --validate-inventory
 
 
 Here are sample outputs:
 
-        total diamonds: 583 passed count: 568
-        
-        summary report is saved to .../ritani-inventory/report/summary.csv
-        passed diamonds report is saved to .../ritani-inventory/report/passed.csv
-        errors report is saved to .../ritani-inventory/report/errors.csv
-        warnings report is saved to .../ritani-inventory/report/warnings.csv
+<pre>
+    total diamonds: 583 passed count: 568
     
+    summary report is saved to .../ritani-inventory/report/summary.csv
+    passed diamonds report is saved to .../ritani-inventory/report/passed.csv
+    errors report is saved to .../ritani-inventory/report/errors.csv
+    warnings report is saved to .../ritani-inventory/report/warnings.csv
+</pre>
+
 1) report/summary.csv provides summary info:
 
 <table>
@@ -258,26 +259,26 @@ Here are sample outputs:
 </table>
 
 
-The typical new vendor will go through many iterations between Step3 to Step4 to make the feed are perfect.
+The typical new vendor will go through many iterations between Step3 to Step4 to perfecting the feed.
 
 ### Step 5 update the fields-maps to API server
 
 Once you have your fields-maps.js ready:
 
-    run
+run
     
     newecx --upload-fields-maps
 
 ## Daily Operations:
 
-    run
+run
 
     newecx --validate-inventory
 
-    to see if your feeds are OK
+to see if your feeds are OK
 
-    run
+run
 
     newecx --submit-inventory
 
-    to submit the data/inventory.csv file to Ritani
+to submit the data/inventory.csv file to Ritani
