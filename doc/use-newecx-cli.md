@@ -168,13 +168,13 @@ Assuming you followed the quick start,
 ### Step 4 run validate
 
    run
-
+   
    newecx --validate-inventory
 
-   Here are sample outputs:
+Here are sample outputs:
 
         total diamonds: 583 passed count: 568
-
+        
         summary report is saved to .../ritani-inventory/report/summary.csv
         passed diamonds report is saved to .../ritani-inventory/report/passed.csv
         errors report is saved to .../ritani-inventory/report/errors.csv
