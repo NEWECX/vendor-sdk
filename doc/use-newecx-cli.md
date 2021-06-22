@@ -115,12 +115,52 @@ Assuming you followed the quick start,
 
         3) values_map for shape and other keys
 
+            {
+                key: 'shape',
+                field: 'Shape',
+
+            // description: 'shape',
+            // require: 'required',
+            // type: 'string',
+
+                values_map: {
+                    PC: 'PR',
+                    CC: 'CU'
+                },
+
+            // allowed_values:: 'RD, CU, PR, EM, OV, AS, RA, MQ, PS, HS, TR, SH, PE, OC, ST, HE, HM, TZ',
+
+            /* for your reference:
+
+                dictionary: {
+                RD: 'Round',
+                CU: 'Cushion',
+                PR: 'Princess',
+                EM: 'Emerald',
+                OV: 'Oval',
+                AS: 'Asscher',
+                RA: 'Radiant',
+                MQ: 'Marquise',
+                PS: 'Pear',
+                HS: 'Heart',
+                TR: 'Triangle',
+                SH: 'Shield',
+                PE: 'Pentagonal',
+                OC: 'Octagonal',
+                ST: 'Star',
+                HE: 'Hexagonal',
+                HM: 'Half Moon',
+                TZ: 'Trapezoid'
+                }
+            */
+            },
+
            To map shape in the current feed is the first step, you are expected to map 
            all potential shapes that will use in your feed.
 
            The sames are expected for other keys that have values_map.
 
-        4) cost and cost_per_cara
+        4) cost and cost_per_carat
 
            You need to provide only one. If both are provided, the newecx cli checks the data 
            integrity between them.
