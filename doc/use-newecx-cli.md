@@ -167,6 +167,8 @@ Assuming you followed the quick start,
 
 ### Step 4 run validate
 
+   run
+
    newecx --validate-inventory
 
    Here are sample outputs:
@@ -261,15 +263,23 @@ The typical new vendor will go through many iterations between Step3 to Step4 to
 
 ### Step 5 update the fields-maps to API server
 
-   newecx --upload-fields-maps
+Once you have your fields-maps.js ready:
+
+    run
+    
+    newecx --upload-fields-maps
 
 ## Daily Operations:
+
+    run
 
     newecx --validate-inventory
 
     to see if your feeds are OK
 
-    newecx -submit-inventory
+    run
+
+    newecx --submit-inventory
 
     to submit the data/inventory.csv file to Ritani
 
