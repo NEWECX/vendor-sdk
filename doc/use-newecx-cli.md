@@ -271,13 +271,17 @@ run
 
 ## Daily Operations:
 
-run
+### 1) copy your feed 
+
+to project directory as data/inventory.csv
+
+### 2) run validate inventory
 
     newecx --validate-inventory
 
 to see if your feeds are OK
 
-run
+### 3) run submit inventory
 
     newecx --submit-inventory
 
