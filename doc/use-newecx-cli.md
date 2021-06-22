@@ -120,12 +120,12 @@ Assuming you followed the quick start,
 
    Here are sample output:
 
-   total diamonds: 583 passed count: 568
+        total diamonds: 583 passed count: 568
 
-   summary report is saved to .../ritani-inventory/report/summary.csv
-   passed diamonds report is saved to .../ritani-inventory/report/passed.csv
-   errors report is saved to .../ritani-inventory/report/errors.csv
-   warnings report is saved to .../ritani-inventory/report/warnings.csv
+        summary report is saved to .../ritani-inventory/report/summary.csv
+        passed diamonds report is saved to .../ritani-inventory/report/passed.csv
+        errors report is saved to .../ritani-inventory/report/errors.csv
+        warnings report is saved to .../ritani-inventory/report/warnings.csv
     
    1) report/summary.csv provides summary info
    2) report/errors.csv gives the reasons why the diamonds are not accepted
