@@ -275,13 +275,13 @@ run
 
 to project directory as data/inventory.csv
 
-### 2) run validate inventory
+### 2) validate inventory
 
     newecx --validate-inventory
 
 to see if your feeds are OK
 
-### 3) run submit inventory
+### 3) submit inventory
 
     newecx --submit-inventory
 
