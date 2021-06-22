@@ -74,7 +74,8 @@ Assuming you followed the quick start,
 
     The cli generates src/fields-maps.js based on the header and data in data/inventory.csv. 
     
-    It is javascript object that defines:
+
+It is javascript object that defines:
 
 1. How to map standard key to field in inventory.csv? 
 
@@ -86,91 +87,90 @@ Assuming you followed the quick start,
 
 ### Step 3 modify fields-maps
 
-   It is a process to read through the file, follow instruction provided within the file, 
+    It is a process to read through the file, follow instruction provided within the file, 
    
-   and answer and modify ? marked lines and sections.
+    and answer and modify ? marked lines and sections.
 
-   Tips:
+Tips:
 
-        1) lab_grown
+    1) lab_grown
 
-           Most vendors don't have this column. You can simply add one line after key: 'lab_grown':
+        Most vendors don't have this column. You can simply add one line after key: 'lab_grown':
 
-           default_value = 1 // for lab grown diamond
+        default_value = 1 // for lab grown diamond
 
-           OR
+        OR
 
-           default_value = 0 // for earth diamond
+        default_value = 0 // for earth diamond
 
-        2) use default_value
+    2) use default_value
 
-           For example, days_to_ship of all of diamonds is 1 day, you don't have to create a new column, 
-           instead you can simply add default_value = 1 to days_to_ship:
+        For example, days_to_ship of all of diamonds is 1 day, you don't have to create a new column, 
+        instead you can simply add default_value = 1 to days_to_ship:
 
-            {
-                key: 'days_to_ship',
-                default_value = 1,
-                ......
+        {
+            key: 'days_to_ship',
+            default_value = 1,
+            ......
+        },
+
+    3) values_map for shape and other keys
+
+        {
+            key: 'shape',
+            field: 'Shape',
+
+        // description: 'shape',
+        // require: 'required',
+        // type: 'string',
+
+            values_map: {
+                PC: 'PR',
+                CC: 'CU'
             },
 
-        3) values_map for shape and other keys
+        // allowed_values:: 'RD, CU, PR, EM, OV, AS, RA, MQ, PS, HS, TR, SH, PE, OC, ST, HE, HM, TZ',
 
-            {
-                key: 'shape',
-                field: 'Shape',
+        /* for your reference:
 
-            // description: 'shape',
-            // require: 'required',
-            // type: 'string',
+            dictionary: {
+            RD: 'Round',
+            CU: 'Cushion',
+            PR: 'Princess',
+            EM: 'Emerald',
+            OV: 'Oval',
+            AS: 'Asscher',
+            RA: 'Radiant',
+            MQ: 'Marquise',
+            PS: 'Pear',
+            HS: 'Heart',
+            TR: 'Triangle',
+            SH: 'Shield',
+            PE: 'Pentagonal',
+            OC: 'Octagonal',
+            ST: 'Star',
+            HE: 'Hexagonal',
+            HM: 'Half Moon',
+            TZ: 'Trapezoid'
+            }
+        */
+        },
 
-                values_map: {
-                    PC: 'PR',
-                    CC: 'CU'
-                },
+        To map shape in the current feed is the first step, you are expected to map 
+        all potential shapes that will use in your feed.
 
-            // allowed_values:: 'RD, CU, PR, EM, OV, AS, RA, MQ, PS, HS, TR, SH, PE, OC, ST, HE, HM, TZ',
+        The sames are expected for other keys that have values_map.
 
-            /* for your reference:
+    4) cost and cost_per_carat
 
-                dictionary: {
-                RD: 'Round',
-                CU: 'Cushion',
-                PR: 'Princess',
-                EM: 'Emerald',
-                OV: 'Oval',
-                AS: 'Asscher',
-                RA: 'Radiant',
-                MQ: 'Marquise',
-                PS: 'Pear',
-                HS: 'Heart',
-                TR: 'Triangle',
-                SH: 'Shield',
-                PE: 'Pentagonal',
-                OC: 'Octagonal',
-                ST: 'Star',
-                HE: 'Hexagonal',
-                HM: 'Half Moon',
-                TZ: 'Trapezoid'
-                }
-            */
-            },
-
-           To map shape in the current feed is the first step, you are expected to map 
-           all potential shapes that will use in your feed.
-
-           The sames are expected for other keys that have values_map.
-
-        4) cost and cost_per_carat
-
-           You need to provide only one. If both are provided, the newecx cli checks the data 
-           integrity between them.
+        You need to provide only one. If both are provided, the newecx cli checks the data 
+        integrity between them.
 
 ### Step 4 validate
 
-
-   run
-   
-   newecx --validate-inventory
+    run
+    
+    newecx --validate-inventory
 
 
 Here are sample outputs:
@@ -182,7 +182,7 @@ Here are sample outputs:
         errors report is saved to .../ritani-inventory/report/errors.csv
         warnings report is saved to .../ritani-inventory/report/warnings.csv
     
-   1) report/summary.csv provides summary info:
+1) report/summary.csv provides summary info:
 
 <table>
    <tr>
@@ -194,7 +194,7 @@ Here are sample outputs:
 </table>
 
 
-   2) report/errors.csv gives the reasons why the diamonds are not accepted
+2) report/errors.csv gives the reasons why the diamonds are not accepted
 
 <table>
 <tr>
@@ -214,7 +214,7 @@ Here are sample outputs:
 
 
 
-   3) report/warnings.csv provides ways to improve your feeds
+3) report/warnings.csv provides ways to improve your feeds
 
 <table>
 <tr>
@@ -241,9 +241,7 @@ Here are sample outputs:
 </table>
 
 
-
-
-   4) report/passed.csv provides the list of passed diamonds
+4) report/passed.csv provides the list of passed diamonds
 
 <table>
 <tr>
@@ -258,7 +256,6 @@ Here are sample outputs:
 <tr>
 <td>5</td><td>474106655</td><td>IGI</td><td>LG474106655</td><td>3.32</td><td>9860.4</td><td>2021-06-21T23:40:10.595Z</td><td>w3E8505MPS07KlTfMdduMOY2GOd</td>
 </table>
-
 
 
 The typical new vendor will go through many iterations between Step3 to Step4 to make the feed are perfect.
@@ -284,5 +281,3 @@ Once you have your fields-maps.js ready:
     newecx --submit-inventory
 
     to submit the data/inventory.csv file to Ritani
-
-
