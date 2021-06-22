@@ -167,9 +167,11 @@ Assuming you followed the quick start,
 
 ### Step 4 run validate
 
+
    run
    
    newecx --validate-inventory
+
 
 Here are sample outputs:
 
