@@ -32,21 +32,21 @@ Here is a snapshot of a project work directory:
         ├── agreed-header.js
         └── fields-maps.js
 </pre>
-1. data/inventory.csv is the feed that contains latest diamonds that are available to sell. You will need to copy it to here and keep only the latest one.
+1. data/inventory.csv is your diamond feed. This should contain the diamonds available to sell. You will need to copy your latest feed to data/inventory.csv.
 
-2. data/assets contains all assets of diamonds that passed validation process. How to download assets are explained in the late advance docs. 
+2. data/assets folder contains all your diamond assets (images, videos, certificates, etc.). See below how to download your uploaded assets. 
 
-3. report folder contains reports after each operations.
+3. report folder contains reports that are generated after each operation.
 
-4. src/agreed-header.js and src/fields-maps.js are used by newecx command. They provide instructions for how to validate data and transform values in your inventory csv.
+4. src/agreed-header.js contains your CSV headers. src/fields-maps.js contains the mapping between your headers and values to Ritani's standard format.
 
 ## Operations for newly started vendor:
 
 Assuming you followed the quick start, 
 
-1. create a project directory, 
-2. change your current work directory to the project directory, 
-3. and run newecx --set-config to setup your credentials.
+1. you created a project directory, 
+2. you changed your current work directory to the project directory, 
+3. and you ran newecx --set-config to setup your credentials.
 
 ### Step 1 agreed-header
 
@@ -54,15 +54,15 @@ run
 
     newecx --make-header
 
-It reads the data/inventory.csv and extract the header and save as src/agreed-header.js
+This will read your data/inventory.csv and extract the headers and save it in src/agreed-header.js
 
 run
 
     newecx --upload-header
 
-The header of data/inventory.csv is updated to server. It will serve as contract between you and the API server. 
+This will upload your headers (in src/agreed-header.js) to the server. This will serve as a contract between you and the API server. 
     
-So the name is called "agreed-header". If you make any changes to the header of the csv file, you will need to update the server.
+If you make any changes to the headers of the csv file, you will need to rerun these commands to update the server. Otherwise, your feed will be rejected.
 
 ### Step 2 fields-maps
 
@@ -70,28 +70,28 @@ run
 
     newecx --make-fields-maps
 
-The cli generates src/fields-maps.js based on the header and data in data/inventory.csv. 
+The cli generates src/fields-maps.js based on the headers and data in data/inventory.csv. 
     
 
-It is javascript object that defines:
+It is a javascript object that defines:
 
-1. How to map standard key to field in inventory.csv? 
+1. How to map your CSV headers to Ritani standard keys? 
 
-    It provides an estimation version of this. You are responsible to ensure they are correct.
+    This command will try to guess the mappings between your headers and the standard format. **YOU ARE RESPONSIBLE TO ENSURE THEY ARE CORRECT.**
 
-2. How to map vendor's data values to standard values? 
+2. How to map the values of the diamond characteristics to the standard values? 
 
-    It provides values_map object in a commented out block that needs your help to uncomment it.
+    It provides a values_map object with the unknown values. You must provide the correct value mappings and then uncomment the block. See below.
 
 ### Step 3 modify fields-maps
 
-It is a process to read through the file, follow instruction provided within the file, and answer and modify ? marked lines and sections.
+Read through the fields-maps.js file and follow  the instructions provided within the file. Values that are unknown will be marked with a question mark ?. You will need to provide the mapping.
 
 #### Tips:
 
 ##### 1) lab_grown
 
-Most vendors don't have this column. You can simply add one line after key: 'lab_grown':
+This field is for specifying whether the diamond is earth grown or lab grown. If your feed doesn't have a column for diamond type, you can simply add one line after the key: 'lab_grown':
 
 <pre>
     default_value = 1 // for lab grown diamond
@@ -157,9 +157,9 @@ For example, days_to_ship of all of diamonds is 1 day, you don't have to create 
     },
 </pre>
 
-To map shape in the current feed is the first step, you are expected to map all potential shapes that will use in your feed.
+For the shape example above, you are expected to map all the shape code that will be used in your feed to Ritani's standard codes.
 
-The sames are expected for other keys that have values_map.
+The sames is expected for other keys that have values_map.
 
 ##### 4) cost and cost_per_carat
 
@@ -172,7 +172,7 @@ run
     newecx --validate-inventory
 
 
-Here are sample outputs:
+Here is a sample output:
 
 <pre>
     total diamonds: 583 passed count: 568
@@ -195,7 +195,7 @@ Here are sample outputs:
 </table>
 
 
-2) report/errors.csv gives the reasons why the diamonds are not accepted
+2) report/errors.csv lists the errors for the rejected diamonds:
 
 <table>
 <tr>
@@ -215,7 +215,7 @@ Here are sample outputs:
 
 
 
-3) report/warnings.csv provides ways to improve your feeds
+3) report/warnings.csv provides recommendations to improve your feed:
 
 <table>
 <tr>
@@ -259,9 +259,9 @@ Here are sample outputs:
 </table>
 
 
-The typical new vendor will go through many iterations between Step3 to Step4 to perfecting the feed.
+You may have to go through many iterations in order to perfect your feed (run Step3 and Step4, find the errors, make the necessary changes, run the steps again, and repeat until there are no errors).
 
-### Step 5 update the fields-maps to API server
+### Step 5 upload the fields-maps to the API server
 
 Once you have your fields-maps.js ready:
 

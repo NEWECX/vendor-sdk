@@ -1,26 +1,26 @@
 # Diamond Vendor Inventory SDK Quick Start
 
-## How To Install (node version 14 or higher are required):
+## How To Install (node version 14 or higher is required):
 
     npm -g install @ritani/vendor-sdk
 
-For install node and npm, please refer to: <a href="https://nodejs.org/en/download/">pre-built installer for your platform</a>
+To install node and npm, please refer to: <a href="https://nodejs.org/en/download/">pre-built installer for your platform</a>
 
 ## How To Use
 
 ### Step 1: Get API and FTP credentials from Ritani:
 
-If you already had it, you can skip step 1 and go to step 2 directly.
+If you already have it, you can skip step 1 and go to step 2 directly.
 
-Sign up with vendor-portal.ritani.com:
+Sign up on Ritani's vendor portal:
 
 <a href="https://vendor-portal.ritani.com/vendor/signup">Click to Sign up and create an account</a>
 
-You will get ftp and api credentials:
+Once signup is complete, sign in and click on the account tab. There you will find your FTP and API credentials:
 
-    ftp_username, ftp_password and api_key
+    Username, Password and API key
 
-### Step 2: Create a project folder and config.
+### Step 2: Create a project folder. Then run the SDK config command. This will guide you through the process of configuring the SDK.
 
 for example: ritani-inventory as project folder, ritani-inventory/data as data folder
 
@@ -42,7 +42,7 @@ for example: ritani-inventory as project folder, ritani-inventory/data as data f
 
     template files are saved in .../ritani-inventory/template
 
-    Here are what we have in the project directory:
+    Here is what we have in the project directory:
     .
     ├── data
     └── template
@@ -62,7 +62,7 @@ for example: ritani-inventory as project folder, ritani-inventory/data as data f
         ├── instruction.csv
         └── inventory.csv
 
-For quick view, you can click on:
+Click below to view sample data:
 
 1. <a href="/doc/agreed-header.js">agreed-header.js</a>
 2. <a href="/doc/fields-map.js">fields-map.js</a>
@@ -94,11 +94,11 @@ For quick view, you can click on:
     -sb --submit-both-inventory-assets         to submit both inventory and assets to server
     -h, --help                                 display help for command
 
-<a href="/doc/use-newecx-cli.md">Click here for document of use newecx cli command</a>
+<a href="/doc/use-newecx-cli.md">Click here for the full documentation of the newecx cli command</a>
 
-### Step 5: Example of Use Vendor SDK APIs
+### Step 5: Example of Using Vendor SDK APIs
 
-To upload your inventory feed data/inventory.csv file:
+To upload your inventory feed (data/inventory.csv file):
 
     'use strict';
 
@@ -115,4 +115,4 @@ To upload your inventory feed data/inventory.csv file:
 
     })();
 
-<a href="/doc/vender-sdk-apis.md">Click here for document of Vendor SDK APIs</a>
+<a href="/doc/vender-sdk-apis.md">Click here for full documentation of the Vendor SDK APIs</a>
