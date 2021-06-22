@@ -72,7 +72,9 @@ Assuming you followed the quick start,
 
     newecx --make-fields-maps
 
-    The cli generates src/fields-maps.js based on the header and data in data/inventory.csv. It is javascript object that defines:
+    The cli generates src/fields-maps.js based on the header and data in data/inventory.csv. 
+    
+    It is javascript object that defines:
 
 1. How to mapping standard key to field in inventory.csv? 
 
@@ -84,7 +86,9 @@ Assuming you followed the quick start,
 
 ### Step 3 modify fields-maps
 
-   It is a process to read through the file, follow instruction provided within the file, and answer and modify ? marked section.
+   It is a process to read through the file, follow instruction provided within the file, 
+   
+   and answer and modify ? marked section.
 
    Tips:
 
@@ -100,13 +104,15 @@ Assuming you followed the quick start,
 
         2) values_map for shape and other keys
 
-           To map shape in the current feed is the first step, you are expected to map all potential shapes.
+           To map shape in the current feed is the first step, you are expected to map 
+           all potential shapes.
 
            The sames are expected for other keys that have values_map.
 
         3) cost and cost_per_cara
 
-           You will need provide only one. If both are provided, the newecx cli checks the data integrity between them.
+           You will need provide only one. If both are provided, the newecx cli checks the data 
+           integrity between them.
 
 ### Step 4 run validate
 
@@ -126,7 +132,8 @@ Assuming you followed the quick start,
    3) report/warnings.csv provides ways to improve your feeds
    4) report/passed.csv provides the list of passed diamonds
 
-   The typical new vendor will go through many iterates between Step3 to Step4 to make the feed are perfect.
+   The typical new vendor will go through many iterates between Step3 to Step4 
+   to make the feed are perfect.
 
 ### Step 5 update the fields-maps to API server
 
