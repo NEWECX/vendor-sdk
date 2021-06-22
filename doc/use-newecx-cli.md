@@ -44,7 +44,7 @@ Here is a snapshot of a project work directory, after running newecx cli command
 
 Assuming you followed the quick start, create a project directory, change your current work directory to the project directory, and run newecx --set-config to setup your credentials.
 
-### Step 1 make and update src/agreed-header.js
+### Step 1 make and update agreed-header
 
     newecx --make-header
 
@@ -58,19 +58,35 @@ Assuming you followed the quick start, create a project directory, change your c
     So the name is called "agreed-header". If you make any changes to the header of the csv file, 
     you will need to update the server.
 
-### Step 2 make src/fields-maps.js
+### Step 2 make fields-maps
 
     newecx --make-fields-maps
 
     The cli generates src/fields-maps.js based on the header and data in data/inventory.csv. It is javascript object that defines:
 
-1. How to mapping standard key to field in data/inventory.csv? it provides an estimation version of this. You are responsible to ensure they are correct.
+1. How to mapping standard key to field in inventory.csv? It provides an estimation version of this. You are responsible to ensure they are correct.
 
 2. How to mapping different values to standard values? It provides values_map object in a commented out block that the newecx needs your help.
 
-### Step 3 modify src/fields-maps.js file 
+### Step 3 modify fields-maps
 
-   It is a process to read through the file, follow instruction provided within the file, and answer and modify ? marked section
+   It is a process to read through the file, follow instruction provided within the file, and answer and modify ? marked section.
+
+   Tips:
+
+        1) lab_grown
+
+           Most vendor doesn't have this column. You can simply add one line after key: 'lab_grown':
+           default_value = 1 // for lab grown diamond
+           default_value = 0 // for earth diamond
+
+        2) values_map for shape
+
+           To map shape in the current feed is the first step, you are expected to map all potential shapes
+
+        3) cost and cost_per_cara
+
+           You will need provide one. If both are provided, the cli checks the data integrity between them.
 
 ### Step 4 run validate
 
