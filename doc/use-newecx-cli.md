@@ -102,14 +102,25 @@ Assuming you followed the quick start,
 
            default_value = 0 // for earth diamond
 
-        2) values_map for shape and other keys
+        2) use default_value
+
+           For example, days_to_ship of all of diamonds is 1 day, you don't have to create a new column, 
+           instead you can simply add default_value = 1 to days_to_ship:
+
+            {
+                key: 'days_to_ship',
+                default_value = 1,
+                ......
+            },
+
+        3) values_map for shape and other keys
 
            To map shape in the current feed is the first step, you are expected to map 
            all potential shapes that will use in your feed.
 
            The sames are expected for other keys that have values_map.
 
-        3) cost and cost_per_cara
+        4) cost and cost_per_cara
 
            You need to provide only one. If both are provided, the newecx cli checks the data 
            integrity between them.
