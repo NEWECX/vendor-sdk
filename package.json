@@ -36,7 +36,8 @@
     "@ritani/ftp-client": "^1.0.3",
     "@ritani/get-check-sum": "^1.0.0",
     "@ritani/http-client": "^1.0.2",
-    "@ritani/to-simple-js": "^1.0.1",
+    "@ritani/to-simple-js": "^1.0.4",
+    "colors": "^1.4.0",
     "commander": "^7.2.0",
     "csvtojson": "^2.0.10",
     "dotenv": "^10.0.0",
@@ -44,7 +45,9 @@
     "file-type": "^16.5.0",
     "inquirer": "^8.1.1",
     "json2csv": "^5.0.6",
-    "latest-version": "^5.1.0"
+    "latest-version": "^5.1.0",
+    "require-from-string": "^2.0.2",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "chai": "^4.3.4",

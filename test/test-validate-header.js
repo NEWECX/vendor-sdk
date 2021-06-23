@@ -34,18 +34,22 @@ describe('Test validate-header', () => {
         const result = validate_header(['vendor_sku', 'carat'], ['carat']);
         //console.log(result);
         expect(result).to.be.deep.equal([
-            {
-              field: 'header',
-              error: 'number of header fields 2 is not 1 of agreed header'
-            },
-            {
-              field: 'header',
-              error: 'column: 1 header is vendor_sku not matching with agreed header: carat'
-            },
-            {
-              field: 'header',
-              error: 'For your reference, the agreed header:["carat"]'
-            }
+          {
+            field: 'header',
+            warning: 'number of header fields 2 is not 1 of agreed header'
+          },
+          {
+            field: 'header',
+            warning: 'column: 1 header is vendor_sku, not matching with agreed header: carat'
+          },
+          {
+            field: 'header',
+            warning: 'column: 2 header is carat, not matching with agreed header: undefined'
+          },
+          {
+            field: 'header',
+            info: 'For your reference, the agreed header: carat'
+          }
         ]);
     });
 
@@ -53,18 +57,18 @@ describe('Test validate-header', () => {
         const result = validate_header(['carat'], ['vendor_sku', 'carat']);
         //console.log(result);
         expect(result).to.be.deep.equal([
-            {
-              field: 'header',
-              error: 'number of header fields 1 is not 2 of agreed header'
-            },
-            {
-              field: 'header',
-              error: 'column: 1 header is carat not matching with agreed header: vendor_sku'
-            },
-            {
-              field: 'header',
-              error: 'For your reference, the agreed header:["vendor_sku","carat"]'
-            }
+          {
+            field: 'header',
+            warning: 'number of header fields 1 is not 2 of agreed header'
+          },
+          {
+            field: 'header',
+            warning: 'column: 1 header is carat, not matching with agreed header: vendor_sku'
+          },
+          {
+            field: 'header',
+            info: 'For your reference, the agreed header: vendor_sku, carat'
+          }
         ]);
     });
 });
