@@ -48,7 +48,7 @@
 
     See the ftp-client directory, it is a small node program that is ready to use for uploading inventory and assets to 
     
-    diamondftp.ritani.com.
+    ftp.ritani.com.
 
     src/config.js is configured with working demo1 account credential. 
 
