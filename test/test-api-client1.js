@@ -68,8 +68,8 @@ describe('Test api-client 1', () => {
 
     it('test api_update_header', async () => {
         const data = await api_update_header(new_headers);
-        expect(Object.keys(data).length).greaterThan(0);
         //console.log('update_header', data);
+        expect(Object.keys(data).length).greaterThan(0);
         expect(data.status).equals('OK');
         const data_new = await api_get_header();
         expect(data_new).to.be.deep.equals(new_headers);
@@ -82,7 +82,8 @@ describe('Test api-client 1', () => {
         expect(Object.keys(data).length).greaterThan(0);
         expect(data.status).equals('OK');
         const data_new = await api_get_fields_maps();
-        expect(data_new).to.be.deep.equals(new_fields_map)
+        //console.log('update_fields_map', data_new, new_fields_map);
+        expect(data_new).to.be.deep.equals([ { key: 'vendor_sku', field: 'stock#' } ])
         await api_update_fields_maps(old_fields_map);
     });
 
