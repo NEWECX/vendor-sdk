@@ -2,15 +2,15 @@
 "vendor_sku","vendor internal sku or stock#","string","expected","","","R10-38900"
 "carat","carat weight","number","required","","",1.03
 "shipping_availability","memo field, please filter available ones to submit","string","optional","","","Guaranteed"
-"certificate_lab","certificate lab","string","required","AGSL, DF, EGL, GCAL, GHI, GIA, GSI, HRD, IGI, IIDGR, PGS, BSC, JGS, WGI, EDR","AGSL: 'American GEM Society Laboratories'
-DF: 'Diamond Foundry'
-EGL: 'European Gemological Laboratories'
-GCAL: 'GEM Certification & Assurance LAB'
-GIA: 'The Gemological Institute of America'
-GHI: 'Gemology Headquarters International Laboratory'
-GSI: 'Gemological Science International'
+"certificate_lab","certificate lab","string","required","GIA, AGSL, HRD, IGI, GCAL, DF, EGL, GHI, GSI, IIDGR, PGS, BSC, JGS, WGI, EDR","GIA: 'The Gemological Institute of America'
+AGSL: 'American GEM Society Laboratories'
 HRD: 'Diamond High Council'
 IGI: 'International Gemological Institute'
+GCAL: 'GEM Certification & Assurance LAB'
+DF: 'Diamond Foundry'
+EGL: 'European Gemological Laboratories'
+GHI: 'Gemology Headquarters International Laboratory'
+GSI: 'Gemological Science International'
 IIDGR: 'International Institute of Diamond Grading & Research'
 PGS: 'Professional GEM Science Laboratory'
 BSC: 'Biological Safety Cabinet Testing & Certification'
@@ -50,7 +50,10 @@ SI2: 'Slightly Inclusion 2'
 I1: 'Inclusion 1'
 I2: 'Inclusion 2'
 I3: 'Inclusion 3'","SI1"
+"clarity_characteristics","clarity characteristics, i.e, Feather",,"optional","","",""
 "color","color","string","required","D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z","","E"
+"color_origin","color origin, i.e, Nature",,"optional","","",""
+"color_distribution","color distribution, i.e, Even",,"optional","","",""
 "cut","cut grade","string","expected","EX, VG, G, F","EX: 'Excellent'
 VG: 'Very Good'
 G: 'Good'
@@ -89,9 +92,9 @@ G: 'Good'
 F: 'Fair'","VG"
 "table_percent","table percent","number","required","","",66
 "key_to_symbols","key to symbols","string","optional","","","Crystal,Needle,Feather"
-"crown_height","crown height","number","optional","","",""
+"crown_height","crown height percent","number","optional","","",""
 "crown_angle","crown angle","number","optional","","",""
-"pavilion_depth","pavilion depth","number","optional","","",""
+"pavilion_depth","pavilion depth percent","number","optional","","",""
 "pavilion_angle","pavilion angle","number","optional","","",""
 "fancy_color","fancy color","string","optional","YELLOW, PINK, PURPLE, RED, BLUE, GREEN, ORANGE, BROWN, BLACK, GRAY","",""
 "fancy_color_intensity","fancy color intensity","string","optional","FL, FA, FI, FV, FP, FD","FL: 'Fancy Light'
@@ -109,6 +112,8 @@ FD: 'Fancy Dark'",""
 "lab_grown","lab grown or earth grown","number","required","0, 1","'0': 'N'
 '1': 'Y'",0
 "laser_inscription","laser inscription","string","optional","","",""
+"report_date","date shows on lab report","string","optional","","",""
+"comments","comments","string","optional","","",""
 "orig_primary_image_url","url for primary image primary.jpg","string","expected","","","https://assets.newecx.com/template/assets/GIA-2205729946/primary.jpg"
 "orig_proportions_url","url for proportions diagram cutprofile.jpg","string","optional","","","https://assets.newecx.com/template/assets/GIA-2205729946/cutprofile.jpg"
 "orig_plotting_url","url for plotting diagram plot.jpg","string","optional","","","https://assets.newecx.com/template/assets/GIA-2205729946/plot.jpg"

@@ -29,20 +29,20 @@ const fields_map = [
 
  // description: 'certificate lab',
 
- // allowed_values:: 'AGSL, DF, EGL, GCAL, GHI, GIA, GSI, HRD, IGI, IIDGR, PGS, BSC, JGS, WGI, EDR',
+ // allowed_values:: 'GIA, AGSL, HRD, IGI, GCAL, DF, EGL, GHI, GSI, IIDGR, PGS, BSC, JGS, WGI, EDR',
 
  /* for your reference:
 
     dictionary: {
-      AGSL: 'American GEM Society Laboratories',
-      DF: 'Diamond Foundry',
-      EGL: 'European Gemological Laboratories',
-      GCAL: 'GEM Certification & Assurance LAB',
       GIA: 'The Gemological Institute of America',
-      GHI: 'Gemology Headquarters International Laboratory',
-      GSI: 'Gemological Science International',
+      AGSL: 'American GEM Society Laboratories',
       HRD: 'Diamond High Council',
       IGI: 'International Gemological Institute',
+      GCAL: 'GEM Certification & Assurance LAB',
+      DF: 'Diamond Foundry',
+      EGL: 'European Gemological Laboratories',
+      GHI: 'Gemology Headquarters International Laboratory',
+      GSI: 'Gemological Science International',
       IIDGR: 'International Institute of Diamond Grading & Research',
       PGS: 'Professional GEM Science Laboratory',
       BSC: 'Biological Safety Cabinet Testing & Certification',
@@ -140,6 +140,12 @@ const fields_map = [
 */
   },
   {
+    key: 'clarity_characteristics',
+ // require: 'optional',
+
+ // description: 'clarity characteristics, i.e, Feather'
+  },
+  {
     key: 'color',
  // type: 'string',
  // require: 'required',
@@ -176,6 +182,18 @@ const fields_map = [
       Z: 'Z'
     }
 */
+  },
+  {
+    key: 'color_origin',
+ // require: 'optional',
+
+ // description: 'color origin, i.e, Nature'
+  },
+  {
+    key: 'color_distribution',
+ // require: 'optional',
+
+ // description: 'color distribution, i.e, Even'
   },
   {
     key: 'cut',
@@ -379,7 +397,7 @@ const fields_map = [
  // type: 'number',
  // require: 'optional',
 
- // description: 'crown height'
+ // description: 'crown height percent'
   },
   {
     key: 'crown_angle',
@@ -393,7 +411,7 @@ const fields_map = [
  // type: 'number',
  // require: 'optional',
 
- // description: 'pavilion depth'
+ // description: 'pavilion depth percent'
   },
   {
     key: 'pavilion_angle',
@@ -531,6 +549,20 @@ const fields_map = [
  // require: 'optional',
 
  // description: 'laser inscription'
+  },
+  {
+    key: 'report_date',
+ // type: 'string',
+ // require: 'optional',
+
+ // description: 'date shows on lab report'
+  },
+  {
+    key: 'comments',
+ // type: 'string',
+ // require: 'optional',
+
+ // description: 'comments'
   },
   {
     key: 'orig_primary_image_url',
