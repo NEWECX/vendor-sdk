@@ -22,7 +22,7 @@ describe('Test validate-fields-map', () => {
     it('test empty fields_map', async () => {
         const result = validate_fields_map();
         //console.log(result);
-        expect(result).to.be.deep.equal([ { field: 'fields_map', error: 'missing or empty' } ]);
+        expect(result).to.be.deep.equal([ { field: 'fields_map', error: 'missing' } ]);
     });
 
     it('test simple fields_map', async () => {
