@@ -6,24 +6,8 @@ Here is a snapshot of a project work directory:
     ├── data
     │   ├── inventory.csv
     │   └── assets
-    │       ├── IGI-LG457051822
-    │       │   ├── certificate.pdf
-    │       │   └── primary.jpg
-    │       ├── IGI-LG457051825
-    │       │   ├── certificate.pdf
-    │       │   └── primary.jpg
-    │       ├── IGI-LG457051828
-    │       │   ├── certificate.pdf
-    │       │   └── primary.jpg
     ......
-    │       ├── IGI-LG474106608
-    │       │   └── certificate.pdf
-    │       ├── IGI-LG474106653
-    │       │   └── certificate.pdf
-    │       └── IGI-LG474106655
-    │           └── certificate.pdf
     ├── report
-    │   ├── assets-retrieval.csv
     │   ├── errors.csv
     │   ├── passed.csv
     │   ├── summary.csv

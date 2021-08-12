@@ -16,7 +16,7 @@ Sign up on Ritani's vendor portal:
 
 <a href="https://vendor-portal.ritani.com/vendor/signup">Click to Sign up and create an account</a>
 
-Once signup is complete, sign in and click on the account tab. There you will find your FTP and API credentials:
+Once sign up is complete, sign in and click on the account tab. There you will find your FTP and API credentials:
 
     Username, Password and API key
 
