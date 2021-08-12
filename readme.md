@@ -47,16 +47,7 @@ for example: ritani-inventory as project folder, ritani-inventory/data as data f
     ├── data
     └── template
         ├── assets
-        │   ├── GIA-2205729946
-        │   │   ├── certificate.pdf
-        │   │   ├── cutprofile.jpg
-        │   │   ├── plot.jpg
-        │   │   ├── primary.jpg
-        │   │   └── video.mp4
-        │   └── IGI-459108837
-        │       ├── certificate.pdf
-        │       ├── primary.jpg
-        │       └── video.mp4
+        ...
         ├── agreed-header.js
         ├── fields-map.js
         ├── instruction.csv
