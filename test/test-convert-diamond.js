@@ -20,6 +20,7 @@ describe('Test convert-diamond', () => {
         const result = await convert_diamond( 
             {'stock#': 'vendor-sku', carat: '1.00'},    // row
             [{key: 'vendor_sku', field: 'stock#'}],     // fields_map
+            null,
             [{key: 'vendor_sku', type: 'string', require: 'expected'}, {key: 'carat', type: 'number', require: 'required'}], // std_fields
             ['vendor_sku', 'carat'] // assets_fields
         );
@@ -37,7 +38,8 @@ describe('Test convert-diamond', () => {
             { lab: 'AAA' },    // row
             [
                 { key: 'certificate_lab', field: 'lab'}, // fields_map
-            ],     
+            ],
+            null,  
             std_fields,
             assets_fields,
         );
@@ -68,7 +70,8 @@ describe('Test convert-diamond', () => {
             { lab: 'AAA' },    // row
             [
                 { key: 'certificate_lab', field: 'lab', values_map: { aaa: 'AGSL' }}, // fields_map
-            ],     
+            ],
+            null,   
             std_fields,
             assets_fields,
         );
@@ -92,7 +95,8 @@ describe('Test convert-diamond', () => {
             { lab: '' },    // row
             [
                 { key: 'certificate_lab', field: 'lab' }, // fields_map
-            ],     
+            ],
+            null,    
             std_fields,
             assets_fields,
         );
@@ -122,7 +126,8 @@ describe('Test convert-diamond', () => {
             { lab: '' },    // row
             [
                 { key: 'certificate_lab', field: 'lab', default_value: 'GIA'}, // fields_map
-            ],     
+            ],
+            null,     
             std_fields,
             assets_fields,
         );
@@ -146,7 +151,8 @@ describe('Test convert-diamond', () => {
             { lab_grown: '' },    // row
             [
                 { key: 'lab_grown'}, // fields_map
-            ],     
+            ],
+            null,     
             std_fields,
             assets_fields,
         );
@@ -176,7 +182,8 @@ describe('Test convert-diamond', () => {
             { lab_grown: '' },    // row
             [
                 { key: 'lab_grown', default_value: 1 }, // fields_map
-            ],     
+            ],
+            null,   
             std_fields,
             assets_fields,
         );
@@ -200,7 +207,8 @@ describe('Test convert-diamond', () => {
             { lab_grown: 'Y' },    // row
             [
                 { key: 'lab_grown', values_map: { y: 1, n: 0 } }, // fields_map
-            ],     
+            ],
+            null,    
             std_fields,
             assets_fields,
         );
