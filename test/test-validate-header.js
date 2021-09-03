@@ -12,28 +12,36 @@ const expect = chai.expect;
 
 describe('Test validate-header', () => {
 
-    it('test validate-header empty header', async () => {
-        const result = validate_header();
-        //console.log(result);
-        expect(result).to.be.deep.equal([ { field: 'header', error: 'missing or not array or empty' } ]);
+    it('1) test validate-header empty header', async () => {
+        const header_errors = [];
+        const result = validate_header(undefined,undefined,undefined,header_errors);
+        //console.log(result, header_errors);
+        expect(result).equals(false);
+        expect(header_errors).to.be.deep.equal([ { field: 'header', error: 'missing or not array or empty' } ]);
     });
 
-    it('test validate-header empty agreed_header', async () => {
-        const result = validate_header(['a', 'b']);
-        //console.log(result);
-        expect(result).to.be.deep.equal([ { field: 'header', error: 'agreed missing or not array' } ]);
+    it('2)test validate-header empty agreed_header', async () => {
+        const header_errors = [];
+        const result = validate_header(['a', 'b'],undefined,undefined,header_errors);
+        //console.log(result, header_errors);
+        expect(result).equals(false);
+        expect(header_errors).to.be.deep.equal([ { field: 'header', error: 'agreed missing or not array' } ]);
     });
 
-    it('test validate-header simple', async () => {
-        const result = validate_header(['vendor_sku', 'carat'], ['vendor_sku', 'carat']);
-        //console.log(result);
-        expect(result).equals('ok');
+    it('3) test validate-header simple', async () => {
+        const header_errors = [];
+        const result = validate_header(['vendor_sku', 'carat'], ['vendor_sku', 'carat'],undefined,header_errors);
+        //console.log(result, header_errors);
+        expect(result).equals(true);
+        expect(header_errors.length).equals(0);
     });
 
-    it('test validate-header less agreed_header', async () => {
-        const result = validate_header(['vendor_sku', 'carat'], ['carat']);
-        //console.log(result);
-        expect(result).to.be.deep.equal([
+    it('4) test validate-header less agreed_header', async () => {
+        const header_errors = [];
+        const result = validate_header(['vendor_sku', 'carat'], ['carat'],undefined,header_errors);
+        //console.log(result, header_errors);
+        expect(result).equals(true);
+        expect(header_errors).to.be.deep.equal([
           {
             field: 'header',
             warning: 'number of header fields 2 is not 1 of agreed header'
@@ -53,10 +61,12 @@ describe('Test validate-header', () => {
         ]);
     });
 
-    it('test validate-header less header', async () => {
-        const result = validate_header(['carat'], ['vendor_sku', 'carat']);
-        //console.log(result);
-        expect(result).to.be.deep.equal([
+    it('5) test validate-header less header', async () => {
+        const header_errors = [];
+        const result = validate_header(['carat'], ['vendor_sku', 'carat'],undefined,header_errors);
+        //console.log(result, header_errors);
+        expect(result).equals(true);
+        expect(header_errors).to.be.deep.equal([
           {
             field: 'header',
             warning: 'number of header fields 1 is not 2 of agreed header'
