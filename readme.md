@@ -46,7 +46,7 @@ for example: ritani-inventory as project folder, ritani-inventory/data as data f
     .
     ├── data
     └── template
-        ├── assets
+        ├── ...
         ...
         ├── agreed-header.js
         ├── fields-map.js

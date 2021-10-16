@@ -5,7 +5,7 @@ Here is a snapshot of a project work directory:
     .
     ├── data
     │   ├── inventory.csv
-    │   └── assets
+    │   └── ...
     ......
     ├── report
     │   ├── errors.csv
@@ -16,13 +16,12 @@ Here is a snapshot of a project work directory:
         ├── agreed-header.js
         └── fields-maps.js
 </pre>
+
 1. data/inventory.csv is your diamond feed. This should contain the diamonds available to sell. You will need to copy your latest feed to data/inventory.csv.
 
-2. data/assets folder contains all your diamond assets (images, videos, certificates, etc.). See below how to download your uploaded assets. 
+2. report folder contains reports that are generated after each operation.
 
-3. report folder contains reports that are generated after each operation.
-
-4. src/agreed-header.js contains your CSV headers. src/fields-maps.js contains the mapping between your headers and values to Ritani's standard format.
+3. src/agreed-header.js contains your CSV headers. src/fields-maps.js contains the mapping between your headers and values to Ritani's standard format.
 
 ## Operations for newly started vendor:
 
