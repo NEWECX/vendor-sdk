@@ -72,10 +72,13 @@ Click below to view sample data:
     -sd --set-data-dir <data_directory>        to set data directory
     -sp --set-project-dir <project_directory>  to set project directory
     -gt --generate-template                    to generate template, instruction and sample data
+    -di --download-inventory                   to download latest inventory feed data from server
     -dh --download-header                      to download agreed header from server
     -df --download-fields-maps                 to download fields-maps from server
     -uh --upload-header                        to upload agreed header to server
     -uf --upload-fields-maps                   to upload fields-maps to server
+    -fuh --force-upload-header                 to force upload agreed header to server
+    -fuf --force-upload-fields-maps            to force upload fields-maps to server
     -mh --make-header                          to make agreed-header.js from inventory data
     -mf --make-fields-maps                     to make fields-maps.js from inventory data
     -vi --validate-inventory                   to validate inventory csv

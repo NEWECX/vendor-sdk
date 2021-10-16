@@ -32,7 +32,19 @@ Assuming you followed the quick start,
 2. you changed your current work directory to the project directory, 
 3. and you ran newecx --set-config to setup your credentials.
 
-### Step 1 agreed-header
+### Step 1 prepare inventory.csv
+
+    you can copy your inventory.csv to data folder
+
+    OR
+
+    get the latest inventory feed that the server current is holding
+
+run
+
+    newecx --download-inventory
+
+### Step 2 agreed-header
 
 run
 
@@ -48,7 +60,7 @@ This will upload your headers (in src/agreed-header.js) to the server. This will
     
 If you make any changes to the headers of the csv file, you will need to rerun these commands to update the server. Otherwise, your feed will be rejected.
 
-### Step 2 fields-maps
+### Step 3 fields-maps
 
 run
 
