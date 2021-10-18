@@ -10,6 +10,7 @@ Here is a snapshot of a project work directory:
     ├── report
     │   ├── errors.csv
     │   ├── passed.csv
+    │   ├── std-inventory.csv
     │   ├── summary.csv
     │   └── warnings.csv
     └── src
