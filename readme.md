@@ -83,7 +83,8 @@ Click below to view sample data:
     -mf --make-fields-maps                     to make fields-maps.js from inventory data
     -vi --validate-inventory                   to validate inventory csv
     -ra --retrieve-assets                      to retrieve assets of passed diamonds
-    -si --submit-inventory                     to submit inventory feed to server
+    -si --submit-inventory                     to submit original inventory feed to server
+    -ssi --submit-std-inventory                to submit the generated standardized inventory csv to server
     -sa --submit-assets                        to submit retrieved assets to server
     -sb --submit-both-inventory-assets         to submit both inventory and assets to server
     -h, --help                                 display help for command
