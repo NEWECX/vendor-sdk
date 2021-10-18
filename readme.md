@@ -75,6 +75,7 @@ Click below to view sample data:
     -di --download-inventory                   to download latest inventory feed data from server
     -dh --download-header                      to download agreed header from server
     -df --download-fields-maps                 to download fields-maps from server
+    -da --download-all                         to download inventory, header and fields-maps from server
     -uh --upload-header                        to upload agreed header to server
     -uf --upload-fields-maps                   to upload fields-maps to server
     -fuh --force-upload-header                 to force upload agreed header to server
