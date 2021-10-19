@@ -64,6 +64,10 @@ run
 
     newecx --upload-header
 
+if your account is in production (out of sandbox), run
+
+    newecx --force-upload-header
+
 This will upload your headers (in src/agreed-header.js) to the server. This will serve as a contract between you and the API server. 
     
 If you make any changes to the headers of the csv file, you will need to rerun these commands to update the server. Otherwise, your feed will be rejected.
@@ -273,6 +277,10 @@ run
     
     newecx --upload-fields-maps
 
+if your account is in production (out of sandbox), run
+
+    newecx --force-upload-fields-maps
+
 ## Daily Operations:
 
 ### 1) copy your feed 
@@ -287,6 +295,14 @@ to see if your feeds are OK
 
 ### 3) submit inventory
 
+Run one of the two operations, either one is OK
+
+1)
     newecx --submit-inventory
 
-to submit the data/inventory.csv file to Ritani
+to submit the original data/inventory.csv file to Ritani
+
+2)
+    newecx --submit-std-inventory
+
+to submit the generated standardized report/std-inventory.csv file to Ritani
