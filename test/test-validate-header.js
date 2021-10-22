@@ -16,7 +16,7 @@ describe('Test validate-header', () => {
         const header_errors = [];
         const result = validate_header(undefined,undefined,undefined,header_errors);
         //console.log(result, header_errors);
-        expect(result).equals(false);
+        expect(result[0]).equals(false);
         expect(header_errors).to.be.deep.equal([ { field: 'header', error: 'missing or not array or empty' } ]);
     });
 
@@ -24,7 +24,7 @@ describe('Test validate-header', () => {
         const header_errors = [];
         const result = validate_header(['a', 'b'],undefined,undefined,header_errors);
         //console.log(result, header_errors);
-        expect(result).equals(false);
+        expect(result[0]).equals(false);
         expect(header_errors).to.be.deep.equal([ { field: 'header', error: 'agreed missing or not array' } ]);
     });
 
@@ -32,7 +32,7 @@ describe('Test validate-header', () => {
         const header_errors = [];
         const result = validate_header(['vendor_sku', 'carat'], ['vendor_sku', 'carat'],undefined,header_errors);
         //console.log(result, header_errors);
-        expect(result).equals(true);
+        expect(result[0]).equals(true);
         expect(header_errors.length).equals(0);
     });
 
@@ -40,7 +40,7 @@ describe('Test validate-header', () => {
         const header_errors = [];
         const result = validate_header(['vendor_sku', 'carat'], ['carat'],undefined,header_errors);
         //console.log(result, header_errors);
-        expect(result).equals(true);
+        expect(result[0]).equals(true);
         expect(header_errors).to.be.deep.equal([
           {
             field: 'header',
@@ -65,7 +65,7 @@ describe('Test validate-header', () => {
         const header_errors = [];
         const result = validate_header(['carat'], ['vendor_sku', 'carat'],undefined,header_errors);
         //console.log(result, header_errors);
-        expect(result).equals(true);
+        expect(result[0]).equals(true);
         expect(header_errors).to.be.deep.equal([
           {
             field: 'header',
