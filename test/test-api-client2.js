@@ -28,7 +28,7 @@ describe('Test api-client 2', () => {
     it('test api_upload_inventory', async () => {
         const local_filepath = node_path.join(__dirname, 'data', 'inventory.csv');
         const data = await api_upload_inventory(local_filepath);
-        //console.log('upload_inventory(1)', data);
+        console.log('upload_inventory(1)', data);
         expect(data).has.property('status');
         expect(data.status).equals('OK');
     });

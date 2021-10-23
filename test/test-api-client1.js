@@ -108,5 +108,4 @@ describe('Test api-client 1', () => {
             console.log('get_asset_info(2)', data);
         }
     });
-
 });
