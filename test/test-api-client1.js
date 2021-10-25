@@ -68,7 +68,7 @@ describe('Test api-client 1', () => {
 
     it('test api_update_header', async () => {
         const data = await api_update_header(new_headers);
-        //console.log('update_header', data);
+        console.log('update_header', data);
         expect(Object.keys(data).length).greaterThan(0);
         expect(data.status).equals('OK');
         const data_new = await api_get_header();
@@ -108,4 +108,5 @@ describe('Test api-client 1', () => {
             console.log('get_asset_info(2)', data);
         }
     });
+
 });

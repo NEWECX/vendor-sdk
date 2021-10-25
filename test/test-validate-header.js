@@ -36,23 +36,39 @@ describe('Test validate-header', () => {
         expect(header_errors.length).equals(0);
     });
 
-    it('4) test validate-header less agreed_header', async () => {
-        const header_errors = [];
-        const result = validate_header(['vendor_sku', 'carat'], ['carat'],undefined,header_errors);
+    it('4) test validate-header with case not match', async () => {
+        const header_errors = [], fields_map = [];
+        const result = validate_header(['vendor_sku', 'Carat'], ['vendor_sku', 'carat'],fields_map,header_errors);
+        //console.log(fields_map, result, header_errors);
+        expect(result).equals(true);
+        expect(fields_map).to.be.deep.equal([
+          {key: 'carat', field: 'Carat'}
+        ]);
+        expect(header_errors).to.be.deep.equal([
+          {
+            field: 'header',
+            warning: 'column: 2 header is Carat, not matching with agreed header: carat'
+          },
+          {
+            field: 'header',
+            info: 'For your reference, the agreed header: vendor_sku, carat'
+          }
+        ]);
+    });
+
+    it('5) test validate-header more than agreed_header', async () => {
+        const header_errors = [], fields_map = [];
+        const result = validate_header(['vendor_sku', 'carat'], ['carat'],fields_map,header_errors);
         //console.log(result, header_errors);
         expect(result).equals(true);
         expect(header_errors).to.be.deep.equal([
           {
             field: 'header',
-            warning: 'number of header fields 2 is not 1 of agreed header'
+            warning: 'number of header fields is 2, not the same as number of agreed header 1'
           },
           {
             field: 'header',
             warning: 'column: 1 header is vendor_sku, not matching with agreed header: carat'
-          },
-          {
-            field: 'header',
-            warning: 'column: 2 header is carat, not matching with agreed header: undefined'
           },
           {
             field: 'header',
@@ -61,15 +77,43 @@ describe('Test validate-header', () => {
         ]);
     });
 
-    it('5) test validate-header less header', async () => {
-        const header_errors = [];
-        const result = validate_header(['carat'], ['vendor_sku', 'carat'],undefined,header_errors);
-        //console.log(result, header_errors);
+    it('6) test validate-header more than agreed_header and case not match', async () => {
+      const header_errors = [], fields_map = [];
+      const result = validate_header(['vendor_sku', 'Carat'], ['carat'],fields_map,header_errors);
+      //console.log(result, fields_map, header_errors);
+      expect(result).equals(true);
+      expect(fields_map).to.be.deep.equal([
+        {key: 'carat', field: 'Carat'}
+      ]);
+      expect(header_errors).to.be.deep.equal([
+        {
+          field: 'header',
+          warning: 'number of header fields is 2, not the same as number of agreed header 1'
+        },
+        {
+          field: 'header',
+          warning: 'column: 1 header is vendor_sku, not matching with agreed header: carat'
+        },
+        {
+          field: 'header',
+          warning: 'column: 2 header is Carat, not matching with agreed header: carat'
+        },
+        {
+          field: 'header',
+          info: 'For your reference, the agreed header: carat'
+        }
+      ]);
+    });
+
+    it('7) test validate-header less than agreed_header', async () => {
+        const header_errors = [], fields_map = [];
+        const result = validate_header(['carat'], ['vendor_sku', 'carat'],fields_map,header_errors);
+        //console.log(result, fields_map, header_errors);
         expect(result).equals(true);
         expect(header_errors).to.be.deep.equal([
           {
             field: 'header',
-            warning: 'number of header fields 1 is not 2 of agreed header'
+            warning: 'number of header fields is 1, not the same as number of agreed header 2'
           },
           {
             field: 'header',
@@ -81,4 +125,103 @@ describe('Test validate-header', () => {
           }
         ]);
     });
+
+    it('8) test validate-header less than agreed_header and case not match', async () => {
+      const header_errors = [], fields_map = [];
+      const result = validate_header(['Carat'], ['vendor_sku', 'carat'],fields_map,header_errors);
+      //console.log(result, fields_map, fields_map, header_errors);
+      expect(fields_map).to.be.deep.equal([
+        {key: 'carat', field: 'Carat'}
+      ]);
+      expect(result).equals(true);
+      expect(header_errors).to.be.deep.equal([
+        {
+          field: 'header',
+          warning: 'number of header fields is 1, not the same as number of agreed header 2'
+        },
+        {
+          field: 'header',
+          warning: 'column: 1 header is Carat, not matching with agreed header: vendor_sku'
+        },
+        {
+          field: 'header',
+          warning: 'column: 1 header is Carat, not matching with agreed header: carat'
+        },
+        {
+          field: 'header',
+          info: 'For your reference, the agreed header: vendor_sku, carat'
+        }
+      ]);
+  });
+
+  it('9) test validate-header with extra header', async () => {
+    const header_errors = [], fields_map = [];
+    const result = validate_header(['carat', 'carat', 'extra'], ['vendor_sku', 'carat'],fields_map,header_errors);
+    //console.log(result, fields_map, fields_map, header_errors);
+    expect(result).equals(false);
+    expect(header_errors).to.be.deep.equal([
+      {
+        field: 'header',
+        warning: 'number of header fields is 3, not the same as number of agreed header 2'
+      },
+      {
+        field: 'header',
+        warning: 'column: 1 header is carat, not matching with agreed header: vendor_sku'
+      },
+      {
+        field: 'header',
+        error: 'column: 2 header is carat, duplicated header field name'
+      },
+      {
+        field: 'header',
+        warning: 'column: 3 header is extra, it is an extra field'
+      },
+      {
+        field: 'header',
+        info: 'For your reference, the agreed header: vendor_sku, carat'
+      }
+    ]);
+  });
+
+  it('10) test validate-header with extra header', async () => {
+      const header_errors = [], fields_map = [];
+      const result = validate_header(['vendor_sku', 'carat', 'extra'], ['vendor_sku', 'carat'],fields_map,header_errors);
+      //console.log(result, fields_map, fields_map, header_errors);
+      expect(result).equals(true);
+      expect(header_errors).to.be.deep.equal([
+        {
+          field: 'header',
+          warning: 'number of header fields is 3, not the same as number of agreed header 2'
+        },
+        {
+          field: 'header',
+          warning: 'column: 3 header is extra, it is an extra field'
+        },
+        {
+          field: 'header',
+          info: 'For your reference, the agreed header: vendor_sku, carat'
+        }
+      ]);
+  });
+
+  it('11) test validate-header with extra space field', async () => {
+    const header_errors = [], fields_map = [];
+    const result = validate_header(['vendor_sku', 'carat '], ['vendor_sku', 'carat'],fields_map,header_errors);
+    //console.log(result, fields_map, header_errors);
+    expect(result).equals(true);
+    expect(fields_map).to.be.deep.equal([
+      {key: 'carat', field: 'carat '}
+    ]);
+    expect(header_errors).to.be.deep.equal([
+      {
+        field: 'header',
+        warning: 'column: 2 header is carat , not matching with agreed header: carat'
+      },
+      {
+        field: 'header',
+        info: 'For your reference, the agreed header: vendor_sku, carat'
+      }
+    ]);
+});
+
 });

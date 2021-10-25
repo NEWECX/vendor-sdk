@@ -42,7 +42,7 @@ describe('Test api-client 2', () => {
     });
 
     it('test upload_asset with LAB-CERT# in filepath', async () => {
-        const local_filepath = node_path.join(__dirname, 'data', 'assets', 'GIA-2205729946', 'primary.jpg');
+        const local_filepath = node_path.join(__dirname, 'data', 'assets', 'GIA-1234567890', 'primary.jpg');
         const data = await api_upload_asset(local_filepath);
         //console.log('upload_asset(1)', data);
         expect(data).has.property('status');
