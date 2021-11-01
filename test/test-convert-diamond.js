@@ -18,11 +18,12 @@ describe('Test convert-diamond', () => {
 
     it('test convert-diamond 1', async () => {
         const result = await convert_diamond( 
-            {'stock#': 'vendor-sku', carat: '1.00'},    // row
+            {'stock#': 'vendor-sku', carat: '1.00', certificate_lab: 'AGSL', certificate_number: '12345678'},    // row
             [{key: 'vendor_sku', field: 'stock#'}],     // fields_map
-            null,
-            [{key: 'vendor_sku', type: 'string', require: 'expected'}, {key: 'carat', type: 'number', require: 'required'}], // std_fields
-            ['vendor_sku', 'carat'] // assets_fields
+            undefined,
+            [{key: 'vendor_sku', type: 'string', require: 'expected'}, {key: 'carat', type: 'number', require: 'required'},
+            {key: 'certificate_lab', type: 'string', require: 'required'}, {key: 'certificate_number', type: 'string', require: 'required'}], // std_fields
+            ['vendor_sku', 'carat', 'certificate_lab', 'certificate_number'] // assets_fields
         );
         //console.log('result', JSON.stringify(result, null, 2));
         expect(result.pass).equals(true);
@@ -44,30 +45,30 @@ describe('Test convert-diamond', () => {
             assets_fields,
         );
         //console.log('result', JSON.stringify(result, null, 2));
-        expect(result.errors[0].error.startsWith('value not mapped, certificate_lab => AAA, not in ')).is.true;
-        delete result.errors[0].error;
         expect(result).to.be.deep.equals({
             "pass": false,
-            "certificate_lab": "AAA",
+            "certificate_lab": "",
+            "certificate_number": "",
             "original": {
               "lab": "AAA"
             },
             "errors": [
               {
                 "field": "lab",
+                "error": "value not mapped, certificate_lab => AAA, not in GIA, AGSL, HRD, IGI, GCAL, DF, EGL, GHI, GSI, IIDGR, PGS, BSC, JGS, WGI, EDR"
               }
             ]
         });
     })
 
     it('test convert-diamond 3', async () => {
-        const assets_fields = ['certificate_lab'];
+        const assets_fields = ['certificate_lab', 'certificate_number'];
         const std_fields = [];
         for (const key of assets_fields) {
             std_fields.push(get_std_field(key))
         }
         const result = await convert_diamond(
-            { lab: 'AAA' },    // row
+            { lab: 'AAA', certificate_number: '1234'},    // row
             [
                 { key: 'certificate_lab', field: 'lab', values_map: { aaa: 'AGSL' }}, // fields_map
             ],
@@ -79,7 +80,9 @@ describe('Test convert-diamond', () => {
         expect(result).to.be.deep.equals({
             "pass": true,
             "certificate_lab": "AGSL",
+            "certificate_number": "1234",
             "original": {
+              "certificate_number": "1234",
               "lab": "AAA"
             }
         });
@@ -104,6 +107,7 @@ describe('Test convert-diamond', () => {
         expect(result).to.be.deep.equals({
             "pass": false,
             "certificate_lab": "",
+            "certificate_number": "",
             "original": {
               "lab": ""
             },
@@ -133,8 +137,9 @@ describe('Test convert-diamond', () => {
         );
         //console.log('result', JSON.stringify(result, null, 2));
         expect(result).to.be.deep.equals({
-            "pass": true,
+            "pass": false,
             "certificate_lab": "GIA",
+            "certificate_number": "",
             "original": {
                 "lab": ""
             }
@@ -160,6 +165,8 @@ describe('Test convert-diamond', () => {
         expect(result).to.be.deep.equals({
             "pass": false,
             "lab_grown": "",
+            "certificate_lab": "",
+            "certificate_number": "",
             "original": {
               "lab_grown": ""
             },
@@ -173,13 +180,13 @@ describe('Test convert-diamond', () => {
     });
 
     it('test convert-diamond 7', async () => {
-        const assets_fields = ['lab_grown'];
+        const assets_fields = ['certificate_lab', 'certificate_number', 'lab_grown'];
         const std_fields = [];
         for (const key of assets_fields) {
             std_fields.push(get_std_field(key))
         }
         const result = await convert_diamond( 
-            { lab_grown: '' },    // row
+            { certificate_lab: 'GIA', certificate_number: '1234567890', lab_grown: '' },    // row
             [
                 { key: 'lab_grown', default_value: 1 }, // fields_map
             ],
@@ -190,8 +197,12 @@ describe('Test convert-diamond', () => {
         //console.log('result', JSON.stringify(result, null, 2));
         expect(result).to.be.deep.equals({
             "pass": true,
+            "certificate_lab": "GIA",
+            "certificate_number": "1234567890",
             "lab_grown": 1,
             "original": {
+              "certificate_lab": "GIA",
+              "certificate_number": "1234567890",
               "lab_grown": ""
             }
         });
@@ -214,7 +225,9 @@ describe('Test convert-diamond', () => {
         );
         //console.log('result', JSON.stringify(result, null, 2));
         expect(result).to.be.deep.equals({
-            "pass": true,
+            "certificate_lab": "",
+            "certificate_number": "",
+            "pass": false,
             "lab_grown": 1,
             "original": {
               "lab_grown": "Y"
