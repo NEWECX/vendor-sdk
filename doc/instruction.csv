@@ -2,115 +2,49 @@
 "vendor_sku","vendor internal sku or stock#","string","expected","","","R10-38900"
 "carat","carat weight","number","required","","",1.03
 "shipping_availability","memo field, please filter available ones to submit","string","optional","","","Guaranteed"
-"certificate_lab","certificate lab","string","required","GIA, AGSL, HRD, IGI, GCAL, DF, EGL, GHI, GSI, IIDGR, PGS, BSC, JGS, WGI, EDR","GIA: 'The Gemological Institute of America'
-AGSL: 'American GEM Society Laboratories'
-HRD: 'Diamond High Council'
-IGI: 'International Gemological Institute'
-GCAL: 'GEM Certification & Assurance LAB'
-DF: 'Diamond Foundry'
-EGL: 'European Gemological Laboratories'
-GHI: 'Gemology Headquarters International Laboratory'
-GSI: 'Gemological Science International'
-IIDGR: 'International Institute of Diamond Grading & Research'
-PGS: 'Professional GEM Science Laboratory'
-BSC: 'Biological Safety Cabinet Testing & Certification'
-JGS: 'J.B. Grading System'
-WGI: 'World Gemological Institute'
-EDR: 'Lloyds Family Jewellery Certificate'","GIA"
+"certificate_lab","certificate lab","string","required","GIA, AGSL, HRD, IGI, GCAL, DF, EGL, GHI, GSI, IIDGR, PGS, BSC, JGS, WGI, EDR","GIA: 'The Gemological Institute of America'; AGSL: 'American GEM Society Laboratories'; HRD: 'Diamond High Council'; IGI: 'International Gemological Institute'; GCAL: 'GEM Certification & Assurance LAB'; DF: 'Diamond Foundry'; EGL: 'European Gemological Laboratories'; GHI: 'Gemology Headquarters International Laboratory'; GSI: 'Gemological Science International'; IIDGR: 'International Institute of Diamond Grading & Research'; PGS: 'Professional GEM Science Laboratory'; BSC: 'Biological Safety Cabinet Testing & Certification'; JGS: 'J.B. Grading System'; WGI: 'World Gemological Institute'; EDR: 'Lloyds Family Jewellery Certificate'","GIA"
 "certificate_number","certificate number","string","required","","","2205729946"
 "orig_certificate_url","url for certificate.pdf (preferred) or  certificate.jpg","string","expected","","","https://assets.newecx.com/template/assets/GIA-2205729946/certificate.pdf"
-"shape","shape","string","required","RD, CU, PR, EM, OV, AS, RA, MQ, PS, HS, TR, SH, PE, OC, ST, HE, HM, TZ","RD: 'Round'
-CU: 'Cushion'
-PR: 'Princess'
-EM: 'Emerald'
-OV: 'Oval'
-AS: 'Asscher'
-RA: 'Radiant'
-MQ: 'Marquise'
-PS: 'Pear'
-HS: 'Heart'
-TR: 'Triangle'
-SH: 'Shield'
-PE: 'Pentagonal'
-OC: 'Octagonal'
-ST: 'Star'
-HE: 'Hexagonal'
-HM: 'Half Moon'
-TZ: 'Trapezoid'","CU"
+"shape","shape","string","required","RD, CU, PR, EM, OV, AS, RA, MQ, PS, HS, TR, SH, PE, OC, ST, HE, HM, TZ","RD: 'Round'; CU: 'Cushion'; PR: 'Princess'; EM: 'Emerald'; OV: 'Oval'; AS: 'Asscher'; RA: 'Radiant'; MQ: 'Marquise'; PS: 'Pear'; HS: 'Heart'; TR: 'Triangle'; SH: 'Shield'; PE: 'Pentagonal'; OC: 'Octagonal'; ST: 'Star'; HE: 'Hexagonal'; HM: 'Half Moon'; TZ: 'Trapezoid'","CU"
 "cost","the cost of the whole stone, NOT cost per carat","number","required","","",4073
 "cost_per_carat","the cost per carat","number","required","","",3954.37
-"clarity","clarity","string","required","FL, IF, VVS1, VVS2, VS1, VS2, SI1, SI2, I1, I2, I3","FL: 'Flawless'
-IF: 'Internally Flawless'
-VVS1: 'Very Very Slightly Inclusion 1',
-VVS2: 'Very Very Slightly Inclusion 2',
-VS1: 'Very Slightly Inclusion 1'
-VS2: 'Very Slightly Inclusion 2'
-SI1: 'Slightly Inclusion 1'
-SI2: 'Slightly Inclusion 2'
-I1: 'Inclusion 1'
-I2: 'Inclusion 2'
-I3: 'Inclusion 3'","SI1"
+"clarity","clarity","string","required","FL, IF, VVS1, VVS2, VS1, VS2, SI1, SI2, I1, I2, I3","FL: 'Flawless'; IF: 'Internally Flawless'; VVS1: 'Very Very Slightly Inclusion 1',; VVS2: 'Very Very Slightly Inclusion 2',; VS1: 'Very Slightly Inclusion 1'; VS2: 'Very Slightly Inclusion 2'; SI1: 'Slightly Inclusion 1'; SI2: 'Slightly Inclusion 2'; I1: 'Inclusion 1'; I2: 'Inclusion 2'; I3: 'Inclusion 3'","SI1"
 "clarity_characteristics","clarity characteristics, i.e, Feather",,"optional","","",""
-"color","color","string","required","D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z","","E"
+"color","color","string","required","D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, FLY, FY, FIY, FVY, FPY, FDY, FLO, FO, FIO, FVO, FPO, FDO, FLR, FR, FIR, FVR, FPR, FDR, FLBLU, FBLU, FIBLU, FVBLU, FPBLU, FDBLU, FLBLA, FBLA, FIBLA, FVBLA, FPBLA, FDBLA, FLBRO, FBRO, FIBRO, FVBRO, FPBRO, FDBRO, FLPI, FPI, FIPI, FVPI, FPPI, FDPI, FLPU, FPU, FIPU, FVPU, FPPU, FDPU, FLGRE, FGRE, FIGRE, FVGRE, FPGRE, FDGRE, FLGRA, FGRA, FIGRA, FVGRA, FPGRA, FDGRA","D: 'D'; E: 'E'; F: 'F'; G: 'G'; H: 'H'; I: 'I'; J: 'J'; K: 'K'; L: 'L'; M: 'M'; N: 'N'; O: 'O'; P: 'P'; Q: 'Q'; R: 'R'; S: 'S'; T: 'T'; U: 'U'; V: 'V'; W: 'W'; X: 'X'; Y: 'Y'; Z: 'Z'; FLY: 'Fancy Light Yellow'; FY: 'Fancy Yellow'; FIY: 'Fancy Intense Yellow'; FVY: 'Fancy Vivid Yellow'; FPY: 'Fancy Deep Yellow'; FDY: 'Fancy Dark Yellow'; FLO: 'Fancy Light Orange'; FO: 'Fancy Orange'; FIO: 'Fancy Intense Orange'; FVO: 'Fancy Vivid Orange'; FPO: 'Fancy Deep Orange'; FDO: 'Fancy Dark Orange'; FLR: 'Fancy Light Red'; FR: 'Fancy Red'; FIR: 'Fancy Intense Red'; FVR: 'Fancy Vivid Red'; FPR: 'Fancy Deep Red'; FDR: 'Fancy Dark Red'; FLBLU: 'Fancy Light Blue'; FBLU: 'Fancy Blue'; FIBLU: 'Fancy Intense Blue'; FVBLU: 'Fancy Vivid Blue'; FPBLU: 'Fancy Deep Blue'; FDBLU: 'Fancy Dark Blue'; FLBLA: 'Fancy Light Black'; FBLA: 'Fancy Black'; FIBLA: 'Fancy Intense Black'; FVBLA: 'Fancy Vivid Black'; FPBLA: 'Fancy Deep Black'; FDBLA: 'Fancy Dark Black'; FLBRO: 'Fancy Light Brown'; FBRO: 'Fancy Brown'; FIBRO: 'Fancy Intense Brown'; FVBRO: 'Fancy Vivid Brown'; FPBRO: 'Fancy Deep Brown'; FDBRO: 'Fancy Dark Brown'; FLPI: 'Fancy Light Pink'; FPI: 'Fancy Pink'; FIPI: 'Fancy Intense Pink'; FVPI: 'Fancy Vivid Pink'; FPPI: 'Fancy Deep Pink'; FDPI: 'Fancy Dark Pink'; FLPU: 'Fancy Light Purple'; FPU: 'Fancy Purple'; FIPU: 'Fancy Intense Purple'; FVPU: 'Fancy Vivid Purple'; FPPU: 'Fancy Deep Purple'; FDPU: 'Fancy Dark Purple'; FLGRE: 'Fancy Light Green'; FGRE: 'Fancy Green'; FIGRE: 'Fancy Intense Green'; FVGRE: 'Fancy Vivid Green'; FPGRE: 'Fancy Deep Green'; FDGRE: 'Fancy Dark Green'; FLGRA: 'Fancy Light Gray'; FGRA: 'Fancy Gray'; FIGRA: 'Fancy Intense Gray'; FVGRA: 'Fancy Vivid Gray'; FPGRA: 'Fancy Deep Gray'; FDGRA: 'Fancy Dark Gray'","E"
 "color_origin","color origin, i.e, Nature",,"optional","","",""
 "color_distribution","color distribution, i.e, Even",,"optional","","",""
-"cut","cut grade","string","expected","EX, VG, G, F","EX: 'Excellent'
-VG: 'Very Good'
-G: 'Good'
-F: 'Fair'","VG"
-"culet_size","culet size","string","optional","N, VS, S, M, SL, LG, VL","N: 'None'
-VS: 'Very Small'
-S: 'Small'
-M: 'Medium'
-SL: 'Slightly Large'
-LG: 'Large'
-VL: 'Very Large'","N"
+"cut","cut grade","string","expected","EX, VG, G, F","EX: 'Excellent'; VG: 'Very Good'; G: 'Good'; F: 'Fair'","VG"
+"culet_size","culet size","string","optional","N, VS, S, M, SL, LG, VL","N: 'None'; VS: 'Very Small'; S: 'Small'; M: 'Medium'; SL: 'Slightly Large'; LG: 'Large'; VL: 'Very Large'","N"
 "culet_condition","culet condition","string","optional","","",""
-"polish","polish","string","required","EX, VG, G, F","EX: 'Excellent'
-VG: 'Very Good'
-G: 'Good'
-F: 'Fair'","VG"
+"polish","polish","string","required","EX, VG, G, F","EX: 'Excellent'; VG: 'Very Good'; G: 'Good'; F: 'Fair'","VG"
 "depth","depth in mm","number","required","","",3.63
-"depth_percent","depth percent","number","optional","","",64.7
+"depth_percent","depth percent","number","required","","",64.7
 "width","width in mm","number","required","","",5.6
 "length","length in mm","number","required","","",6.16
 "length_width_ratio","length width ratio","number","optional","","",1.1
 "measurements","measurements by width - length x depth mm","string","optional","","",""
-"fluorescence","fluorescence","string","required","N, F, M, S, VS","N: 'None'
-F: 'Faint'
-M: 'Medium'
-S: 'Strong'
-VS: 'Very Strong'","F"
+"fluorescence","fluorescence","string","required","N, F, M, S, VS","N: 'None'; F: 'Faint'; M: 'Medium'; S: 'Strong'; VS: 'Very Strong'","F"
 "fluorescence_color","fluorescence color","string","optional","","",""
 "girdle","girdle includes thin to thick","string","optional","","","Slightly Thick to Extremely Thick, Faceted"
 "girdle_thin","girdle thin","string","optional","","",""
 "girdle_thick","girdle thick","string","optional","","",""
 "girdle_percent","girdle percent","number","optional","","",""
-"symmetry","symmetry","string","required","EX, VG, G, F","EX: 'Excellent'
-VG: 'Very Good'
-G: 'Good'
-F: 'Fair'","VG"
+"symmetry","symmetry","string","required","EX, VG, G, F","EX: 'Excellent'; VG: 'Very Good'; G: 'Good'; F: 'Fair'","VG"
 "table_percent","table percent","number","required","","",66
 "key_to_symbols","key to symbols","string","optional","","","Crystal,Needle,Feather"
 "crown_height","crown height percent","number","optional","","",""
 "crown_angle","crown angle","number","optional","","",""
 "pavilion_depth","pavilion depth percent","number","optional","","",""
 "pavilion_angle","pavilion angle","number","optional","","",""
-"fancy_color","fancy color","string","optional","YELLOW, PINK, PURPLE, RED, BLUE, GREEN, ORANGE, BROWN, BLACK, GRAY","",""
-"fancy_color_intensity","fancy color intensity","string","optional","FL, FA, FI, FV, FP, FD","FL: 'Fancy Light'
-FA: 'Fancy'
-FI: 'Fancy Intense'
-FV: 'Fancy Vivid'
-FP: 'Fancy Deep'
-FD: 'Fancy Dark'",""
-"fancy_color_overtone","fancy color overtone","string","optional","YELLOW, PINK, PURPLE, RED, BLUE, GREEN, ORANGE, BROWN, BLACK, GRAY","",""
+"fancy_color","fancy color","string","optional","YELLOW, PINK, PURPLE, RED, BLUE, GREEN, ORANGE, BROWN, BLACK, GRAY","YELLOW: 'Yellow'; PINK: 'Pink'; PURPLE: 'Purple'; RED: 'Red'; BLUE: 'Blue'; GREEN: 'Green'; ORANGE: 'Orange'; BROWN: 'Brown'; BLACK: 'Black'; GRAY: 'Gray'",""
+"fancy_color_intensity","fancy color intensity","string","optional","FL, FA, FI, FV, FP, FD","FL: 'Fancy Light'; FA: 'Fancy'; FI: 'Fancy Intense'; FV: 'Fancy Vivid'; FP: 'Fancy Deep'; FD: 'Fancy Dark'",""
+"fancy_color_overtone","fancy color overtone","string","optional","YELLOW, PINK, PURPLE, RED, BLUE, GREEN, ORANGE, BROWN, BLACK, GRAY","YELLOW: 'Yellow'; PINK: 'Pink'; PURPLE: 'Purple'; RED: 'Red'; BLUE: 'Blue'; GREEN: 'Green'; ORANGE: 'Orange'; BROWN: 'Brown'; BLACK: 'Black'; GRAY: 'Gray'",""
 "city","city of the diamond location","string","optional","","",""
 "state","state of the diamond location","string","optional","","",""
 "country","country of the diamond location","string","optional","","",""
 "location","location of the diamond","string","optional","","","belgium"
 "days_to_ship","days need to ship the diamond","number","expected","","",""
-"lab_grown","lab grown or earth grown","number","required","0, 1","'0': 'N'
-'1': 'Y'",0
+"lab_grown","lab grown or earth grown","number","required","0, 1","'0': 'N'; '1': 'Y'",0
 "laser_inscription","laser inscription","string","optional","","",""
 "report_date","date shows on lab report","string","optional","","",""
 "comments","comments","string","optional","","",""
