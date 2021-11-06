@@ -327,20 +327,20 @@ describe('Test convert-diamond', () => {
         //console.log('result', JSON.stringify(result, null, 2));
         expect(result.pass).equals(false);
         expect(result).to.be.deep.equals({
-            "pass": false,
-            "certificate_lab": "GIA",
-            "certificate_number": "",
-            "original": {
-              "lab": "AAA",
-              "cert": "none"
-            },
-            "errors": [
-              {
-                "field": "cert",
-                "error": "invalid certificate number, certificate_number => none"
-              }
-            ]
-          });
+          "pass": false,
+          "certificate_lab": "GIA",
+          "certificate_number": "",
+          "original": {
+            "lab": "AAA",
+            "cert": "none"
+          },
+          "errors": [
+            {
+              "field": "cert",
+              "error": "invalid certificate, invalid certificate number"
+            }
+          ]
+        });
     })
 
     it('test convert-diamond 12', async () => {
@@ -359,24 +359,24 @@ describe('Test convert-diamond', () => {
         //console.log('result', JSON.stringify(result, null, 2));
         expect(result.pass).equals(false);
         expect(result).to.be.deep.equals({
-            "pass": false,
-            "certificate_lab": "",
-            "certificate_number": "",
-            "original": {
-              "lab": "AAA",
-              "cert": "none"
+          "pass": false,
+          "certificate_lab": "",
+          "certificate_number": "",
+          "original": {
+            "lab": "AAA",
+            "cert": "none"
+          },
+          "errors": [
+            {
+              "field": "lab",
+              "error": "required key, certificate_lab => AAA, not in GIA"
             },
-            "errors": [
-              {
-                "field": "lab",
-                "error": "required key, certificate_lab => AAA, not in GIA"
-              },
-              {
-                "field": "cert",
-                "error": "invalid certificate number, certificate_number => none"
-              }
-            ]
-          });
+            {
+              "field": "cert",
+              "error": "invalid certificate, invalid certificate lab, not in GIA, AGSL, HRD, IGI, GCAL, DF, EGL, GHI, GSI, IIDGR, PGS, BSC, JGS, WGI, EDR"
+            }
+          ]
+        });
     })
 
     it('test convert-diamond 13', async () => {
@@ -742,4 +742,50 @@ describe('Test convert-diamond', () => {
             ]
           });
     })
+
+    it('test convert-diamond 27', async () => {
+      const row = { color: 'W-Z' };
+      const fields_map = [];
+      const options = undefined;
+      const std_fields = [];
+      for (const key of ['color']) {
+          std_fields.push(get_std_field(key))
+      }
+      const asset_fields = [];
+      const result = await convert_diamond(row, fields_map, options, std_fields, asset_fields);
+      //console.log('result', JSON.stringify(result, null, 2));
+      expect(result.pass).equals(true);
+      expect(result).to.be.deep.equals({
+        "pass": true,
+        "color": "W",
+        "original": {
+          "color": "W-Z"
+        }
+      });
+  })
+
+  it('test convert-diamond 28', async () => {
+    const row = { color: 'FVYO' };
+    const fields_map = [];
+    const options = undefined;
+    const std_fields = [];
+    for (const key of ['color', 'fancy_color', 'fancy_color_intensity', 'fancy_color_overtone']) {
+        std_fields.push(get_std_field(key))
+    }
+    const asset_fields = [];
+    const result = await convert_diamond(row, fields_map, options, std_fields, asset_fields);
+    //console.log('result', JSON.stringify(result, null, 2));
+    expect(result.pass).equals(true);
+    expect(result).to.be.deep.equals({
+      "pass": true,
+      "color": "FVY",
+      "fancy_color": "YELLOW",
+      "fancy_color_intensity": "FV",
+      "fancy_color_overtone": "ORANGE",
+      "original": {
+        "color": "FVYO"
+      }
+    });
+})
+
 });
