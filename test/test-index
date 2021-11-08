@@ -35,7 +35,6 @@ describe('Test index', () => {
             { key: 'get_data_directory', type: 'function' },
             { key: 'set_configuration', type: 'function' },
             { key: 'load_configuration', type: 'function' },
-            { key: 'get_npm_pkg', type: 'function' },
             { key: 'transform_colors', type: 'function' },
             { key: 'check_certificate', type: 'function' },
             { key: 'clean_fields_maps', type: 'function' },

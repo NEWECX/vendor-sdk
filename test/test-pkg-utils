@@ -1,0 +1,25 @@
+'use strict';
+
+const chai = require('chai');
+const {find_pkg, get_npm_pkg} = require('../lib/util/pkg-utils');
+
+const expect = chai.expect;
+
+// to run all tests start with test-
+// npm test
+// OR
+// stage_env=test mocha --timeout 100000 --reporter spec test/test-pkg-utils
+
+describe('Test check-latest-version', () => {
+
+    it('test find_pkg', async () => {
+        const pkg  = await find_pkg();
+        expect(pkg.name).equals('@ritani/vendor-sdk')
+    });
+
+    it('test get_npm_pkg', async () => {
+        const pkg  = await get_npm_pkg('@ritani/vendor-sdk');
+        expect(pkg.name).equals('@ritani/vendor-sdk')
+    });
+
+});
