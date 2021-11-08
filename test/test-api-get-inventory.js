@@ -22,7 +22,8 @@ describe('Test api-get-inventory', () => {
         fs.unlinkSync(filepath)
       }
       const result = await api_get_inventory(filepath);
-      expect(result).equals(true);
+      //console.log(result)
+      expect(result.status).equals('OK');
       expect(fs.existsSync(filepath)).equals(true);
     });
 

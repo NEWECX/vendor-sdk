@@ -59,7 +59,7 @@ describe('Test api-client 1', () => {
     });
 
     it('test api_get_fields_maps', async () => {
-        const result = await api_update_fields_maps(new_fields_map);
+        const result = await api_update_fields_maps(new_fields_map, true);
         //console.log('result', result);
         const data = await api_get_fields_maps();
         //console.log('get_fields_map', data);
@@ -67,7 +67,7 @@ describe('Test api-client 1', () => {
     });
 
     it('test api_update_header', async () => {
-        const data = await api_update_header(new_headers);
+        const data = await api_update_header(new_headers, true);
         //console.log('update_header', data);
         expect(Object.keys(data).length).greaterThan(0);
         expect(data.status).equals('OK');
@@ -77,7 +77,7 @@ describe('Test api-client 1', () => {
     });
 
     it('test api_update_fields_map', async () => {
-        const data = await api_update_fields_maps(new_fields_map);
+        const data = await api_update_fields_maps(new_fields_map, true);
         //console.log('update_fields_map', data);
         expect(Object.keys(data).length).greaterThan(0);
         expect(data.status).equals('OK');
@@ -108,5 +108,4 @@ describe('Test api-client 1', () => {
             console.log('get_asset_info(2)', data);
         }
     });
-
 });
