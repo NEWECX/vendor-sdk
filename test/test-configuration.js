@@ -22,13 +22,13 @@ const account = {
 };
 
 describe('Test account config', () => {
-
+/*
     it('test get_ftp_config', async () => {
         configuration.set_account(account);
         const ftp_config = configuration.get_ftp_config();
         expect(ftp_config).to.deep.equal({host: 'ftp.ritani.com', user: 'test', password: 'password', secure: true});
     });
-
+*/
     it('test get_api_base_url', async () => {
         configuration.set_account(account);
         const api_base_url = configuration.get_api_base_url();

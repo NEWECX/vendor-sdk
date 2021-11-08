@@ -1,6 +1,6 @@
 {
   "name": "@ritani/vendor-sdk",
-  "version": "3.3.0",
+  "version": "3.3.1",
   "description": "Ritani Diamond Vendor Inventory SDK",
   "bin": {
     "newecx": "./bin/newecx-cli.js"
@@ -49,7 +49,7 @@
     "find-package-json": "^1.2.0",
     "inquirer": "^8.2.0",
     "json2csv": "^5.0.6",
-    "latest-version": "^6.0.0",
+    "package-json": "^7.0.0",
     "require-from-string": "^2.0.2",
     "uuid": "^8.3.2"
   },

@@ -1,0 +1,72 @@
+'use strict';
+
+const chai = require('chai');
+const vendor_sdk = require('../lib');
+
+const expect = chai.expect;
+
+// to run all tests start with test-
+// npm test
+// OR
+// stage_env=test mocha --timeout 100000 --reporter spec test/test-index
+
+describe('Test index', () => {
+
+    it('test index', async () => {
+        const result = [];
+        for (const key in vendor_sdk) {
+            const value = vendor_sdk[key];
+            result.push({key, type: typeof value});
+        }
+        expect(result).to.be.deep.equals([
+            { key: 'std_fields', type: 'object' },
+            { key: 'non_std_mappings', type: 'function' },
+            { key: 'filename_values', type: 'object' },
+            { key: 'assets_filename_map', type: 'object' },
+            { key: 'assets_stats_types', type: 'object' },
+            { key: 'set_account', type: 'function' },
+            { key: 'has_api_config', type: 'function' },
+            { key: 'get_extra_property', type: 'function' },
+            { key: 'get_api_base_url', type: 'function' },
+            { key: 'get_api_key', type: 'function' },
+            { key: 'get_project_directory', type: 'function' },
+            { key: 'set_project_directory', type: 'function' },
+            { key: 'set_data_directory', type: 'function' },
+            { key: 'get_data_directory', type: 'function' },
+            { key: 'set_configuration', type: 'function' },
+            { key: 'load_configuration', type: 'function' },
+            { key: 'get_npm_pkg', type: 'function' },
+            { key: 'transform_colors', type: 'function' },
+            { key: 'check_certificate', type: 'function' },
+            { key: 'clean_fields_maps', type: 'function' },
+            { key: 'get_checksum', type: 'function' },
+            { key: 'signature_properties', type: 'function' },
+            { key: 'api_upload_inventory', type: 'function' },
+            { key: 'api_upload_asset', type: 'function' },
+            { key: 'api_upload_assets', type: 'function' },
+            { key: 'api_upload_all_files', type: 'function' },
+            { key: 'api_get_inventory_info', type: 'function' },
+            { key: 'api_get_inventory', type: 'function' },
+            { key: 'api_get_header', type: 'function' },
+            { key: 'api_get_fields_maps', type: 'function' },
+            { key: 'api_update_header', type: 'function' },
+            { key: 'api_update_fields_maps', type: 'function' },
+            { key: 'api_get_asset_info', type: 'function' },
+            { key: 'api_get_report', type: 'function' },
+            { key: 'parse_inventory_csv', type: 'function' },
+            { key: 'mk_inventory_reports', type: 'function' },
+            { key: 'download_assets', type: 'function' },
+            { key: 'retrieval_report', type: 'function' },
+            { key: 'mk_template', type: 'function' },
+            { key: 'get_fields_map', type: 'function' },
+            { key: 'mk_fields_map', type: 'function' },
+            { key: 'get_std_header', type: 'function' },
+            { key: 'write_to_csv', type: 'function' },
+            { key: 'read_from_csv', type: 'function' },
+            { key: 'write_simple_js', type: 'function' },
+            { key: 'get_latest_csv_file', type: 'function' },
+            { key: 'get_cmds', type: 'function' },
+        ]);
+    });
+
+});

@@ -43,13 +43,9 @@ describe('Test api-client 1', () => {
     });
 
     it('test api_get_inventory_info', async () => {
-        const data = await api_get_inventory_info();
+        const data = await api_get_inventory_info(true);
         expect(Object.keys(data).length).greaterThan(0);
-        if (Object.keys(data).length > 3) {
-            expect(data).has.property('md5');
-        } else {
-            console.log('get_inventory_info', data);
-        }
+        expect(data.status).equals('OK');
     });
 
     it('test api_get_header', async () => {
@@ -91,21 +87,13 @@ describe('Test api-client 1', () => {
         const local_filepath = node_path.join(__dirname, 'data', 'assets', 'GIA-2205729946', 'primary.jpg');
         const data = await api_get_asset_info(local_filepath);
         expect(Object.keys(data).length).greaterThan(0);
-        if (Object.keys(data).length > 3) {
-            expect(data).has.property('md5');
-        } else {
-            console.log('get_asset_info(1)', data);
-        }
+        expect(data.status).equals('OK');
     });
 
     it('test get_asset_info with certificate_lab and certificate_number', async () => {
         const local_filepath = node_path.join(__dirname, 'data', 'somewhere', 'certificate.pdf');
         const data = await api_get_asset_info(local_filepath, 'GIA', '2205729946');
         expect(Object.keys(data).length).greaterThan(0);
-        if (Object.keys(data).length > 3) {
-            expect(data).has.property('md5');
-        } else {
-            console.log('get_asset_info(2)', data);
-        }
+        expect(data.status).equals('OK');
     });
 });
