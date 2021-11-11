@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if [ -d vendor-sdk ]; then
+rm -rf vendor-sdk/*
+fi
+
+if [ -f vendor-sdk.zip ]; then
+rm vendor-sdk.zip
+fi
+
+pkg --compress GZip .
+
+cd vendor-sdk
+
+mv vendor-sdk-macos newecx
+mv vendor-sdk-win.exe newecx.exe
+
+cd ..
+
+zip -rq vendor-sdk.zip vendor-sdk
+
+aws s3 cp ./vendor-sdk.zip s3://assets.newecx.com/vendor-sdk-downloads/
+aws s3 cp ./vendor-sdk.zip s3://assets.newecx.com/vendor-sdk-downloads/vendor-sdk-$(date +"%Y-%m-%d").zip
+
+rm -rf vendor-sdk/*
+rm vendor-sdk.zip

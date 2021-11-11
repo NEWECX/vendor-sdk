@@ -13,3 +13,6 @@ src
 .eslintignore
 .eslintrc.json
 doc
+dist
+vendor-sdk/
+vendor-sdk.zip

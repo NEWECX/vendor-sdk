@@ -15,6 +15,8 @@ data
 tmp
 src
 report
+vendor-sdk/
+vendor-sdk.zip
 
 # Firebase cache
 .firebase/

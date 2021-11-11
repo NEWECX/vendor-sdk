@@ -1,6 +1,6 @@
 {
   "name": "@ritani/vendor-sdk",
-  "version": "3.3.8",
+  "version": "3.3.9",
   "description": "Ritani Diamond Vendor Inventory SDK",
   "bin": {
     "newecx": "./bin/newecx-cli.js"
@@ -12,7 +12,16 @@
     "doc": "./doc"
   },
   "scripts": {
+    "release": "./release",
     "test": "stage_env=test mocha --timeout 100000 --reporter spec test/test-*"
+  },
+  "pkg": {
+    "scripts": [],
+    "targets": [
+      "node16-macos-x64",
+      "node16-win-x64"
+    ],
+    "outputPath": "vendor-sdk"
   },
   "repository": {
     "type": "git",
