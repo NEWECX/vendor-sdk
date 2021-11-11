@@ -1,8 +1,18 @@
 # Use newecx cli Command
 
+After unzip the ritani-vendor-sdk.zip:
+
+open a console, for window it is command prompt, for macos it is terminal
+
+cd ritani-vendor-sdk
+
 Here is a snapshot of a project work directory:
 <pre>
     .
+    ├── newecx               # executable for macos, run it with ./newecx in terminal
+    ├── newecx.exe           # executable for windows, run with newecx in command prompt
+    ├── readme.pdf           # this file
+    ├── instruction.csv      # instruction for all fields
     ├── data
     │   ├── inventory.csv
     │   └── ...
@@ -48,25 +58,25 @@ OR
 
 get the latest inventory feed that the server currently is holding
 
-run
+run newecx with option --download-inventory
 
+    # for windows
     newecx --download-inventory
+
+    # for macos
+    ./newecx --download-inventory
 
 ### Step 2 agreed-header
 
-run
-
-    newecx --make-header
+run newecx with option --make-header
 
 This will read your data/inventory.csv and extract the headers and save it in src/agreed-header.js
 
-run
-
-    newecx --upload-header
+run newecx with option --upload-header
 
 if your account is in production (out of sandbox), run
 
-    newecx --force-upload-header
+run newecx with option --force-upload-header
 
 This will upload your headers (in src/agreed-header.js) to the server. This will serve as a contract between you and the API server. 
     
@@ -74,9 +84,7 @@ If you make any changes to the headers of the csv file, you will need to rerun t
 
 ### Step 3 fields-maps
 
-run
-
-    newecx --make-fields-maps
+run newecx with option  --make-fields-maps
 
 The cli generates src/fields-maps.js based on the headers and data in data/inventory.csv. 
     
@@ -175,20 +183,21 @@ You need to provide only one. If both are provided, the newecx cli checks the da
 
 ### Step 4 validate
 
-run
-    
-    newecx --validate-inventory
+run newecx with option --validate-inventory
 
 
 Here is a sample output:
 
 <pre>
-    total diamonds: 583 passed count: 568
-    
-    summary report is saved to .../ritani-inventory/report/summary.csv
-    passed diamonds report is saved to .../ritani-inventory/report/passed.csv
-    errors report is saved to .../ritani-inventory/report/errors.csv
-    warnings report is saved to .../ritani-inventory/report/warnings.csv
+    default file inventory.csv not exists, use .../ritani-vendor-sdk/data/downloaded-inventory.csv
+
+    header_ok: true, total diamonds: 2651, passed count: 581
+
+    summary report is saved to .../ritani-vendor-sdk/report/summary.csv
+    errors report is saved to .../ritani-vendor-sdk/report/errors.csv
+    warnings report is saved to .../ritani-vendor-sdk/report/warnings.csv
+    passed diamonds report is saved to .../ritani-vendor-sdk/report/passed.csv
+    standardized complete inventory is saved to .../ritani-vendor-sdk/report/std-inventory.csv
 </pre>
 
 1) report/summary.csv provides summary info:
@@ -273,13 +282,11 @@ You may have to go through many iterations in order to perfect your feed (run St
 
 Once you have your fields-maps.js ready:
 
-run
-    
-    newecx --upload-fields-maps
+run newecx with option --upload-fields-maps
 
 if your account is in production (out of sandbox), run
 
-    newecx --force-upload-fields-maps
+run newecx with option --force-upload-fields-maps
 
 ## Daily Operations:
 
@@ -289,7 +296,7 @@ to project directory as data/inventory.csv
 
 ### 2) validate inventory
 
-    newecx --validate-inventory
+run newecx with option --validate-inventory
 
 to see if your feeds are OK
 
@@ -297,12 +304,10 @@ to see if your feeds are OK
 
 Run one of the two operations, either one is OK
 
-1)
-    newecx --submit-inventory
+1) run newecx with option --submit-inventory
 
-to submit the original data/inventory.csv file to Ritani
+    to submit the original data/inventory.csv file to Ritani
 
-2)
-    newecx --submit-std-inventory
+2) run newecx with option --submit-std-inventory
 
-to submit the generated standardized report/std-inventory.csv file to Ritani
+    to submit the generated standardized report/std-inventory.csv file to Ritani
