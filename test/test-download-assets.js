@@ -2,7 +2,7 @@
 
 const chai = require('chai');
 const configuration = require('../lib/configuration');
-const { download_assets } = require('../lib/downloads')
+const { download_assets } = require('../lib/util/downloads')
 const fs = require('fs');
 
 const expect = chai.expect;

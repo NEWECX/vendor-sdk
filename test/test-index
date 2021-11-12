@@ -18,6 +18,7 @@ describe('Test index', () => {
             const value = vendor_sdk[key];
             result.push({key, type: typeof value});
         }
+        //console.log(result);
         expect(result).to.be.deep.equals([
             { key: 'std_fields', type: 'object' },
             { key: 'non_std_mappings', type: 'function' },
@@ -56,6 +57,8 @@ describe('Test index', () => {
             { key: 'mk_inventory_reports', type: 'function' },
             { key: 'download_assets', type: 'function' },
             { key: 'retrieval_report', type: 'function' },
+            { key: 'mk_empty_csv', type: 'function' },
+            { key: 'mk_instruction', type: 'function' },
             { key: 'mk_template', type: 'function' },
             { key: 'get_fields_map', type: 'function' },
             { key: 'mk_fields_map', type: 'function' },
@@ -64,8 +67,8 @@ describe('Test index', () => {
             { key: 'read_from_csv', type: 'function' },
             { key: 'write_simple_js', type: 'function' },
             { key: 'get_latest_csv_file', type: 'function' },
-            { key: 'get_cmds', type: 'function' },
-        ]);
+            { key: 'get_cmds', type: 'function' }
+          ]);
     });
 
 });
