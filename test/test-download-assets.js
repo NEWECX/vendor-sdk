@@ -1,8 +1,8 @@
 'use strict';
 
 const chai = require('chai');
-const configuration = require('../lib/configuration');
-const { download_assets } = require('../lib/util/downloads')
+const { set_data_directory } = require('../lib').util;
+const { download_assets } = require('../lib').core
 const fs = require('fs');
 
 const expect = chai.expect;
@@ -37,7 +37,7 @@ describe('Test download-assets', () => {
 
         cleanup_folder(diamond_path);
 
-        configuration.set_data_directory( data_dir );
+        set_data_directory( data_dir );
 
         const result = await download_assets([diamond]);
         //console.log(JSON.stringify(result, null, 2));
@@ -109,7 +109,7 @@ describe('Test download-assets', () => {
 
         cleanup_folder(diamond_path);
 
-        configuration.set_data_directory( data_dir );
+        set_data_directory( data_dir );
 
         const result = await download_assets([diamond]);
         //console.log(JSON.stringify(result, null, 2));
@@ -170,7 +170,7 @@ describe('Test download-assets', () => {
 
         cleanup_folder(diamond_path);
 
-        configuration.set_data_directory( data_dir );
+        set_data_directory( data_dir );
 
         const result = await download_assets([diamond]);
         //console.log(JSON.stringify(result, null, 2));

@@ -2,7 +2,7 @@
 
 const chai = require('chai');
 const node_path = require('path');
-const { api_get_inventory } = require('../lib/api-client')
+const { api_get_inventory } = require('../lib').core;
 const fs = require('fs');
 
 const expect = chai.expect;

@@ -1,7 +1,7 @@
 'use strict';
 
 const chai = require('chai');
-const validate_header = require('../lib/util/validate-header');
+const { validate_header } = require('../lib').core;
 
 const expect = chai.expect;
 

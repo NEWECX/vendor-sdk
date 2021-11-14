@@ -32,8 +32,6 @@ for example: ritani-inventory as project folder, ritani-inventory/data as data f
 
     Enter your project directory: .../ritani-inventory
     Enter your data directory: .../ritani-inventory/data
-    Enter your FTP username: ...
-    Enter your FTP password: ...
     Enter your vendor API key: ...
 
 ### Step 3: generate template with instruction and sample data
@@ -99,7 +97,7 @@ To upload your inventory feed (data/inventory.csv file):
     'use strict';
 
     const node_path = require('path');
-    const { api_upload_inventory } = require('@ritani/vendor-sdk');
+    const { api_upload_inventory } = require('@ritani/vendor-sdk').core;
 
     (async () => {
 

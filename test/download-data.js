@@ -5,7 +5,7 @@ const node_path = require('path');
 const http_client = require('@ritani/http-client');
 const extract = require('extract-zip')
 
-async function download_data() {
+module.exports = async() => {
     const data_filepath = node_path.join(__dirname, 'data');
     if (fs.existsSync(data_filepath)) {
         console.log('data folder already exists');
@@ -31,6 +31,4 @@ async function download_data() {
     } else {
         console.log('failed to download data.zip');
     }
-}
-
-module.exports = download_data;
+};

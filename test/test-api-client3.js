@@ -2,8 +2,8 @@
 
 const chai = require('chai');
 const node_path = require('path');
-const configuration = require('../lib/configuration');
-const { api_upload_all_files } = require('../lib/api-client')
+const {set_data_directory} = require('../lib').util;
+const { api_upload_all_files } = require('../lib').core;
 
 const download_data =  require('./download-data');
 
@@ -34,7 +34,7 @@ describe('Test api-client 3', () => {
     });
 
     it('test api_upload_all_files without data_dir', async () => {
-        configuration.set_data_directory(node_path.join(__dirname, 'data'));
+        set_data_directory(node_path.join(__dirname, 'data'));
         const data = await api_upload_all_files();
         //console.log('api_upload_all_files(2)', data);
         expect(data).has.property('inventory');

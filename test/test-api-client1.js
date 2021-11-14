@@ -11,7 +11,7 @@ const {
     api_update_fields_maps,
     api_get_asset_info,
     api_get_report,
-} = require('../lib/api-client')
+} = require('../lib').core;
 
 const download_data =  require('./download-data');
 

@@ -2,8 +2,8 @@
 
 const origWarning = process.emitWarning;
 
-process.emitWarning = function(...args) {
+process.emitWarning = (...args) => {
     if (!args[2].startsWith('DEP')) {
         return origWarning.apply(process, args);
     }
-}
+};

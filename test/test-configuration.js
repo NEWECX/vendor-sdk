@@ -1,7 +1,7 @@
 'use strict';
 
 const chai = require('chai');
-const configuration = require('../lib/configuration');
+const configuration = require('../lib/util/configuration');
 
 const expect = chai.expect;
 
@@ -11,10 +11,6 @@ const expect = chai.expect;
 // stage_env=test mocha --reporter spec test/test-configuration
 
 const account = {
-    ftp_host: 'ftp.ritani.com',
-    ftp_user: 'test',
-    ftp_password: 'password',
-    ftp_secure: true,
     api_base_url: 'https://api.newecx.com',
     api_key: 'API-KEY',
     data_dir: '/path/to/my-data-directory',
@@ -22,13 +18,7 @@ const account = {
 };
 
 describe('Test account config', () => {
-/*
-    it('test get_ftp_config', async () => {
-        configuration.set_account(account);
-        const ftp_config = configuration.get_ftp_config();
-        expect(ftp_config).to.deep.equal({host: 'ftp.ritani.com', user: 'test', password: 'password', secure: true});
-    });
-*/
+
     it('test get_api_base_url', async () => {
         configuration.set_account(account);
         const api_base_url = configuration.get_api_base_url();

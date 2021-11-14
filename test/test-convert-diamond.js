@@ -1,8 +1,8 @@
 'use strict';
 
 const chai = require('chai');
-const convert_diamond = require('../lib/util/convert-diamond');
-const get_std_field = require('../lib/util/get-std-field');
+const { get_std_field } = require('../lib').util;
+const { convert_diamond } = require('../lib').core;
 
 const expect = chai.expect;
 

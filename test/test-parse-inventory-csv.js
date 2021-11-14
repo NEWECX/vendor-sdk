@@ -2,8 +2,8 @@
 
 const chai = require('chai');
 const node_path = require('path');
-const { parse_inventory_csv } = require('../lib/validate');
-
+const { parse_inventory_csv } = require('../lib').core;
+const download_data = require('./download-data');
 const expect = chai.expect;
 
 const agreed_header = require('./agreed-header');
@@ -15,6 +15,10 @@ const fields_map = require('./fields-map');
 // stage_env=test mocha --timeout 3000 --reporter spec test/test-parse-inventory-csv 
 
 describe('Test parse-inventory-csv', () => {
+
+    before(async () => {
+        await download_data();
+    })
 
     it('test parse-inventory-csv', async () => {
         const local_filepath = node_path.join(__dirname, 'data', 'inventory.csv');

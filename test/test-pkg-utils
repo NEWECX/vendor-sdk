@@ -1,7 +1,7 @@
 'use strict';
 
 const chai = require('chai');
-const {find_pkg, get_npm_pkg} = require('../lib/util/pkg-utils');
+const {find_pkg, get_npm_pkg} = require('../lib').util;
 
 const expect = chai.expect;
 
