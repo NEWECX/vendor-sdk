@@ -704,18 +704,18 @@ describe('Test convert-diamond', () => {
         //console.log('result', JSON.stringify(result, null, 2));
         expect(result.pass).equals(true);
         expect(result).to.be.deep.equals({
-            "pass": true,
-            "orig_certificate_url": "",
-            "original": {
-              "orig_certificate_url": "ftp://assets.newecx.com/template/assets/GIA-2205729946/certificate.pdf"
-            },
-            "errors": [
-              {
-                "field": "orig_certificate_url",
-                "warning": "expected key, orig_certificate_url => ftp://assets.newecx.com/template/assets/GIA-2205729946/certificate.pdf, protocol not http and https"
-              }
-            ]
-          });
+          "pass": true,
+          "orig_certificate_url": "",
+          "original": {
+            "orig_certificate_url": "ftp://assets.newecx.com/template/assets/GIA-2205729946/certificate.pdf"
+          },
+          "errors": [
+            {
+              "field": "orig_certificate_url",
+              "warning": "expected key, orig_certificate_url => ftp://assets.newecx.com/template/assets/GIA-2205729946/certificate.pdf, invalid url"
+            }
+          ]
+        });
     })
 
     it('test convert-diamond 26', async () => {
@@ -730,7 +730,7 @@ describe('Test convert-diamond', () => {
         expect(result.pass).equals(true);
         expect(result).to.be.deep.equals({
             "pass": true,
-            "orig_certificate_url": "assets.newecx.com/template/assets/GIA-2205729946/certificate.pdf",
+            "orig_certificate_url": "",
             "original": {
               "orig_certificate_url": "assets.newecx.com/template/assets/GIA-2205729946/certificate.pdf"
             },
