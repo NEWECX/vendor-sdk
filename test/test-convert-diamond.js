@@ -114,8 +114,8 @@ describe('Test convert-diamond', () => {
         expect(result).to.be.deep.equals({
             "pass": false,
             "carat": 2,
-            "cost": 2000,
-            "cost_per_carat": 1006,
+            "cost": '',
+            "cost_per_carat": '',
             "original": {
               "carat": "2.00",
               "cost": "2000",
@@ -264,7 +264,7 @@ describe('Test convert-diamond', () => {
           });
     })
 
-    it('test convert-diamond 9', async () => {
+    it('test convert-diamond 10', async () => {
         const row = { lab: 'AAA' };
         const fields_map = [
             { key: 'certificate_lab', field: 'lab', values_map: {AAA: 'GIA'}}, // fields_map
@@ -284,7 +284,7 @@ describe('Test convert-diamond', () => {
           });
     })
 
-    it('test convert-diamond 10', async () => {
+    it('test convert-diamond 11', async () => {
         const row = { lab: 'AAA', cert: 'GIA12345' };
         const fields_map = [ 
             { key: 'certificate_lab', field: 'lab', values_map: {AAA: 'GIA'}}, 
@@ -311,7 +311,7 @@ describe('Test convert-diamond', () => {
     })
 
 
-    it('test convert-diamond 11', async () => {
+    it('test convert-diamond 12', async () => {
         const row = { lab: 'AAA', cert: 'none' };
         const fields_map = [ 
             { key: 'certificate_lab', field: 'lab', values_map: {AAA: 'GIA'}}, 
@@ -343,7 +343,7 @@ describe('Test convert-diamond', () => {
         });
     })
 
-    it('test convert-diamond 12', async () => {
+    it('test convert-diamond 13', async () => {
         const row = { lab: 'AAA', cert: 'none' };
         const fields_map = [ 
             { key: 'certificate_lab', field: 'lab'}, 
@@ -379,7 +379,7 @@ describe('Test convert-diamond', () => {
         });
     })
 
-    it('test convert-diamond 13', async () => {
+    it('test convert-diamond 14', async () => {
         const row = { color: 'G' };
         const fields_map = [];
         const options = undefined;
@@ -403,7 +403,7 @@ describe('Test convert-diamond', () => {
           });
     })
 
-    it('test convert-diamond 14', async () => {
+    it('test convert-diamond 15', async () => {
         const row = { color: 'FIY' };
         const fields_map = [];
         const options = undefined;
@@ -427,7 +427,7 @@ describe('Test convert-diamond', () => {
           });
     })
 
-    it('test convert-diamond 15', async () => {
+    it('test convert-diamond 16', async () => {
         const row = { color: 'Fancy Light Yellow' };
         const fields_map = [];
         const options = undefined;
@@ -451,7 +451,7 @@ describe('Test convert-diamond', () => {
           });
     })
 
-    it('test convert-diamond 16', async () => {
+    it('test convert-diamond 17', async () => {
         const row = { color: 'Fancy Orangish Light Yellow' };
         const fields_map = [];
         const options = undefined;
@@ -475,7 +475,7 @@ describe('Test convert-diamond', () => {
           });
     })
 
-    it('test convert-diamond 17', async () => {
+    it('test convert-diamond 18', async () => {
         const row = { color: 'Fancy Orangish Color' };
         const fields_map = [];
         const options = undefined;
@@ -499,7 +499,7 @@ describe('Test convert-diamond', () => {
           });
     })
 
-    it('test convert-diamond 18', async () => {
+    it('test convert-diamond 19', async () => {
         const row = { };
         const fields_map = [ {key: 'lab_grown', default_value: 1}];
         const options = undefined;
@@ -517,7 +517,7 @@ describe('Test convert-diamond', () => {
           });
     })
     
-    it('test convert-diamond 19', async () => {
+    it('test convert-diamond 20', async () => {
         const row = { length: '3', width: '3', depth: '2'};
         const fields_map = [];
         const options = undefined;
@@ -543,7 +543,7 @@ describe('Test convert-diamond', () => {
           });
     })
 
-    it('test convert-diamond 20', async () => {
+    it('test convert-diamond 21', async () => {
         const row = { measurements: '3.00 - 3.00 x 2.00'};
         const fields_map = [];
         const options = undefined;
@@ -567,7 +567,7 @@ describe('Test convert-diamond', () => {
           });
     })
 
-    it('test convert-diamond 21', async () => {
+    it('test convert-diamond 22', async () => {
         const row = { measurements: '3.00 - 4.00 x 2.00'};
         const fields_map = [];
         const options = undefined;
@@ -591,7 +591,7 @@ describe('Test convert-diamond', () => {
           });
     })
 
-    it('test convert-diamond 22', async () => {
+    it('test convert-diamond 23', async () => {
         const row = { length: '3', width: '3'};
         const fields_map = [];
         const options = undefined;
@@ -622,7 +622,7 @@ describe('Test convert-diamond', () => {
           });
     })
 
-    it('test convert-diamond 23', async () => {
+    it('test convert-diamond 24', async () => {
         const row = { length: '3', width: '3', measurements: '3.00 - 3.00 x 2.00'};
         const fields_map = [];
         const options = undefined;
@@ -648,7 +648,7 @@ describe('Test convert-diamond', () => {
           });
     })
 
-    it('test convert-diamond 24', async () => {
+    it('test convert-diamond 25', async () => {
         const row = { length: '3', width: '1', measurements: '3.00 - 3.00 x 2.00'};
         const fields_map = [];
         const options = undefined;
@@ -674,7 +674,7 @@ describe('Test convert-diamond', () => {
           });
     })
 
-    it('test convert-diamond 24', async () => {
+    it('test convert-diamond 26', async () => {
         const row = { orig_certificate_url: 'https://assets.newecx.com/template/assets/GIA-2205729946/certificate.pdf' };
         const fields_map = [];
         const options = undefined;
@@ -693,7 +693,7 @@ describe('Test convert-diamond', () => {
           });
     })
 
-    it('test convert-diamond 25', async () => {
+    it('test convert-diamond 27', async () => {
         const row = { orig_certificate_url: 'ftp://assets.newecx.com/template/assets/GIA-2205729946/certificate.pdf' };
         const fields_map = [];
         const options = undefined;
@@ -718,7 +718,7 @@ describe('Test convert-diamond', () => {
         });
     })
 
-    it('test convert-diamond 26', async () => {
+    it('test convert-diamond 28', async () => {
         const row = { orig_certificate_url: 'assets.newecx.com/template/assets/GIA-2205729946/certificate.pdf' };
         const fields_map = [];
         const options = undefined;
@@ -743,7 +743,7 @@ describe('Test convert-diamond', () => {
           });
     })
 
-    it('test convert-diamond 27', async () => {
+    it('test convert-diamond 29', async () => {
       const row = { color: 'W-Z' };
       const fields_map = [];
       const options = undefined;
@@ -764,7 +764,7 @@ describe('Test convert-diamond', () => {
       });
   })
 
-  it('test convert-diamond 28', async () => {
+  it('test convert-diamond 30', async () => {
     const row = { color: 'FVYO' };
     const fields_map = [];
     const options = undefined;
@@ -786,6 +786,6 @@ describe('Test convert-diamond', () => {
         "color": "FVYO"
       }
     });
-})
+  })
 
 });
