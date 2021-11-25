@@ -757,7 +757,7 @@ describe('Test convert-diamond', () => {
       expect(result.pass).equals(true);
       expect(result).to.be.deep.equals({
         "pass": true,
-        "color": "W",
+        "color": "Y",
         "original": {
           "color": "W-Z"
         }
