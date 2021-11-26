@@ -1,6 +1,6 @@
 {
   "name": "@ritani/vendor-sdk",
-  "version": "3.8.6",
+  "version": "3.8.7",
   "description": "Ritani Diamond Vendor Inventory SDK",
   "bin": {
     "newecx": "./bin/newecx.js"
@@ -45,7 +45,7 @@
     "npm": ">= 6.14.0"
   },
   "dependencies": {
-    "@ritani/diamond-glossary": "^1.3.8",
+    "@ritani/diamond-glossary": "^1.3.9",
     "@ritani/get-check-sum": "^1.0.0",
     "@ritani/http-client": "^1.1.0",
     "@ritani/to-simple-js": "^1.0.8",

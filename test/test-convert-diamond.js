@@ -373,7 +373,7 @@ describe('Test convert-diamond', () => {
             },
             {
               "field": "cert",
-              "error": "invalid certificate, invalid certificate lab, not in GIA, AGSL, HRD, IGI, GCAL, DF, EGL, GHI, GSI, IIDGR, PGS, BSC, JGS, WGI, EDR"
+              "error": "invalid certificate, invalid certificate lab, not in GIA, AGSL, HRD, IGI, GCAL, DF, EGL, GHI, GSI, IIDGR, PGS, BSC, JGS, WGI, EDR, LGC"
             }
           ]
         });
