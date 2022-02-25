@@ -49,10 +49,10 @@ describe('Test validate-header', () => {
             field: 'header',
             warning: 'column: 2 header is Carat, not matching with agreed header: carat'
           },
-          {
-            field: 'header',
-            info: 'For your reference, the agreed header: vendor_sku, carat'
-          }
+          // {
+          //   field: 'header',
+          //   info: 'For your reference, the agreed header: vendor_sku, carat'
+          // }
         ]);
     });
 
@@ -70,10 +70,10 @@ describe('Test validate-header', () => {
             field: 'header',
             warning: 'column: 1 header is vendor_sku, not matching with agreed header: carat'
           },
-          {
-            field: 'header',
-            info: 'For your reference, the agreed header: carat'
-          }
+          // {
+          //   field: 'header',
+          //   info: 'For your reference, the agreed header: carat'
+          // }
         ]);
     });
 
@@ -98,10 +98,10 @@ describe('Test validate-header', () => {
           field: 'header',
           warning: 'column: 2 header is Carat, not matching with agreed header: carat'
         },
-        {
-          field: 'header',
-          info: 'For your reference, the agreed header: carat'
-        }
+        // {
+        //   field: 'header',
+        //   info: 'For your reference, the agreed header: carat'
+        // }
       ]);
     });
 
@@ -119,10 +119,10 @@ describe('Test validate-header', () => {
             field: 'header',
             warning: 'column: 1 header is carat, not matching with agreed header: vendor_sku'
           },
-          {
-            field: 'header',
-            info: 'For your reference, the agreed header: vendor_sku, carat'
-          }
+          // {
+          //   field: 'header',
+          //   info: 'For your reference, the agreed header: vendor_sku, carat'
+          // }
         ]);
     });
 
@@ -147,10 +147,10 @@ describe('Test validate-header', () => {
           field: 'header',
           warning: 'column: 1 header is Carat, not matching with agreed header: carat'
         },
-        {
-          field: 'header',
-          info: 'For your reference, the agreed header: vendor_sku, carat'
-        }
+        // {
+        //   field: 'header',
+        //   info: 'For your reference, the agreed header: vendor_sku, carat'
+        // }
       ]);
   });
 
@@ -176,10 +176,10 @@ describe('Test validate-header', () => {
         field: 'header',
         warning: 'column: 3 header is extra, it is an extra field'
       },
-      {
-        field: 'header',
-        info: 'For your reference, the agreed header: vendor_sku, carat'
-      }
+      // {
+      //   field: 'header',
+      //   info: 'For your reference, the agreed header: vendor_sku, carat'
+      // }
     ]);
   });
 
@@ -197,10 +197,10 @@ describe('Test validate-header', () => {
           field: 'header',
           warning: 'column: 3 header is extra, it is an extra field'
         },
-        {
-          field: 'header',
-          info: 'For your reference, the agreed header: vendor_sku, carat'
-        }
+        // {
+        //   field: 'header',
+        //   info: 'For your reference, the agreed header: vendor_sku, carat'
+        // }
       ]);
   });
 
@@ -217,10 +217,10 @@ describe('Test validate-header', () => {
         field: 'header',
         warning: 'column: 2 header is carat , not matching with agreed header: carat'
       },
-      {
-        field: 'header',
-        info: 'For your reference, the agreed header: vendor_sku, carat'
-      }
+      // {
+      //   field: 'header',
+      //   info: 'For your reference, the agreed header: vendor_sku, carat'
+      // }
     ]);
 });
 
