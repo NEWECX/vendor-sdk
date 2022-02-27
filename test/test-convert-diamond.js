@@ -788,4 +788,28 @@ describe('Test convert-diamond', () => {
     });
   })
 
+  it('test convert-diamond 31', async () => {
+    const row = { color: 'fancy deep orange-yellow' };
+    const fields_map = [];
+    const options = undefined;
+    const std_fields = [];
+    for (const key of ['color', 'fancy_color', 'fancy_color_intensity', 'fancy_color_overtone']) {
+        std_fields.push(get_std_field(key))
+    }
+    const asset_fields = [];
+    const result = await convert_diamond(row, fields_map, options, std_fields, asset_fields);
+    //console.log('result', JSON.stringify(result, null, 2));
+    expect(result.pass).equals(true);
+    expect(result).to.be.deep.equals({
+      "pass": true,
+      "color": "FPY",
+      "fancy_color": "YELLOW",
+      "fancy_color_intensity": "FP",
+      "fancy_color_overtone": "",
+      "original": {
+        "color": "fancy deep orange-yellow"
+      }
+    });
+  })
+
 });
