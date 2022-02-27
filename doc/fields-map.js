@@ -29,7 +29,7 @@ const fields_map = [
 
  // description: 'certificate lab',
 
- // allowed_values:: 'GIA, AGSL, HRD, IGI, GCAL, DF, EGL, GHI, GSI, IIDGR, PGS, BSC, JGS, WGI, EDR',
+ // allowed_values:: 'GIA, AGSL, HRD, IGI, GCAL, DF, EGL, GHI, GSI, IIDGR, PGS, BSC, JGS, WGI, EDR, LGC',
 
  /* for your reference:
 
@@ -48,7 +48,8 @@ const fields_map = [
       BSC: 'Biological Safety Cabinet Testing & Certification',
       JGS: 'J.B. Grading System',
       WGI: 'World Gemological Institute',
-      EDR: 'Lloyds Family Jewellery Certificate'
+      EDR: 'Lloyds Family Jewellery Certificate',
+      LGC: 'The UK’s designated National Measurement Institute for chemical and bioanalytical measurements'
     }
 */
   },
@@ -73,7 +74,7 @@ const fields_map = [
 
  // description: 'shape',
 
- // allowed_values:: 'RD, CU, PR, EM, OV, AS, RA, MQ, PS, HS, TR, SH, PE, OC, ST, HE, HM, TZ',
+ // allowed_values:: 'RD, CU, PR, EM, OV, AS, RA, MQ, PS, HS, TR, SH, PE, OC, ST, HE, HM, TZ, KI, BT, DE, LO, OT',
 
  /* for your reference:
 
@@ -90,12 +91,17 @@ const fields_map = [
       HS: 'Heart',
       TR: 'Triangle',
       SH: 'Shield',
-      PE: 'Pentagonal',
-      OC: 'Octagonal',
+      PE: 'Pentagon',
+      OC: 'Octagon',
       ST: 'Star',
-      HE: 'Hexagonal',
+      HE: 'Hexagon',
       HM: 'Half Moon',
-      TZ: 'Trapezoid'
+      TZ: 'Trapezoid',
+      KI: 'Kite',
+      BT: 'Briolette',
+      DE: 'Decagon',
+      LO: 'Lozenge',
+      OT: 'Other'
     }
 */
   },
@@ -152,7 +158,7 @@ const fields_map = [
 
  // description: 'color',
 
- // allowed_values:: 'D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, FLY, FY, FIY, FVY, FPY, FDY, FLO, FO, FIO, FVO, FPO, FDO, FLR, FR, FIR, FVR, FPR, FDR, FLBLU, FBLU, FIBLU, FVBLU, FPBLU, FDBLU, FLBLA, FBLA, FIBLA, FVBLA, FPBLA, FDBLA, FLBRO, FBRO, FIBRO, FVBRO, FPBRO, FDBRO, FLPI, FPI, FIPI, FVPI, FPPI, FDPI, FLPU, FPU, FIPU, FVPU, FPPU, FDPU, FLGRE, FGRE, FIGRE, FVGRE, FPGRE, FDGRE, FLGRA, FGRA, FIGRA, FVGRA, FPGRA, FDGRA',
+ // allowed_values:: 'D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, FLY, FY, FIY, FVY, FPY, FDY, FLO, FO, FIO, FVO, FPO, FDO, FLR, FR, FIR, FVR, FPR, FDR, FLBLU, FBLU, FIBLU, FVBLU, FPBLU, FDBLU, FLBLA, FBLA, FIBLA, FVBLA, FPBLA, FDBLA, FLBRO, FBRO, FIBRO, FVBRO, FPBRO, FDBRO, FLPI, FPI, FIPI, FVPI, FPPI, FDPI, FLPU, FPU, FIPU, FVPU, FPPU, FDPU, FLGRE, FGRE, FIGRE, FVGRE, FPGRE, FDGRE, FLGRA, FGRA, FIGRA, FVGRA, FPGRA, FDGRA, FLW, FW, FIW, FVW, FPW, FDW',
 
  /* for your reference:
 
@@ -239,7 +245,13 @@ const fields_map = [
       FIGRA: 'Fancy Intense Gray',
       FVGRA: 'Fancy Vivid Gray',
       FPGRA: 'Fancy Deep Gray',
-      FDGRA: 'Fancy Dark Gray'
+      FDGRA: 'Fancy Dark Gray',
+      FLW: 'Fancy Light White',
+      FW: 'Fancy White',
+      FIW: 'Fancy Intense White',
+      FVW: 'Fancy Vivid White',
+      FPW: 'Fancy Deep White',
+      FDW: 'Fancy Dark White'
     }
 */
   },
@@ -262,15 +274,16 @@ const fields_map = [
 
  // description: 'cut grade',
 
- // allowed_values:: 'EX, VG, G, F',
+ // allowed_values:: 'ID, VG, G, F, P',
 
  /* for your reference:
 
     dictionary: {
-      EX: 'Excellent',
+      ID: 'Ideal',
       VG: 'Very Good',
       G: 'Good',
-      F: 'Fair'
+      F: 'Fair',
+      P: 'Poor'
     }
 */
   },
@@ -310,7 +323,7 @@ const fields_map = [
 
  // description: 'polish',
 
- // allowed_values:: 'EX, VG, G, F',
+ // allowed_values:: 'EX, VG, G, F, P',
 
  /* for your reference:
 
@@ -318,7 +331,8 @@ const fields_map = [
       EX: 'Excellent',
       VG: 'Very Good',
       G: 'Good',
-      F: 'Fair'
+      F: 'Fair',
+      P: 'Poor'
     }
 */
   },
@@ -426,7 +440,7 @@ const fields_map = [
 
  // description: 'symmetry',
 
- // allowed_values:: 'EX, VG, G, F',
+ // allowed_values:: 'EX, VG, G, F, P',
 
  /* for your reference:
 
@@ -434,7 +448,8 @@ const fields_map = [
       EX: 'Excellent',
       VG: 'Very Good',
       G: 'Good',
-      F: 'Fair'
+      F: 'Fair',
+      P: 'Poor'
     }
 */
   },
@@ -487,7 +502,7 @@ const fields_map = [
 
  // description: 'fancy color',
 
- // allowed_values:: 'YELLOW, PINK, PURPLE, RED, BLUE, GREEN, ORANGE, BROWN, BLACK, GRAY',
+ // allowed_values:: 'YELLOW, PINK, PURPLE, RED, BLUE, GREEN, ORANGE, BROWN, BLACK, GRAY, WHITE',
 
  /* for your reference:
 
@@ -501,7 +516,8 @@ const fields_map = [
       ORANGE: 'Orange',
       BROWN: 'Brown',
       BLACK: 'Black',
-      GRAY: 'Gray'
+      GRAY: 'Gray',
+      WHITE: 'White'
     }
 */
   },
@@ -533,7 +549,7 @@ const fields_map = [
 
  // description: 'fancy color overtone',
 
- // allowed_values:: 'YELLOW, PINK, PURPLE, RED, BLUE, GREEN, ORANGE, BROWN, BLACK, GRAY',
+ // allowed_values:: 'YELLOW, PINK, PURPLE, RED, BLUE, GREEN, ORANGE, BROWN, BLACK, GRAY, WHITE',
 
  /* for your reference:
 
@@ -547,7 +563,8 @@ const fields_map = [
       ORANGE: 'Orange',
       BROWN: 'Brown',
       BLACK: 'Black',
-      GRAY: 'Gray'
+      GRAY: 'Gray',
+      WHITE: 'White'
     }
 */
   },
@@ -582,7 +599,7 @@ const fields_map = [
   {
     key: 'days_to_ship',
  // type: 'number',
- // require: 'expected',
+ // require: 'optional',
 
  // description: 'days need to ship the diamond'
   },

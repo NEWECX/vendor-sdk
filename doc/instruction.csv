@@ -13,10 +13,10 @@
 "color","color","string","required","D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, FLY, FY, FIY, FVY, FPY, FDY, FLO, FO, FIO, FVO, FPO, FDO, FLR, FR, FIR, FVR, FPR, FDR, FLBLU, FBLU, FIBLU, FVBLU, FPBLU, FDBLU, FLBLA, FBLA, FIBLA, FVBLA, FPBLA, FDBLA, FLBRO, FBRO, FIBRO, FVBRO, FPBRO, FDBRO, FLPI, FPI, FIPI, FVPI, FPPI, FDPI, FLPU, FPU, FIPU, FVPU, FPPU, FDPU, FLGRE, FGRE, FIGRE, FVGRE, FPGRE, FDGRE, FLGRA, FGRA, FIGRA, FVGRA, FPGRA, FDGRA, FLW, FW, FIW, FVW, FPW, FDW","D: 'D'; E: 'E'; F: 'F'; G: 'G'; H: 'H'; I: 'I'; J: 'J'; K: 'K'; L: 'L'; M: 'M'; N: 'N'; O: 'O'; P: 'P'; Q: 'Q'; R: 'R'; S: 'S'; T: 'T'; U: 'U'; V: 'V'; W: 'W'; X: 'X'; Y: 'Y'; Z: 'Z'; FLY: 'Fancy Light Yellow'; FY: 'Fancy Yellow'; FIY: 'Fancy Intense Yellow'; FVY: 'Fancy Vivid Yellow'; FPY: 'Fancy Deep Yellow'; FDY: 'Fancy Dark Yellow'; FLO: 'Fancy Light Orange'; FO: 'Fancy Orange'; FIO: 'Fancy Intense Orange'; FVO: 'Fancy Vivid Orange'; FPO: 'Fancy Deep Orange'; FDO: 'Fancy Dark Orange'; FLR: 'Fancy Light Red'; FR: 'Fancy Red'; FIR: 'Fancy Intense Red'; FVR: 'Fancy Vivid Red'; FPR: 'Fancy Deep Red'; FDR: 'Fancy Dark Red'; FLBLU: 'Fancy Light Blue'; FBLU: 'Fancy Blue'; FIBLU: 'Fancy Intense Blue'; FVBLU: 'Fancy Vivid Blue'; FPBLU: 'Fancy Deep Blue'; FDBLU: 'Fancy Dark Blue'; FLBLA: 'Fancy Light Black'; FBLA: 'Fancy Black'; FIBLA: 'Fancy Intense Black'; FVBLA: 'Fancy Vivid Black'; FPBLA: 'Fancy Deep Black'; FDBLA: 'Fancy Dark Black'; FLBRO: 'Fancy Light Brown'; FBRO: 'Fancy Brown'; FIBRO: 'Fancy Intense Brown'; FVBRO: 'Fancy Vivid Brown'; FPBRO: 'Fancy Deep Brown'; FDBRO: 'Fancy Dark Brown'; FLPI: 'Fancy Light Pink'; FPI: 'Fancy Pink'; FIPI: 'Fancy Intense Pink'; FVPI: 'Fancy Vivid Pink'; FPPI: 'Fancy Deep Pink'; FDPI: 'Fancy Dark Pink'; FLPU: 'Fancy Light Purple'; FPU: 'Fancy Purple'; FIPU: 'Fancy Intense Purple'; FVPU: 'Fancy Vivid Purple'; FPPU: 'Fancy Deep Purple'; FDPU: 'Fancy Dark Purple'; FLGRE: 'Fancy Light Green'; FGRE: 'Fancy Green'; FIGRE: 'Fancy Intense Green'; FVGRE: 'Fancy Vivid Green'; FPGRE: 'Fancy Deep Green'; FDGRE: 'Fancy Dark Green'; FLGRA: 'Fancy Light Gray'; FGRA: 'Fancy Gray'; FIGRA: 'Fancy Intense Gray'; FVGRA: 'Fancy Vivid Gray'; FPGRA: 'Fancy Deep Gray'; FDGRA: 'Fancy Dark Gray'; FLW: 'Fancy Light White'; FW: 'Fancy White'; FIW: 'Fancy Intense White'; FVW: 'Fancy Vivid White'; FPW: 'Fancy Deep White'; FDW: 'Fancy Dark White'","E"
 "color_origin","color origin, i.e, Nature",,"optional","","",""
 "color_distribution","color distribution, i.e, Even",,"optional","","",""
-"cut","cut grade","string","expected","EX, VG, G, F","EX: 'Excellent'; VG: 'Very Good'; G: 'Good'; F: 'Fair'","VG"
+"cut","cut grade","string","expected","ID, VG, G, F, P","ID: 'Ideal'; VG: 'Very Good'; G: 'Good'; F: 'Fair'; P: 'Poor'","VG"
 "culet_size","culet size","string","optional","N, VS, S, M, SL, LG, VL","N: 'None'; VS: 'Very Small'; S: 'Small'; M: 'Medium'; SL: 'Slightly Large'; LG: 'Large'; VL: 'Very Large'","N"
 "culet_condition","culet condition","string","optional","","",""
-"polish","polish","string","required","EX, VG, G, F","EX: 'Excellent'; VG: 'Very Good'; G: 'Good'; F: 'Fair'","VG"
+"polish","polish","string","required","EX, VG, G, F, P","EX: 'Excellent'; VG: 'Very Good'; G: 'Good'; F: 'Fair'; P: 'Poor'","VG"
 "depth","depth in mm","number","required","","",3.63
 "depth_percent","depth percent","number","required","","",64.7
 "width","width in mm","number","required","","",5.6
@@ -29,7 +29,7 @@
 "girdle_thin","girdle thin","string","optional","","",""
 "girdle_thick","girdle thick","string","optional","","",""
 "girdle_percent","girdle percent","number","optional","","",""
-"symmetry","symmetry","string","required","EX, VG, G, F","EX: 'Excellent'; VG: 'Very Good'; G: 'Good'; F: 'Fair'","VG"
+"symmetry","symmetry","string","required","EX, VG, G, F, P","EX: 'Excellent'; VG: 'Very Good'; G: 'Good'; F: 'Fair'; P: 'Poor'","VG"
 "table_percent","table percent","number","required","","",66
 "key_to_symbols","key to symbols","string","optional","","","Crystal,Needle,Feather"
 "crown_height","crown height percent","number","optional","","",""
