@@ -44,6 +44,7 @@ describe('Test api-client 1', () => {
 
     it('test api_get_inventory_info', async () => {
         const data = await api_get_inventory_info(true);
+        //console.log(data)
         expect(Object.keys(data).length).greaterThan(0);
         expect(data.status).equals('OK');
     });
@@ -83,17 +84,18 @@ describe('Test api-client 1', () => {
         await api_update_fields_maps(old_fields_map);
     });
 
-    it('test get_asset_info with LAB-CERT# in filepath', async () => {
-        const local_filepath = node_path.join(__dirname, 'data', 'assets', 'GIA-2205729946', 'primary.jpg');
-        const data = await api_get_asset_info(local_filepath);
-        expect(Object.keys(data).length).greaterThan(0);
-        expect(data.status).equals('OK');
-    });
+    // it('test get_asset_info with LAB-CERT# in filepath', async () => {
+    //     const local_filepath = node_path.join(__dirname, 'data', 'assets', 'GIA-2205729946', 'primary.jpg');
+    //     const data = await api_get_asset_info(local_filepath);
+    //     console.log(data);
+    //     expect(Object.keys(data).length).greaterThan(0);
+    //     expect(data.status).equals('OK');
+    // });
 
-    it('test get_asset_info with certificate_lab and certificate_number', async () => {
-        const local_filepath = node_path.join(__dirname, 'data', 'somewhere', 'certificate.pdf');
-        const data = await api_get_asset_info(local_filepath, 'GIA', '2205729946');
-        expect(Object.keys(data).length).greaterThan(0);
-        expect(data.status).equals('OK');
-    });
+    // it('test get_asset_info with certificate_lab and certificate_number', async () => {
+    //     const local_filepath = node_path.join(__dirname, 'data', 'somewhere', 'certificate.pdf');
+    //     const data = await api_get_asset_info(local_filepath, 'GIA', '2205729946');
+    //     expect(Object.keys(data).length).greaterThan(0);
+    //     expect(data.status).equals('OK');
+    // });
 });
