@@ -44,7 +44,7 @@
 "country","country of the diamond location","string","optional","","",""
 "location","location of the diamond","string","optional","","","belgium"
 "days_to_ship","days need to ship the diamond","number","optional","","",""
-"lab_grown","lab grown or earth grown","number","required","0, 1","'0': 'N'; '1': 'Y'",0
+"lab_grown","lab grown or earth grown","number","required","1, 0","'0': 'N'; '1': 'Y'",0
 "laser_inscription","laser inscription","string","optional","","",""
 "report_date","date shows on lab report","string","optional","","",""
 "comments","comments","string","optional","","",""
